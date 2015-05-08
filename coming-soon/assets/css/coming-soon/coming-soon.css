@@ -1,0 +1,83 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	min-height: 100%;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin-bottom: 120px;
+	color: white;
+}
+
+
+body > .content {
+	background-color: #34495e;
+}
+
+.sub-footer {
+	position: absolute;
+	width: 100%;
+	height: 120px;
+	bottom: 0;
+}
+
+.hand {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.countdown {
+	display: inline-block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.counter {
+	border: 2px solid #ffffff;
+	float: left;
+	height: 160px;
+	margin: 0 10px;
+	text-align: center;
+	width: 160px;
+	background-color: #1abc9c;
+}
+
+.days, .hours, .minutes, .seconds {
+	font-size: 4.2em;
+	line-height: 0.5em;
+	position: relative;
+	top: 55px;
+}
+
+.info {
+	font-size: 1.1em;
+	position: relative;
+	top: 70px;
+}
+
+.service-box-logo {
+	display: block;
+	margin: auto;
+	width: 120px;
+	height: 120px;
+}
+
+.service-box-logo.service-box.filled .service-icon {
+	padding: 0;
+	background-color: white;
+}
+
+.logo-text {
+	font-size: 60px;
+	letter-spacing: 3px;
+}
+
+.divider.centered {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
