@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Grid X : Home 5 style</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+
+	<!--Fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,400italic%7CRaleway:400,600' rel='stylesheet'
+				type='text/css'>
+
+	<!--jQuery and plugins-->
+	<script type="text/javascript" src="assets/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="assets/to-remove/underscore-min.js"></script>
+	<script type="text/javascript" src="assets/to-remove/backbone-min.js"></script>
+	<script type="text/javascript" src="assets/to-remove/backbone-paginated-collection.js"></script>
+	<script type="text/javascript" src="assets/to-remove/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="assets/to-remove/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript" src="assets/js/waypoints/waypoints.js"></script>
+
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+	<script type="text/javascript" src="assets/js/bootstrap/bootstrap.js"></script>
+
+	<!--Icons and Animates-->
+	<link rel="stylesheet" href="assets/css/elegant-icons/elegant-icons.css">
+	<link rel="stylesheet" href="assets/css/etline/etline.css">
+	<link rel="stylesheet" href="assets/css/animate.css/animate.css">
+
+	<!-- OwlCarusel -->
+	<link rel="stylesheet" href="assets/css/owl-carousel/owl-carousel.css">
+	<script type="text/javascript" src="assets/js/owl-carousel/owl-carousel.js"></script>
+
+	<!--Magnific lightbox-->
+	<link rel="stylesheet" href="assets/css/magnific-popup/magnific-popup.css">
+	<script type="text/javascript" src="assets/js/magnific-popup/magnific-popup.js"></script>
+
+
+	<!--Masterslider-->
+	<link rel="stylesheet" href="assets/css/masterslider/style/masterslider.css">
+	<link rel="stylesheet" href="assets/css/masterslider/masterslider.css">
+	<link rel="stylesheet" href="assets/css/masterslider/skins/default/style.css">
+	<script type="text/javascript" src="assets/js/masterslider/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="assets/js/masterslider/masterslider.js"></script>
+
+	<!--Stylesheet-->
+	<link rel="stylesheet" type="text/css" href="assets/css/grid.x/style.css">
+
+
+	<!--Template: Item style 1 - COLORED CATEGORY-->
+	<script type="text/template" id="tpl-item-style1">
+		<div class="grid-item tpl-item-style1 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>" data-id="<%= id %>"
+				 style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry">
+			<div class="background" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);"></div>
+			<% if (typeof(categories) != "undefined") { %>
+			<a href="javascript:;" class="category" style="background-color:<%= _.last(categories).color %>;"><%=
+				_.last(categories).title %></a>
+			<% } %>
+			<div class="entry-item">
+				<span class="format <%= format %>"></span>
+
+				<h2><a href="<%= link %>" class="post-permalink"><%= title %></a></h2>
+				<span class="date"><%= date %></span>
+			</div>
+		</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 2 - SWAP IMAGE-->
+	<script type="text/template" id="tpl-item-style2">
+		<div class="grid-item tpl-item-style2 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>" data-id="<%= id %>"
+				 style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry">
+			<a href="<%= link %>" class="post-permalink"
+				 style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);">
+				<span style="background-image:url(<%= typeof(_logo)!== 'undefined' ?  _logo : '' %>);"></span>
+			</a>
+		</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 3 - BOOK COVER-->
+	<script type="text/template" id="tpl-item-style3">
+		<div class="grid-item tpl-item-style3 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>" data-id="<%= id %>"
+				 style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry">
+			<div class="image" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);"></div>
+			<div class="hover">
+				<div class="overlay" style="<% if (typeof(categories) != " undefined
+				") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+			</div>
+            <span class="inner-table">
+            <span class="inner-row"><h3><a href="<%= link %>" class="post-permalink"><%= title %></a></h3></span>
+            </span>
+		</div>
+		</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 4 - PORTFOLIO with lightbox-->
+	<script type="text/template" id="tpl-item-style4">
+		<div class="grid-item tpl-item-style4 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>" data-id="<%= id %>"
+				 style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry">
+			<div class="image" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);"></div>
+			<div class="hover">
+				<div class="overlay" style="<% if (typeof(categories) != " undefined
+				") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+			</div>
+            <span class="inner-table">
+            <span class="inner-row">
+            <span class="link-icon">
+            <a href="javascript:;"><i class="glyphicon glyphicon-link"></i></a>&nbsp;
+            <a href="javascript:;" class="popup"><i class="glyphicon glyphicon-search"></i></a>
+            </span>
+            <h3><a href="<%= link %>" class="post-permalink"><%= title %></a></h3>
+            </span>
+            </span>
+		</div>
+		</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 5 - TITLE CAT HOVER-->
+	<script type="text/template" id="tpl-item-style5">
+		<div class="grid-item tpl-item-style5 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>" data-id="<%= id %>"
+				 style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry">
+			<div class="background" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);"></div>
+			<div class="entry-hover">
+				<div class="inner-table">
+					<div class="inner-row">
+						<% if (typeof(categories) != "undefined") { %>
+						<div class="categories">
+							<% _.each(categories, function(cat){ %>
+							<a href="javascript:;"><%= _.escape(cat.title) %></a>
+							<% }); %>
+						</div>
+						<% } %>
+						<h2><a href="<%= link %>" class="post-permalink"><%= title %></a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 6 - CUBIC HOVER-->
+	<script type="text/template" id="tpl-item-style6">
+		<div class="grid-item tpl-item-style6 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>" data-id="<%= id %>"
+				 style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);">
+			<div class="entry-hover">
+				<div class="inner-table">
+					<div class="inner-row">
+						<h2><a href="<%= link %>" class="post-permalink"><%= title %></a></h2>
+						<% if (typeof(categories) != "undefined") { %>
+						<div class="categories">
+							<% _.each(categories, function(cat){ %>
+							<a href="javascript:;"><%= _.escape(cat.title) %></a>
+							<% }); %>
+						</div>
+						<% } %>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 7 - GRAY SCALE-->
+	<script type="text/template" id="tpl-item-style7">
+		<div class="grid-item tpl-item-style7 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>" data-id="<%= id %>"
+				 style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry">
+			<a href="<%= link %>" class="post-permalink"
+				 style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);">
+				<span style="background-image:url(<%= typeof(_logo)!== 'undefined' ?  _logo : '' %>);"></span>
+			</a>
+		</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 8 - TITLE BOTTOM HOVER-->
+	<script type="text/template" id="tpl-item-style8">
+		<div class="grid-item tpl-item-style8 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>" data-id="<%= id %>"
+				 style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry">
+			<div class="image" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);"></div>
+			<div class="hover">
+            <span class="inner-table">
+            <span class="inner-row">
+            <h3><a href="<%= link %>" class="post-permalink"><%= title %></a></h3>
+            <% if (typeof(categories) != "undefined") { %>
+            <div class="categories">
+							<% _.each(categories, function(cat){ %>
+							<a href="javascript:;"><%= _.escape(cat.title) %></a>
+							<% }); %>
+						</div>
+            <% } %>
+            </span>
+            </span>
+			</div>
+		</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 9 - FLIP EFFECT-->
+	<script type="text/template" id="tpl-item-style9">
+		<div class="grid-item tpl-item-style9 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>" data-id="<%= id %>"
+				 style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry">
+			<div class="front" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);"></div>
+			<div class="back">
+            <span class="inner-table">
+            <span class="inner-row">
+            <h3><a href="<%= link %>" class="post-permalink"><%= title %></a></h3>
+            <% if (typeof(categories) != "undefined") { %>
+            <div class="categories">
+							<% _.each(categories, function(cat){ %>
+							<a href="javascript:;"><%= _.escape(cat.title) %></a>
+							<% }); %>
+						</div>
+            <% } %>
+            </span>
+            </span>
+			</div>
+		</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 10 - AUTO FLIP EFFECT-->
+	<script type="text/template" id="tpl-item-style10">
+		<div class="grid-item tpl-item-style10 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>"
+				 data-id="<%= id %>" style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry">
+			<div class="front" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);"><a href="#"
+																																																						 class="post-permalink"></a>
+			</div>
+			<div class="back" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);"><a href="#"
+																																																						class="post-permalink"></a>
+			</div>
+		</div>
+		</div>
+	</script>
+	<script type="text/template" id="tpl-item-style11">
+		<div class="grid-item tpl-item-style11 <%= typeof(grid_size)!== 'undefined' ?  grid_size : '' %>"
+				 data-id="<%= id %>" style="<% if (typeof(categories) != "
+				 undefined") { %>background-color:<%= _.last(categories).color %>;<% } %>">
+		<div class="grid-item-entry">
+			<div class="front" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);"><a href="#"
+																																																						 class="post-permalink"></a>
+			</div>
+			<div class="back" style="background-image:url(<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>);"><a href="#"
+																																																						class="post-permalink"></a>
+			</div>
+		</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 1 - MASONRY FOR PORTFOLIO-->
+	<script type="text/template" id="tpl-masonry-style1">
+		<div class="grid-item tpl-masonry-style1" data-id="<%= id %>">
+			<div class="grid-item-entry">
+				<div class="entry-media">
+					<a href="<%= link %>" class="post-permalink"><img src="<%= typeof(thumb)!== 'undefined' ?  thumb : '' %>"></a>
+				</div>
+				<div class="entry-meta">
+					<h2><a href="<%= link %>" class="post-permalink"><%= title %></a></h2>
+					<% if (typeof(categories) != "undefined") { %>
+					<div class="categories">
+						<% _.each(categories, function(cat){ %>
+						<a href="<%= _.escape(cat.link) %>"><%= _.escape(cat.title) %></a>
+						<% }); %>
+					</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 2 - MASONRY FOR POST FORMAT-->
+	<script type="text/template" id="tpl-masonry-style2">
+		<div class="grid-item tpl-masonry-style2" data-id="<%= id %>">
+			<div class="grid-item-entry entry-format-<%= format %>">
+				<% if (typeof(media) != "undefined") { %>
+				<div class="entry-media"><%= media %></div>
+				<% } %>
+				<div class="entry-meta">
+					<h3><a href="<%= link %>" class="post-permalink"><%= title %></a></h3>
+
+					<div class="meta">
+						<% if (typeof(categories) != "undefined") { %>
+            <span class="categories">
+            <i class="icon_tag_alt"></i>
+            <a href="<%= _.last(categories).link %>"><%= _.last(categories).title %></a>
+            </span>
+						<% } %>
+            <span class="date">
+            <i class="icon_clock_alt"></i><%= date %>
+            </span>
+					</div>
+					<div class="excerpt"><%= excerpt %></div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<!--Template: Item style 3 - MASONRY-->
+	<script type="text/template" id="tpl-masonry-style3" data-id="<%= id %>">
+		<div class="grid-item tpl-masonry-style3">
+			<div class="grid-item-entry">
+				<% if (typeof(thumb) != "undefined") { %>
+				<div class="entry-media">
+					<a href="<%= link %>"><img src="<%= thumb %>"></a>
+				</div>
+				<% } %>
+				<div class="entry-meta">
+					<h3><a href="<%= link %>" class="post-permalink"><%= title %></a></h3>
+
+					<div class="meta">
+						<% if (typeof(categories) != "undefined") { %>
+            <span class="categories">
+            <% _.each(categories, function(cat){ %>
+            <a href="<%= _.escape(cat.link) %>"><%= _.escape(cat.title) %></a>
+            <% }); %>
+            </span>
+						<% } %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+	<!--Template: Push State-->
+	<script type="text/template" id="tpl-single-open-state">
+		<div class="open-state viewport-single-post">
+			<div class="entry-media"><%= typeof(media)!== 'undefined' ? media : '' %></div>
+			<div class="post-action">
+            <span class="actions">
+            <a href="javascript:;" class="prev">
+							<i class="switch-close arrow_carrot-left"></i>
+							<i class="switch-holder icon_grid-3x3"></i>
+						</a>
+            <a href="javascript:;" class="next"><i class="arrow_carrot-right"></i></a>
+            <a href="javascript:;" class="close"><i class="icon_close"></i></a>
+            </span>
+			</div>
+			<article>
+				<h2 class="post-title">
+					<%= title %>
+            <span class="share">
+            <a href="#">
+							<i class="switch-share icon_link_alt"></i>
+							<i class="switch-item social_facebook"></i>
+						</a>
+            <a href="#"><i class="social_googleplus"></i></a>
+            <a href="#"><i class="social_twitter"></i></a>
+            <a href="#"><i class="social_pinterest"></i></a>
+            </span>
+				</h2>
+				<%= content %>
+				<div class="meta row">
+					<div class="col-md-6">
+						<% if (typeof(categories) != "undefined") { %>
+						<ul class="categories">
+							<% _.each(categories, function(cat){ %>
+							<li><a href="<%= _.escape(cat.link) %>"><%= _.escape(cat.title) %></a></li>
+							<% }); %>
+						</ul>
+						<% } %>
+					</div>
+					<div class="col-md-6 text-right">
+						<div class="date"><%= date %> <span class="comments">0 comments</span></div>
+					</div>
+				</div>
+			</article>
+		</div>
+	</script>
+
+
+	<!--Template: Open GI-->
+	<script type="text/template" id="tpl-single-open-gi">
+		<div class="grid-open-gi">
+			<div class="panel-gi row">
+				<div class="col-md-7">
+					<div class="entry-media">
+						<%= typeof(media)!== 'undefined' ? media : '' %>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<article>
+						<h2 class="post-title"><%= title %></h2>
+
+						<p><%= excerpt %></p>
+					</article>
+
+					<a href="javascript:;" class="item-action prev"><i class="arrow_carrot-left"></i></a>
+					<a href="javascript:;" class="item-action next"><i class="arrow_carrot-right"></i></a>
+				</div>
+			</div>
+			<a href="javascript:;" class="close-viewport"><i class="icon_close"></i></a>
+		</div>
+	</script>
+
+
+	<!--Template: Modal-->
+	<script type="text/template" id="tpl-single-modal">
+		<div id="gx-single-modal" class="modal single-modal fade" role="dialog" aria-labelledby="single-modal-label"
+				 aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body"></div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+
+	<!--Template: Header Search-->
+	<script type="text/template" id="tpl-header-search">
+		<div class="search-template">
+			<div class="inner-table">
+				<div class="inner-row">
+					<div class="container">
+						<form role="search" method="get" class="search-form" action="blog.html">
+							<div class="input-group">
+								<input type="search" class="search-field" placeholder="Type and hit Enter ..." value="" name="s"
+											 autocomplete="off">
+								<input type="submit" class="search-submit" value="Go">
+								<a href="javascript:;" class="close-search"><i class="icon_close"></i></a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+</head>
+<body class="header-transparent menu-light">
+
+<!-- Document wrapper
+================================================== -->
+<div class="wrapper">
+
+	<!-- Header
+  ================================================== -->
+	<header id="header" class="navbar navbar-default boxed">
+		<div class="container">
+
+			<!-- Logo
+      ================================================== -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html" style="background-image:url(assets/img/logo-light.png);">Grid X</a>
+				<a class="navbar-brand retina" href="index.html" style="background-image:url(assets/img/logo-light@2x.png);">Grid
+					X</a>
+			</div>
+
+			<!-- Main navigation
+================================================== -->
+			<nav>
+				<ul class="nav navbar-nav main-menu">
+					<li class="active"><a href="index.html">Home</a>
+						<ul>
+							<li><a href="home-1.html">Home 1 - Fullscreen</a></li>
+							<li><a href="home-2.html">Home 2 - Left Menu</a></li>
+							<li><a href="home-3.html">Home 3 - Flat</a></li>
+							<li><a href="home-4.html">Home 4 - Business</a></li>
+							<li><a href="home-5.html">Home 5 - Business 2</a></li>
+							<li><a href="home-6.html">Home 6 - Polygon</a></li>
+							<li><a href="home-7.html">Home 7 - Book</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="grid-styles.html">Grid X</a>
+						<ul>
+							<li><a href="grid-styles.html">All In A Page</a></li>
+							<li>
+								<a href="grid.html?grid=x&amp;style=1">Grid X - Styles</a>
+								<ul>
+									<li><a href="grid.html?grid=x&amp;style=1">Style 1</a></li>
+									<li><a href="grid.html?grid=x&amp;style=2">Style 2</a></li>
+									<li><a href="grid.html?grid=x&amp;style=3">Style 3</a></li>
+									<li><a href="grid.html?grid=x&amp;style=4">Style 4</a></li>
+									<li><a href="grid.html?grid=x&amp;style=5">Style 5</a></li>
+									<li><a href="grid.html?grid=x&amp;style=6">Style 6</a></li>
+									<li><a href="grid.html?grid=x&amp;style=7">Style 7</a></li>
+									<li><a href="grid.html?grid=x&amp;style=8">Style 8</a></li>
+									<li><a href="grid.html?grid=x&amp;style=9">Style 9</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="grid.html?grid=style&amp;style=1">Grid X - Styles</a>
+								<ul>
+									<li><a href="grid.html?grid=style&amp;style=1">Style 1</a></li>
+									<li><a href="grid.html?grid=style&amp;style=2">Style 2</a></li>
+									<li><a href="grid.html?grid=style&amp;style=3">Style 3</a></li>
+									<li><a href="grid.html?grid=style&amp;style=4">Style 4</a></li>
+									<li><a href="grid.html?grid=style&amp;style=5">Style 5</a></li>
+									<li><a href="grid.html?grid=style&amp;style=6">Style 6</a></li>
+									<li><a href="grid.html?grid=style&amp;style=7">Style 7</a></li>
+									<li><a href="grid.html?grid=style&amp;style=8">Style 8</a></li>
+									<li><a href="grid.html?grid=style&amp;style=9">Style 9</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="grid.html?grid=masonry&amp;style=1">Masonry - Styles</a>
+								<ul>
+									<li><a href="grid.html?grid=masonry&amp;style=1">Style 1</a></li>
+									<li><a href="grid.html?grid=masonry&amp;style=2">Style 2</a></li>
+									<li><a href="grid.html?grid=masonry&amp;style=3">Style 3</a></li>
+								</ul>
+							</li>
+
+							<li class="divider"></li>
+							<li><a href="grid.html?grid=x&amp;style=3&amp;open=push-state">Opeing - Push State</a></li>
+							<li><a href="grid.html?grid=style&amp;style=3&amp;open=open-gi">Opeing - Open GI</a></li>
+							<li><a href="grid.html?grid=style&amp;style=3">Opeing - Modal</a></li>
+
+							<li class="divider"></li>
+							<li><a href="grid-1.html">Grid Demo - 1</a></li>
+							<li><a href="grid-2.html">Grid Demo - 2</a></li>
+							<li><a href="grid-3.html">Grid Demo - 3</a></li>
+							<li><a href="grid-4.html">Grid Demo - 4</a></li>
+							<li><a href="grid-5.html">Grid Demo - 5</a></li>
+							<li><a href="grid-6.html">Grid Demo - 6</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="page.html">Pages</a>
+						<ul>
+							<li><a href="footers.html">Footer Styles</a></li>
+							<li><a href="single.html">Single Pages</a>
+								<ul>
+									<li><a href="single.html">Post Single</a></li>
+									<li><a href="portfolio-single.html">Portfolio Single</a></li>
+									<li><a href="portfolio-single-full.html">Portfolio Single Fullwidth</a></li>
+									<li><a href="page.html">Page</a></li>
+									<li><a href="page-right.html">Page Right</a></li>
+									<li><a href="page-left.html">Page Left</a></li>
+								</ul>
+							</li>
+							<li><a href="about-us.html">About Us</a></li>
+							<li><a href="contact-us.html">Contact Us</a></li>
+							<li><a href="shortcodes.html">Shortcodes</a></li>
+							<li><a href="blog.html">Regular Blog</a></li>
+
+							<li class="divider"></li>
+							<li><a href="404.html">404</a></li>
+							<li><a href="grid-logo.html">+ Logo Page</a></li>
+							<li><a href="grid-team.html">Team Page</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="headers.html">Headers</a>
+						<ul>
+							<li><a href="headers.html">All In A Page</a></li>
+							<li><a href="home-4.html">Regular</a></li>
+							<li><a href="home-1.html">Fullscreen menu</a></li>
+							<li><a href="home-2.html">Left side</a></li>
+							<li><a href="home-5.html">Transparent</a></li>
+							<li><a href="header-transparent-bordered.html">Transparent Bordered</a></li>
+							<li><a href="grid-4.html">Filled Style</a></li>
+							<li><a href="headers.html#left">Align Left</a></li>
+							<li><a href="grid-1.html">Align Center</a></li>
+							<li><a href="headers.html#right">Align Right</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="doc.html">Doc</a>
+					</li>
+				</ul>
+
+				<!-- Top links
+        ================================================== -->
+				<ul class="nav navbar-nav navbar-right">
+					<li class="header-search-form"><a href="javascript:;"><span class="glyphicon glyphicon-search"
+																																			aria-hidden="true"></span></a></li>
+					<li class="header-shop-cart"><a href="#"><span class="glyphicon glyphicon-shopping-cart"
+																												 aria-hidden="true"></span></a></li>
+					<li class="header-menu-icon"><a class="nav-main-trigger" href="javascript:;"><span
+						class="nav-menu-icon"></span></a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+
+	<!-- Top slider
+  ================================================== -->
+	<section class="top-slider fullwidth" data-height="600">
+		<!-- masterslider -->
+		<div class="master-slider ms-skin-default" id="masterslider">
+
+
+			<!-- new slide -->
+			<div class="ms-slide slide-1" data-delay="6">
+
+				<!-- slide background -->
+				<img src="assets/css/masterslider/style/blank.gif" data-src="assets/img/home5/home-5-1-bg.jpg"
+						 alt="Slide3 Background"/>
+
+				<img src="assets/css/masterslider/style/blank.gif" data-src="assets/img//home5/home-5-tablet.png" alt="Tablet"
+						 style="right:0; bottom:0;"
+						 class="ms-layer"
+						 data-type="image"
+						 data-effect="bottom(200|800)"
+						 data-duration="500"
+						 data-delay="0"
+						 data-ease="easeInOutCubic"
+						 data-hide-effect="bottom(short)"
+					/>
+
+				<h1 class="ms-layer"
+						style="left: 0;top: 180px; color:#fff; font-weight: 100; font-size: 48px;"
+						data-type="text"
+						data-effect="bottom(short)"
+						data-duration="250"
+						data-delay="500"
+						data-hide-effect="fade"
+					>Dynamically restore team<br> building business value.</h1>
+
+				<div class="ms-layer"
+						 style="left: 0;top: 360px; color:#fff; font-size: 24px;"
+						 data-effect="bottom(short)"
+						 data-duration="250"
+						 data-delay="750"
+						 data-ease="easeInCubic"
+						 data-hide-effect="fade"
+					>
+					<a class="btn glass btn-success" href="#">PURCHASE NOW</a>
+				</div>
+
+				<div class="ms-layer"
+						 style="left: 200px;top: 360px; color:#fff; font-size: 24px;"
+						 data-effect="bottom(short)"
+						 data-duration="250"
+						 data-delay="800"
+						 data-ease="easeInCubic"
+						 data-hide-effect="fade"
+					>
+					<a class="btn styled btn-primary" href="#"
+						>GET STARTED</a>
+				</div>
+
+			</div>
+			<!-- end of slide -->
+
+
+			<!-- new slide -->
+			<div class="ms-slide slide-3" data-delay="8">
+
+				<!-- slide background -->
+				<img src="assets/css/masterslider/style/blank.gif" data-src="assets/img/home5/home-5-2-bg.jpg"
+						 alt="Slide3 Background"/>
+
+				<img src="assets/css/masterslider/style/blank.gif" data-src="assets/img/home5/home-5-iphone.png" alt="iPhone"
+						 style="left:0; bottom:0;"
+						 class="ms-layer"
+						 data-type="image"
+						 data-effect="bottom(200|800)"
+						 data-duration="500"
+						 data-delay="0"
+						 data-ease="easeInOutCubic"
+						 data-hide-effect="bottom(short)"
+					/>
+
+				<div class="ms-layer slider-caption" data-type="text" data-effect="bottom(short)" data-duration="500"
+						 data-delay="500" data-ease="easeOutExpo"
+						 style="right:0;width:auto;text-align:right;"
+					>
+					<h2 class="big-text text-white bold-text">GRID X THEME</h2>
+				</div>
+
+				<div class="ms-layer slider-caption" data-type="text" data-effect="bottom(short)" data-duration="500"
+						 data-delay="600" data-ease="easeOutExpo"
+						 style="right:5px;width:auto;text-align:right;top:58% !important"
+					>
+					<p class="text-bold text-white thin-text small-text">Square Magazine Portfolio Blog Template <br>Competently
+						maximize business metrics vis-a-vis efficient solutions.</p>
+				</div>
+
+				<button class="btn glass btn-success ms-layer"
+								data-type="text"
+								data-effect="bottom(short)"
+								data-duration="250"
+								data-delay="700"
+								data-ease="easeOutExpo"
+								style="bottom:110px;right:200px;width:auto;left:auto;"
+
+					>MORE FEATURES
+				</button>
+				<button class="btn btn-success styled ms-layer"
+								data-type="text"
+								data-effect="bottom(short)"
+								data-duration="250"
+								data-delay="750"
+								data-ease="easeOutExpo"
+								style="bottom:110px;right:0;width:auto;left:auto;"
+
+					>PURCHASE NOW
+				</button>
+
+			</div>
+			<!-- end of slide -->
+
+
+			<!-- new slide -->
+			<div class="ms-slide slide-2" data-delay="8">
+
+				<!-- slide background -->
+				<img src="assets/css/masterslider/style/blank.gif" data-src="assets/img/home5/home-5-3-bg.jpg"
+						 alt="Slide3 Background"/>
+
+				<img src="assets/css/masterslider/style/blank.gif" data-src="assets/img/home5/home-5-laptop.png" alt="iPhone"
+						 class="ms-layer"
+						 style="bottom:50px;left:185px;"
+						 data-type="image"
+						 data-effect="bottom(200|800)"
+						 data-duration="500"
+						 data-delay="0"
+						 data-ease="easeInOutCubic"
+						 data-hide-effect="bottom(short)"
+					/>
+
+				<div class="ms-layer text-center slider-caption"
+						 data-type="text"
+						 data-effect="bottom(short)"
+						 data-duration="300"
+						 data-delay="500"
+						 data-ease="easeOutExpo"
+					>
+					<h2 class="big-text text-white light-text">GRID X THEME</h2>
+				</div>
+				<div class="ms-layer slider-caption text-center" data-type="text" data-effect="bottom(short)"
+						 data-duration="300" data-delay="600" data-ease="easeOutExpo"
+						 style="top:56% !important"
+					>
+					<p class="text-bold text-white thin-text small-text">Square Magazine Portfolio Blog Template</p>
+				</div>
+
+			</div>
+			<!-- end of slide -->
+
+
+		</div>
+		<!-- end masterslider -->
+
+
+	</section>
+	<!-- Content
+  ================================================== -->
+	<section class="content no-padding-bottom">
+		<div class="container">
+
+			<div class="row padding2x no-padding-bottom">
+				<div class="col-md-12">
+					<div class="text-center">
+						<h1 class="heading-dash style-light">Welcome To The Miracle</h1>
+
+						<p>Seamlessly drive state of the art total linkage before inexpensive outsourcing. Energistically create
+							installed base.<br>Conveniently pontificate multifunctional technologies for high-quality leadership.</p>
+					</div>
+				</div>
+			</div>
+			<div class="divider line"></div>
+
+			<!-- Services -->
+			<div class="row">
+				<div class="col-sm-6 col-md-3">
+					<div class="service-box style-center small" data-animate="fadeInUp">
+						<div class="service-icon"><span class="icon_star_alt"></span></div>
+						<h3>Service Quality</h3>
+
+						<p>Professionally promote performance based e-commerce rather than team driven e-tailers. Uniquely extend
+							seamless.</p>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="service-box style-center small" data-animate="fadeInUp">
+						<div class="service-icon"><span class="icon_cloud-upload_alt"></span></div>
+						<h3>Media Embeds</h3>
+
+						<p>Professionally promote performance based e-commerce rather than team driven e-tailers. Uniquely extend
+							seamless.</p>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="service-box style-center small" data-animate="fadeInUp">
+						<div class="service-icon"><span class="icon_genius"></span></div>
+						<h3>Page Builder</h3>
+
+						<p>Professionally promote performance based e-commerce rather than team driven e-tailers. Uniquely extend
+							seamless.</p>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<div class="service-box style-center small" data-animate="fadeInUp">
+						<div class="service-icon"><span class="icon_mobile"></span></div>
+						<h3>Mobile Apps</h3>
+
+						<p>Professionally promote performance based e-commerce rather than team driven e-tailers. Uniquely extend
+							seamless.</p>
+					</div>
+				</div>
+
+			</div>
+			<!-- end .row -->
+			<div class="divider"></div>
+		</div>
+		<!-- end .container -->
+
+
+		<!-- Fullwidth section
+    ================================================== -->
+		<div class="fullwidth-section no-padding-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 text-center">
+						<img src="assets/img/home5/iphone-mockup.png" alt="Mockup"/>
+					</div>
+
+					<div class="col-md-6 pull-right">
+						<h2 style="font-weight:100;">Globally integrate premium resource</h2>
+
+						<p>Testing procedures whereas backend systems timely responses. Proactively build 24/365 e-services without
+							clicks-and-mortar benefits. Globally maintain holistic alignments via timely testing procedures.</p>
+						<h4>Process improvements before</h4>
+
+						<p>Dramatically pontificate professional niche markets after exceptional potentialities. Credibly create
+							world-class solutions whereas.</p>
+						<h4>Objectively optimize functional content</h4>
+
+						<p>High standards in methods of empowerment. Proactively supply holistic leadership skills recaptiualize
+							front-end expertise without high-quality benefits.</p>
+					</div>
+				</div>
+				<!-- end .row -->
+				<div class="divider no-padding"></div>
+			</div>
+			<!-- end .container -->
+		</div>
+		<!-- end .fullwidth-section -->
+
+
+		<!-- Fullwidth section
+    ================================================== -->
+		<div class="fullwidth-section padding2x no-padding-bottom">
+			<div class="container img-right-bottom" data-image="assets/img/home5/laptop-mockup.png">
+				<div class="row">
+					<div class="col-md-6">
+						<h2 style="font-weight:100;">Complete markets core benefits</h2>
+
+						<p>Objectively cultivate collaborative whereas transparent leadership skills. Appropriately network
+							transparent intellectual capital with value-added methodologies.</p>
+
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-controls="collapseOne">
+											Advantage list
+										</a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										<p>Distinctively network cross-platform e-services whereas reliable partnerships.</p>
+										<ul>
+											<li>Synergistically integrate customized growth</li>
+											<li>Strategies before orthogonal relationships</li>
+											<li>Uniquely deliver granular resources robust convergence</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading collapsed" role="tab" id="headingTwo">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+											 aria-controls="collapseTwo">
+											Sequencial operations
+										</a>
+									</h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+									<div class="panel-body">
+										<p>Synergistically deploy customer directed metrics multifunctional technologies. Competently
+											synthesize integrated web services with revolutionary resources.</p>
+
+										<p>Assertively re-engineer high-quality synergy. Phosfluorescently create client-focused leadership
+											for client-focused catalysts for change.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<button type="button" class="btn styled btn-primary">PURCHASE NOW</button>
+					</div>
+					<!-- .col-* -->
+					<div class="col-md-6">
+						<div class="space" data-height="200"></div>
+					</div>
+					<!-- .col-* -->
+				</div>
+				<!-- end .row -->
+				<div class="space" data-height="60"></div>
+			</div>
+			<!-- end .container -->
+		</div>
+		<!-- end .fullwidth-section -->
+
+
+		<!-- Fullwidth section
+    ================================================== -->
+		<div class="fullwidth-section" style="background-color:rgba(0,0,0,.04);">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 class="heading-dash text-center">What We Do</h1>
+					</div>
+				</div>
+				<!-- end .row -->
+			</div>
+			<!-- end .container -->
+		</div>
+		<!-- end .fullwidth-section -->
+
+
+		<!-- Fullwidth section
+    ================================================== -->
+		<div class="fullwidth-section padding3x no-padding" style="background-color:rgba(0,0,0,.04);">
+			<div id="grid_54f5908fba6d0" class="grid-container grid-style" data-item-style="tpl-item-style5"
+					 data-open-state="push-state" data-size-width="320" data-size-height="240" data-item-size="16x9"
+					 data-column="4" data-size-gutter="15">
+				<div class="grid-viewport row"></div>
+				<script type="text/template"
+								class="grid-data">{"posts":[{"id":2,"title":"Intrinsicly redefine superior","date":"October 8, 2014","format":"","media":"
+				<img
+					src=\"assets\/img\/demo-images\/2.png\">","link":"#","post_type":"portfolio","grid_size":"normal cat6","thumb":"assets\/img\/demo-images\/2.png","excerpt":"Collaboratively pursue robust interfaces via equity invested processes. Completely redefine an expanded array of value whereas user friendly customer service.","content":"
+				<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of empowerment. Proactively
+					leverage existing user friendly information via client-centric synergy. Interactively exploit installed base
+					metrics before superior communities. Distinctively visualize front-end results for emerging web services.
+					Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>Enthusiastically leverage
+					other's compelling vortals via extensible \"outside the box\" thinking. Uniquely architect just in time
+					\"outside the box\" thinking without distributed vortals. Completely plagiarize sticky portals for competitive
+					platforms. Efficiently incubate quality data rather than open-source alignments. Synergistically engage
+					frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/2.png","categories":[{"cat_id":6,"title":"Printing","color":"#4CD964","slug":"category_6","link":"#"}],"tags":[]},{"id":3,"title":"Distinctively
+					engage dynamic","date":"October 8, 2014","format":"","media":"<img src=\"assets\/img\/demo-images\/3.png\">","link":"#","post_type":"portfolio","grid_size":"normal
+					cat8 cat8","thumb":"assets\/img\/demo-images\/3.png","excerpt":"Collaboratively pursue robust interfaces via
+					equity invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/3.png","categories":[{"cat_id":8,"title":"Keynote","color":"#FF2D55","slug":"category_8","link":"#"},{"cat_id":8,"title":"Keynote","color":"#FF2D55","slug":"category_8","link":"#"}],"tags":[]},{"id":4,"title":"Uniquely
+					integrate revolutionary","date":"October 8, 2014","format":"","media":"<img
+					src=\"assets\/img\/demo-images\/4.png\">","link":"#","post_type":"portfolio","grid_size":"normal cat6
+					cat1","thumb":"assets\/img\/demo-images\/4.png","excerpt":"Collaboratively pursue robust interfaces via equity
+					invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/4.png","categories":[{"cat_id":6,"title":"Printing","color":"#4CD964","slug":"category_6","link":"#"},{"cat_id":1,"title":"Graphic
+					Design","color":"#C644FC","slug":"category_1","link":"#"}],"tags":[]},{"id":5,"title":"Rapidiously
+					engage","date":"October 8, 2014","format":"","media":"<img src=\"assets\/img\/demo-images\/5.png\">","link":"#","post_type":"portfolio","grid_size":"normal
+					cat5 cat3","thumb":"assets\/img\/demo-images\/5.png","excerpt":"Collaboratively pursue robust interfaces via
+					equity invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/5.png","categories":[{"cat_id":5,"title":"Development","color":"#34AADC","slug":"category_5","link":"#"},{"cat_id":3,"title":"Technology","color":"#5856D6","slug":"category_3","link":"#"}],"tags":[]},{"id":6,"title":"Rapidiously
+					engage","date":"October 8, 2014","format":"","media":"<img src=\"assets\/img\/demo-images\/6.png\">","link":"#","post_type":"portfolio","grid_size":"normal
+					cat4","thumb":"assets\/img\/demo-images\/6.png","excerpt":"Collaboratively pursue robust interfaces via equity
+					invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/6.png","categories":[{"cat_id":4,"title":"Entertainment","color":"#007AFF","slug":"category_4","link":"#"}],"tags":[]},{"id":7,"title":"Distinctively
+					engage dynamic","date":"October 8, 2014","format":"","media":"<img src=\"assets\/img\/demo-images\/7.png\">","link":"#","post_type":"portfolio","grid_size":"normal
+					cat0","thumb":"assets\/img\/demo-images\/7.png","excerpt":"Collaboratively pursue robust interfaces via equity
+					invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/7.png","categories":[{"cat_id":0,"title":"Web
+					Design","color":"#1D62F0","slug":"category_0","link":"#"}],"tags":[]},{"id":8,"title":"Rapidiously
+					engage","date":"October 8, 2014","format":"","media":"<img src=\"assets\/img\/demo-images\/8.png\">","link":"#","post_type":"portfolio","grid_size":"normal
+					cat3","thumb":"assets\/img\/demo-images\/8.png","excerpt":"Collaboratively pursue robust interfaces via equity
+					invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/8.png","categories":[{"cat_id":3,"title":"Technology","color":"#5856D6","slug":"category_3","link":"#"}],"tags":[]},{"id":9,"title":"Progressively
+					supply","date":"October 8, 2014","format":"","media":"<img src=\"assets\/img\/demo-images\/9.png\">","link":"#","post_type":"portfolio","grid_size":"normal
+					cat4","thumb":"assets\/img\/demo-images\/9.png","excerpt":"Collaboratively pursue robust interfaces via equity
+					invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/9.png","categories":[{"cat_id":4,"title":"Entertainment","color":"#007AFF","slug":"category_4","link":"#"}],"tags":[]},{"id":10,"title":"Rapidiously
+					engage","date":"October 8, 2014","format":"","media":"<img src=\"assets\/img\/demo-images\/10.png\">","link":"#","post_type":"portfolio","grid_size":"normal
+					cat2","thumb":"assets\/img\/demo-images\/10.png","excerpt":"Collaboratively pursue robust interfaces via
+					equity invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/10.png","categories":[{"cat_id":2,"title":"Brand
+					Book","color":"#5856D6","slug":"category_2","link":"#"}],"tags":[]},{"id":11,"title":"Uniquely integrate
+					revolutionary","date":"October 8, 2014","format":"","media":"<img src=\"assets\/img\/demo-images\/11.png\">","link":"#","post_type":"portfolio","grid_size":"normal
+					cat1 cat0","thumb":"assets\/img\/demo-images\/11.png","excerpt":"Collaboratively pursue robust interfaces via
+					equity invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/11.png","categories":[{"cat_id":1,"title":"Graphic
+					Design","color":"#C644FC","slug":"category_1","link":"#"},{"cat_id":0,"title":"Web
+					Design","color":"#1D62F0","slug":"category_0","link":"#"}],"tags":[]},{"id":12,"title":"Uniquely integrate
+					revolutionary","date":"October 8, 2014","format":"","media":"<img src=\"assets\/img\/demo-images\/12.png\">","link":"#","post_type":"portfolio","grid_size":"normal
+					cat8 cat7","thumb":"assets\/img\/demo-images\/12.png","excerpt":"Collaboratively pursue robust interfaces via
+					equity invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/12.png","categories":[{"cat_id":8,"title":"Keynote","color":"#FF2D55","slug":"category_8","link":"#"},{"cat_id":7,"title":"Powerpoint","color":"#FFCC00","slug":"category_7","link":"#"}],"tags":[]},{"id":13,"title":"Intrinsicly
+					redefine superior","date":"October 8, 2014","format":"","media":"<img
+					src=\"assets\/img\/demo-images\/13.png\">","link":"#","post_type":"portfolio","grid_size":"normal cat2
+					cat2","thumb":"assets\/img\/demo-images\/13.png","excerpt":"Collaboratively pursue robust interfaces via
+					equity invested processes. Completely redefine an expanded array of value whereas user friendly customer
+					service.","content":"<p>Seamlessly leverage existing out-of-the-box data without fully tested methods of
+					empowerment. Proactively leverage existing user friendly information via client-centric synergy. Interactively
+					exploit installed base metrics before superior communities. Distinctively visualize front-end results for
+					emerging web services. Uniquely deliver leading-edge paradigms without principle-centered scenarios.<\/p><p>
+					Enthusiastically leverage other's compelling vortals via extensible \"outside the box\" thinking. Uniquely
+					architect just in time \"outside the box\" thinking without distributed vortals. Completely plagiarize sticky
+					portals for competitive platforms. Efficiently incubate quality data rather than open-source alignments.
+					Synergistically engage frictionless benefits
+					without.<\/p>","_logo":"images\/logo\/13.png","categories":[{"cat_id":2,"title":"Brand
+					Book","color":"#5856D6","slug":"category_2","link":"#"},{"cat_id":2,"title":"Brand
+					Book","color":"#5856D6","slug":"category_2","link":"#"}],"tags":[]}]}</script>
+			</div>
+			<!-- .grid-container -->
+		</div>
+		<!-- end .fullwidht-screen -->
+
+		<div class="fullwidth-section" style="background-color:white; color:#fff;"
+				 data-image="assets/img/demo-images/6.png">
+			<div class="blurred-layer" style="background-color:#fb5857;"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="testimonials-slider">
+							<div class="testimonial with-thumb style-centered">
+								<a href="#"><img src="assets/img/demo-images/team-3.png" alt="Team"></a>
+								<blockquote>
+									<p>My favorite things in life don't cost any money. It's really clear that the most precious resource
+										we all have is time.</p>
+									<footer>Steve Jobs <span>Apple Inc.</span></footer>
+								</blockquote>
+							</div>
+							<div class="testimonial">
+								<blockquote>
+									<p>I think it's fair to say that personal computers have become the most empowering tool we've ever
+										created. They're tools of communication, they're tools of creativity.</p>
+									<footer>Bill Gates <span>Microsoft Corporation.</span></footer>
+								</blockquote>
+							</div>
+						</div>
+						<!-- .testimonials-slider -->
+					</div>
+					<!-- .col-* -->
+				</div>
+				<!-- .row -->
+			</div>
+			<!-- .container -->
+		</div>
+		<!-- .fullwidth-section -->
+
+	</section>
+	<!-- .content -->
+
+
+	<!-- Footer
+  ================================================== -->
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-3">
+					<aside class="widget widget_recent_news">
+						<h3 class="widget-title">Latest News</h3>
+						<ul>
+							<li>
+								<a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60-1.png" alt="Thumb"/></a>
+
+								<div class="widget-content">
+									<a href="#">Unique utilize transfer</a>
+
+									<p>Proactively exploit seamless strategic theme areas with timely initiatives conveniently you.</p>
+									<span class="post-date">January 2, 2015</span>
+								</div>
+							</li>
+							<li>
+								<a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60-2.png" alt="Thumb"/></a>
+
+								<div class="widget-content">
+									<a href="#">HTML Tags and Formatting</a>
+
+									<p>Proactively exploit seamless strategic theme</p>
+									<span class="post-date">October 11, 2014</span>
+								</div>
+							</li>
+						</ul>
+					</aside>
+				</div>
+				<!-- .col-md-3 -->
+				<div class="col-sm-6 col-md-3">
+					<aside class="widget widget_instagram clearfix">
+						<h3 class="widget-title">Instagram Photos</h3>
+						<ul class="list-inline">
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60-1.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60-2.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60.png" alt="Thumb"/></a></li>
+							<li><a class="widget-thumb" href="#"><img src="assets/img/thumb/60x60.png" alt="Thumb"/></a></li>
+						</ul>
+					</aside>
+				</div>
+				<!-- .col-md-3 -->
+				<div class="col-sm-6 col-md-3">
+					<aside class="widget widget_recent_entries">
+						<h3 class="widget-title">Recent Posts</h3>
+						<ul>
+							<li>
+								<a href="#">Compellingly network e-business value before unique low risk leardership markets</a>
+								<span class="post-date">January 2, 2015</span>
+							</li>
+							<li>
+								<a href="#">Markup: HTML Tags and Formatting</a>
+								<span class="post-date">October 11, 2014</span>
+							</li>
+							<li>
+								<a href="#">Image Alignment</a>
+								<span class="post-date">March 10, 2014</span>
+							</li>
+							<li>
+								<a href="#">Markup: Title With Special Characters</a>
+								<span class="post-date">December 5, 2013</span>
+							</li>
+						</ul>
+					</aside>
+				</div>
+				<!-- .col-md-3 -->
+				<div class="col-sm-6 col-md-3">
+					<aside class="widget widget_social clearfix">
+						<h3 class="widget-title">Socials</h3>
+						<ul>
+							<li><a href="#" class="social_facebook" title="Facebook"></a></li>
+							<li><a href="#" class="social_twitter"></a></li>
+							<li><a href="#" class="social_pinterest"></a></li>
+							<li><a href="#" class="social_instagram"></a></li>
+							<li><a href="#" class="social_googleplus"></a></li>
+						</ul>
+					</aside>
+
+					<aside class="widget widget_tag_cloud clearfix">
+						<h3 class="widget-title">Tags</h3>
+
+						<div class="tagcloud">
+							<a href="#" class="tag-link" title="6 topic">8BIT</a>
+							<a href="#" class="tag-link" title="12 topic">Articles</a>
+							<a href="#" class="tag-link" title="1 topic">aside</a>
+							<a href="#" class="tag-link" title="1 topic">audio</a>
+							<a href="#" class="tag-link" title="2 topics">captions</a>
+							<a href="#" class="tag-link" title="2 topics">categories</a>
+							<a href="#" class="tag-link" title="23 topics">chat lenght</a>
+							<a href="#" class="tag-link" title="3 topics">Codex</a>
+							<a href="#" class="tag-link" title="3 topics">ThemeForest</a>
+						</div>
+						<!-- .tagcloud -->
+
+					</aside>
+				</div>
+				<!-- .col-md-3 -->
+			</div>
+			<!-- .row -->
+		</div>
+		<!-- .container -->
+	</footer>
+
+	<!-- Back to top anchor -->
+	<span class="back-to-top"></span>
+
+
+</div>
+<!-- end .wrapper -->
+<!-- Javascript -->
+<script type="text/javascript" src="app/grid.js"></script>
+<script type="text/javascript" src="app/scripts.js"></script>
+</body>
+</html>

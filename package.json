@@ -1,0 +1,39 @@
+{
+	"name": "katharsis.io",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {},
+	"devDependencies": {
+		"bower": "~1.4.1",
+		"connect-modrewrite": "^0.7.9",
+		"grunt": "~0.4.5",
+		"grunt-cli": "^0.1.13",
+		"grunt-angular-templates": "^0.5.7",
+		"grunt-bowercopy": "^1.2.0",
+		"grunt-contrib-clean": "~0.5.0",
+		"grunt-contrib-compress": "^0.13.0",
+		"grunt-contrib-concat": "~0.3.0",
+		"grunt-contrib-connect": "~0.9.0",
+		"grunt-contrib-copy": "~0.7.0",
+		"grunt-contrib-cssmin": "^0.10.0",
+		"grunt-contrib-jshint": "~0.11.0",
+		"grunt-contrib-less": "~0.9.0",
+		"grunt-contrib-requirejs": "~0.4.1",
+		"grunt-contrib-watch": "~0.5.2",
+		"grunt-newer": "~0.5.4",
+		"grunt-open": "^0.2.3",
+		"jshint-stylish": "~1.0.0",
+		"grunt-replace": "^0.7.8",
+		"grunt-rev": "~0.1.0",
+		"grunt-usemin": "~3.0.0",
+		"load-grunt-config": "^0.16.0",
+		"matchdep": "^0.3.0",
+		"time-grunt": "~1.0.0"
+	},
+	"engines": {
+		"node": ">=0.10.0"
+	},
+	"scripts": {
+		"install": "grunt install"
+	}
+}
