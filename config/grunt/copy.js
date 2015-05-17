@@ -4,8 +4,8 @@ module.exports = {
 		files: [{
 			expand: true,
 			dot: true,
-			cwd: '<%= yeoman.app %>',
-			dest: '<%= yeoman.dist %>',
+			cwd: '<%= paths.dev %>',
+			dest: '<%= paths.dist %>',
 			src: [
 				'*.{ico,png,txt}',
 				'app/require.js',
@@ -20,7 +20,7 @@ module.exports = {
 		}, {
 			expand: true,
 			cwd: '.tmp/images',
-			dest: '<%= yeoman.dist %>/images',
+			dest: '<%= paths.dist %>/images',
 			src: ['generated/*']
 		}]
 	}

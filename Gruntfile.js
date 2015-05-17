@@ -14,9 +14,11 @@ module.exports = function (grunt) {
 
 		data: {
 			pkg: pkg,
-			app: 'src',
-			dist: 'dist',
-			tmp: '.tmp'
+			paths: {
+				dev: 'src',
+				dist: 'dist',
+				tmp: '.tmp'
+			}
 		},
 		// Pass config to load-grunt-tasks.
 		loadGruntTasks: {

@@ -7,14 +7,12 @@ module.exports = {
 		options: {
 			jshintrc: '.jshintrc',
 			ignores: [
-				'<%= yeoman.app %>/app/require.js',
-				'<%= yeoman.app %>/app/**/_locale/*.js',
-				'<%= yeoman.app %>/app/**/*.spec.js'
+				'<%= paths.dev %>/require.js'
 			]
 		},
 		src: [
 			'Gruntfile.js',
-			'<%= yeoman.app %>/app'
+			'<%= paths.dev %>/app'
 		]
 	}
 };

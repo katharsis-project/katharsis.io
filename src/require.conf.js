@@ -21,11 +21,11 @@ requirejs.config({
 		'angular': {
 			'exports': 'angular', deps: ['jquery']
 		},
-		'angular-bootstrap': ['angular'],
+		'angular-bootstrap': ['angular', 'bootstrap'],
 		'angular-ui-router': ['angular'],
 
 		// Bootstrap dependencies
-		'bootstrap': ['jquery'],
+		'bootstrap': ['jquery']
 	},
 
 	priority: [

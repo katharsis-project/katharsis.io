@@ -9,8 +9,8 @@ requirejs(['require.conf'], function () {
 		'angular',
 		'domReady',
 		'bootstrap',
-		'_includes',
-		'app'
+		'app/_includes',
+		'app/app'
 	], function (require, ng, domReady) {
 		domReady(function () {
 			ng.resumeBootstrap();

@@ -6,8 +6,8 @@ module.exports = {
 			src: [
 				'.tmp',
 				'doc',
-				'<%= yeoman.dist %>/*',
-				'!<%= yeoman.dist %>/.git*'
+				'<%= paths.dist %>/*',
+				'!<%= paths.dist %>/.git*'
 			]
 		}]
 	},
@@ -15,8 +15,8 @@ module.exports = {
 		files: [{
 			src: [
 				'bower_components',
-				'<%= yeoman.app %>/vendor/libs',
-				'<%= yeoman.app %>/styles/libs'
+				'<%= paths.dev %>/vendor/libs',
+				'<%= paths.dev %>/styles/libs'
 			]
 		}]
 	}

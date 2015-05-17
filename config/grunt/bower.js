@@ -10,6 +10,7 @@ module.exports = {
 			'almond/almond.js': 'almond/almond.js',
 			'angular/angular.js': 'angular/angular.js',
 			'angular-bootstrap/ui-bootstrap.js': 'angular-bootstrap/ui-bootstrap.js',
+			'angular-bootstrap/ui-bootstrap-tpls.js': 'angular-bootstrap/ui-bootstrap-tpls.js',
 			'angular-ui-router/angular-ui-router.js': 'angular-ui-router/release/angular-ui-router.js',
 			'bootstrap/bootstrap.js': 'bootstrap/dist/js/bootstrap.js',
 			'prettify/prettify.js': 'google-code-prettify/bin/prettify.min.js',

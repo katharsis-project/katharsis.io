@@ -2,7 +2,7 @@ module.exports = function () {
 	return {
 		default: {
 			options: {
-				baseUrl: 'src/app',
+				baseUrl: '<%= paths.dev %>/app',
 				optimize: 'uglify2',
 				generateSourceMaps: true,
 				preserveLicenseComments: false,

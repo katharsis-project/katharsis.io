@@ -312,13 +312,13 @@ div[class^="col-"] img {
 .fullwidth-section > .blurred-layer.has-texture,
 .fullscreen-section > .blurred-layer.has-texture,
 .page-title > .blurred-layer.has-texture {
-	background-image: url(images/texture/texture.png);
+	background-image: url(assets/img/texture/texture.png);
 }
 
 .fullwidth-section > .blurred-layer.has-poly-texture,
 .fullscreen-section > .blurred-layer.has-poly-texture,
 .page-title > .blurred-layer.has-poly-texture {
-	background-image: url(images/texture/poly-texture.png);
+	background-image: url(assets/img/texture/poly-texture.png);
 }
 
 .fullwidth-section > .row,
@@ -498,7 +498,7 @@ form .form-field label.error {
 
 #header a.navbar-brand.retina {
 	display: none;
-	background-image: url(images/logo@2x.png);
+	background-image: url(assets/img/logo@2x.png);
 }
 
 #header a.navbar-brand-sm {
@@ -1303,7 +1303,7 @@ form .form-field label.error {
 }
 
 .header-fixed-top #header.sticky a.navbar-brand {
-	background-image: url(images/logo-small.png) !important;
+	background-image: url(assets/img/logo-small.png) !important;
 	background-size: 36px auto;
 	background-position: 0 center;
 }

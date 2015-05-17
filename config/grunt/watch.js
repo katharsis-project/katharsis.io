@@ -4,18 +4,15 @@ module.exports = {
 		livereload: true
 	},
 	js: {
-		files: '<%= yeoman.app %>/app/**/*.js',
-		tasks: 'newer:jshint:app'
-	},
-	json: {
-		files: '<%= yeoman.app %>/app/**/**/*.json'
+		files: '<%= paths.dev %>/**/*.js'
+		//tasks: 'newer:jshint:app'
 	},
 	html: {
-		files: '<%= yeoman.app %>/app/**/*.html',
+		files: '<%= paths.dev %>/**/*.html',
 		tasks: 'templates'
 	},
 	less: {
-		files: '<%= yeoman.app %>/styles/less/**/**/*.less',
+		files: '<%= paths.dev %>/assets/less/**/*.less',
 		tasks: 'less'
 	},
 	gruntfile: {

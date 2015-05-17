@@ -32,7 +32,7 @@ module.exports = function () {
 			options: {
 				hostname: 'localhost',
 				port: 9000,
-				base: '<%= yeoman.app %>',
+				base: '<%= paths.dev %>',
 				open: true,
 				livereload: true,
 				useAvailablePort: true,
@@ -43,7 +43,7 @@ module.exports = function () {
 			options: {
 				hostname: 'localhost',
 				port: 9040,
-				base: '<%= yeoman.dist %>',
+				base: '<%= paths.dist %>',
 				open: true,
 				keepalive: true,
 				middleware: middleware

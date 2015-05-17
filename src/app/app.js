@@ -1,8 +1,7 @@
 define([
 	'angular',
 	'angular-ui-router',
-	'angular-bootstrap',
-	'angular-templates'
+	'angular-bootstrap'
 ], function (ng) {
 	'use strict';
 
@@ -10,15 +9,17 @@ define([
 		'ui.bootstrap',
 		'ui.router',
 
-		// App modules
-		'app.templates'
+		// Modules
+		'app.templates',
+		'app.layout',
+		'app.home'
 	]);
 
 
 	app.run(function ($rootScope, $state, $log) {
 		$rootScope.appReady = true;
 
-		$log.debug('Starting application');
+		$log.debug('Started application');
 	});
 
 	return app;

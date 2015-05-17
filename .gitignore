@@ -13,7 +13,7 @@ bower_components
 ### Files ###
 npm-debug.log
 src/app/templates/module.js
-src/app/require.js
+src/require.js
 
 ### SublimeText ###
 # cache files for sublime text
