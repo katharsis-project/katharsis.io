@@ -262,6 +262,7 @@
 		// Fullwidth section
 		var fullscreen_func = function () {
 			$('.fullwidth-section, .fullscreen-section').each(function () {
+				var $this = $(this);
 				var $wrapper = $('body > .wrapper');
 
 				$this.css('margin-left', '0px');
