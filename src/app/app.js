@@ -15,6 +15,9 @@ define([
 		'app.home'
 	]);
 
+	app.config(function ($locationProvider) {
+		$locationProvider.html5Mode();
+	});
 
 	app.run(function ($rootScope, $state, $log) {
 		$rootScope.appReady = true;

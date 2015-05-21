@@ -3,6 +3,10 @@ requirejs.config({
 	paths: {
 		// jQuery dependencies
 		'jquery': 'assets/js/jquery/jquery',
+		'jquery-easing': 'assets/js/masterslider/jquery.easing.min',
+		'masterslider' : 'assets/js/masterslider/masterslider',
+		// Script
+		'grid': 'app/scripts',
 
 		// Angular dependencies
 		'angular': 'assets/js/angular/angular',
@@ -25,7 +29,11 @@ requirejs.config({
 		'angular-ui-router': ['angular'],
 
 		// Bootstrap dependencies
-		'bootstrap': ['jquery']
+		'bootstrap': ['jquery'],
+
+		'jquery-easing': ['jquery'],
+		'masterslider': ['jquery', 'jquery-easing'],
+		'grid' : ['jquery']
 	},
 
 	priority: [

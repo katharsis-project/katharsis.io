@@ -10,7 +10,7 @@ define([
 		$stateProvider.state('app.home', {
 			views: {
 				content: {
-					templateUrl: 'app/home/views/index.html'
+					templateUrl: 'app/home/views/home.html'
 				}
 			}
 		});

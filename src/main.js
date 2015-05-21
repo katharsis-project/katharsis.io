@@ -9,6 +9,7 @@ requirejs(['require.conf'], function () {
 		'angular',
 		'domReady',
 		'bootstrap',
+		'grid',
 		'app/_includes',
 		'app/app'
 	], function (require, ng, domReady) {
