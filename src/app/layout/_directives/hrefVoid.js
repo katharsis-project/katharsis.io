@@ -8,7 +8,6 @@ define(['app/layout/module'], function (module) {
 			restrict: 'A',
 			link: function (scope, element) {
 				element
-					.attr('href', '#')
 					.on('click', function (e) {
 						e.preventDefault();
 						e.stopPropagation();

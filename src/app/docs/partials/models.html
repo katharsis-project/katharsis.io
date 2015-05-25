@@ -1,0 +1,27 @@
+<h2 class="text-center">Models</h2>
+<div class="divider brand centered no-margin-top"></div>
+
+<p>There are several annotations which can be assigned to models. By default all fields of the model are reflected in
+	JSON API communication except synthetic fields. The annotations described below should be associated with a field
+	only.</p>
+
+<h4 class="padding-top-1x heading-dash">JsonApiResource</h4>
+<p>It is the most important annotation which defines a resource. It requires type parameter to be defined that is used
+	to form a URLs and type field in passed JSONs.
+	According to JSON API standard, the name defined in type can be either <a
+		href="http://jsonapi.org/format/#document-structure-resource-identification">plural or singular</a></p>
+
+<h4 class="padding-top-1x heading-dash">JsonApiId</h4>
+<p>Defines a field which will be used as an identifier of a resource. It mus be assigned to a field which implements
+	<code>Serializable</code> or be of a primitive type.</p>
+
+<h4 class="padding-top-1x heading-dash">JsonApiIncludeByDefault</h4>
+<p>Indicates additional resources that should be included by default (will be available in included field of Top level
+	JSON object) with every primary resource. The field can be added to every relationship defined by
+	<code>JsonApiToOne</code> or <code>JsonApiToMany</code>. Otherwise, <code>ResourceException</code> will be thrown at
+	the initialization phrase.</p>
+
+<h4 class="padding-top-1x heading-dash">JsonApiToOne</h4>
+<p>Indicates an association to single value which need to be handled by a separate repository.</p>
+
+<div class="divider double"></div>

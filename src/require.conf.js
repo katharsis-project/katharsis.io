@@ -12,6 +12,7 @@ requirejs.config({
 		'angular': 'assets/js/angular/angular',
 		'angular-bootstrap': 'assets/js/angular-bootstrap/ui-bootstrap-tpls',
 		'angular-ui-router': 'assets/js/angular-ui-router/angular-ui-router',
+		'angular-scroll': 'assets/js/angular-scroll/angular-scroll',
 
 		// Require
 		'domReady': 'assets/js/requirejs-domready/requirejs-domready',
@@ -27,6 +28,7 @@ requirejs.config({
 		},
 		'angular-bootstrap': ['angular', 'bootstrap'],
 		'angular-ui-router': ['angular'],
+		'angular-scroll': ['angular'],
 
 		// Bootstrap dependencies
 		'bootstrap': ['jquery'],

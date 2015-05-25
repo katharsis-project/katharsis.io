@@ -1,0 +1,58 @@
+<h2 class="text-center">Repositories</h2>
+<div class="divider brand centered no-margin-top"></div>
+
+<p>The model definition must have corresponding resource repository. In addition, each relation also must have a
+	corresponding repository.</p>
+
+<h4 class="padding-top-1x heading-dash">ResourceRepository</h4>
+
+<p>Base repository which is used to operate on the resources. Each resource should have a corresponding repository
+	implementation. It consist of five basic methods which provide a CRUD for a resource and two parameters: the first is
+	a type of a resource and the second is a type of the resource’s identifier.</p>
+
+<p>The methods are as follows:</p>
+<ul>
+	<li>
+		<code>findOne(ID id)</code>
+
+		<p>Search one resource with a given ID. If a resource cannot be found, a ResourceNotFoundException exception should
+			be thrown. It should return an entity with associated relationships.</p>
+	</li>
+	<li>
+		<code>findAll(RequestParams requestParams)</code>
+
+		<p>Search for all of the resources. An instance of RequestParams can be used if necessary. If no resources can be
+			found an empty Iterable or null must be returned. It should return entities with associated relationships.</p>
+	</li>
+	<li>
+		<code>findAll(Iterable&#60;ID&#62;ids, RequestParams requestParams)</code>
+
+		<p>Search for resources constrained by a list of identifiers. An instance of RequestParams can be used if necessary. If no resources can be found an empty Iterable or null must be returned. It should return entities with associated relationships.</p>
+	</li>
+	<li>
+		<code>save(S entity)</code>
+
+		<p>Saves a resource. It should not save relating relationships. A Returning resource must include assigned identifier created for the instance of resource. This method should be able to both create a new resource and update existing one.</p>
+	</li>
+	<li>
+		<code>delete(ID id)</code>
+
+		<p>Removes a resource identified by id parameter.</p>
+	</li>
+</ul>
+
+
+<h4 class="padding-top-1x heading-dash">RelationshipRepository</h4>
+
+<p>Each relationship defined in Katharsis (annotation @JsonApiToOne and @JsonApiToMany) must have a relationship repository defined.</p>
+
+<p>Base unidirectional repository responsible for operations on relations. All of the methods in this interface have fieldName field as last parameter. It solves a problem of many relationships between the same resources.</p>
+
+<ul>
+	<li><code>setRelation(T source, D_ID targetId, String fieldName)</code></li>
+	<li><code>setRelations(T source, Iterable&#60;D_ID&#62; targetIds, String fieldName)</code></li>
+	<li><code>findOneTarget(T_ID sourceId, String fieldName)</code></li>
+	<li><code>findTargets(T_ID sourceId, String fieldName)</code></li>
+</ul>
+
+<div class="divider double"></div>

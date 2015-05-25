@@ -6292,7 +6292,8 @@ a.social_link:not(.no-style):before {
 
 .panel-group .panel-heading a {
 	display: block;
-	padding: 20px;
+	padding: 10px;
+	font-size: 14px;
 }
 
 .panel-group .panel-heading a:hover,
@@ -6305,8 +6306,8 @@ a.social_link:not(.no-style):before {
 	font-family: 'ElegantIcons';
 	display: block;
 	position: absolute;
-	right: 20px;
-	top: 20px;
+	right: 10px;
+	top: 10px;
 }
 
 .panel-group .panel-heading a[aria-expanded="true"]:after {
@@ -7070,6 +7071,10 @@ h6 > .btn {
 .dark .header nav ul.navbar-nav > li > a,
 .header.dark nav ul.navbar-nav > li > a {
 	color: #c9c9c9;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+	background-color: transparent;
 }
 
 .dark .header nav ul.main-menu .dropdown-menu,

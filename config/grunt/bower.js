@@ -6,6 +6,7 @@ module.exports = {
 		},
 		files: {
 			'waypoints/waypoints.js': 'waypoints/lib/jquery.waypoints.js',
+			'angular-scroll/angular-scroll.js': 'angular-scroll/angular-scroll.js',
 			'owl-carousel/owl-carousel.js': 'owl-carusel/owl-carousel/owl.carousel.js',
 			'almond/almond.js': 'almond/almond.js',
 			'angular/angular.js': 'angular/angular.js',

@@ -12,11 +12,12 @@ define([
 		// Modules
 		'app.templates',
 		'app.layout',
-		'app.home'
+		'app.home',
+		'app.docs'
 	]);
 
 	app.config(function ($locationProvider) {
-		$locationProvider.html5Mode();
+		$locationProvider.html5Mode(true);
 	});
 
 	app.run(function ($rootScope, $state, $log) {
