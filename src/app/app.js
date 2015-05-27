@@ -13,7 +13,8 @@ define([
 		'app.templates',
 		'app.layout',
 		'app.home',
-		'app.docs'
+		'app.docs',
+		'app.start'
 	]);
 
 	app.config(function ($locationProvider) {

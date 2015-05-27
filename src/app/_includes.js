@@ -9,7 +9,10 @@ define([
 	'app/home/_includes',
 
 	'app/docs/module',
-	'app/docs/_includes'
+	'app/docs/_includes',
+  
+	'app/start/module',
+	'app/start/_includes'
 ], function () {
 	'use strict';
 });
