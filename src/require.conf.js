@@ -4,7 +4,8 @@ requirejs.config({
 		// jQuery dependencies
 		'jquery': 'assets/js/jquery/jquery',
 		'jquery-easing': 'assets/js/masterslider/jquery.easing.min',
-		'masterslider' : 'assets/js/masterslider/masterslider',
+		'masterslider': 'assets/js/masterslider/masterslider',
+		'highlight': 'assets/js/highlight/highlight',
 		// Script
 		'grid': 'app/scripts',
 
@@ -13,6 +14,7 @@ requirejs.config({
 		'angular-bootstrap': 'assets/js/angular-bootstrap/ui-bootstrap-tpls',
 		'angular-ui-router': 'assets/js/angular-ui-router/angular-ui-router',
 		'angular-scroll': 'assets/js/angular-scroll/angular-scroll',
+		'angular-highlight': 'assets/js/angular-highlight/angular-highlight',
 
 		// Require
 		'domReady': 'assets/js/requirejs-domready/requirejs-domready',
@@ -29,13 +31,14 @@ requirejs.config({
 		'angular-bootstrap': ['angular', 'bootstrap'],
 		'angular-ui-router': ['angular'],
 		'angular-scroll': ['angular'],
+		'angular-highlight': ['angular', 'highlight'],
 
 		// Bootstrap dependencies
 		'bootstrap': ['jquery'],
 
 		'jquery-easing': ['jquery'],
 		'masterslider': ['jquery', 'jquery-easing'],
-		'grid' : ['jquery']
+		'grid': ['jquery']
 	},
 
 	priority: [

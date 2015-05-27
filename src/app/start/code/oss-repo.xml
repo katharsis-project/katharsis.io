@@ -1,0 +1,6 @@
+<repositories>
+	<repository>
+		<id>oss-jfrog-artifactory</id>
+		<url>http://oss.jfrog.org/artifactory/oss-release-local</url>
+	</repository>
+</repositories>

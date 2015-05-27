@@ -14,10 +14,10 @@ module.exports = {
 			'angular-bootstrap/ui-bootstrap-tpls.js': 'angular-bootstrap/ui-bootstrap-tpls.js',
 			'angular-ui-router/angular-ui-router.js': 'angular-ui-router/release/angular-ui-router.js',
 			'bootstrap/bootstrap.js': 'bootstrap/dist/js/bootstrap.js',
-			'prettify/prettify.js': 'google-code-prettify/bin/prettify.min.js',
-			'prettify/run-prettify.js': 'google-code-prettify/bin/run_prettify.min.js',
 			'magnific-popup/magnific-popup.js': 'magnific-popup/dist/jquery.magnific-popup.js',
 			'jquery/jquery.js': 'jquery/dist/jquery.js',
+			'highlight/highlight.js': 'highlightjs/highlight.pack.js',
+			'angular-highlight/angular-highlight.js':'angular-highlightjs/angular-highlightjs.js',
 			'requirejs-domready/requirejs-domready.js': 'requirejs-domready/domReady.js'
 		}
 	},
@@ -38,7 +38,7 @@ module.exports = {
 			'owl-carousel/owl-carousel.css': 'owl-carusel/owl-carousel/owl.carousel.css',
 			'magnific-popup/magnific-popup.css': 'magnific-popup/dist/magnific-popup.css',
 			'animate.css/animate.css': 'animate.css/animate.css',
-			'prettify/prettify.css': 'google-code-prettify/bin/prettify.min.css'
+			'highlight/darkula.css': 'highlightjs/styles/obsidian.css'
 		}
 	},
 	less: {

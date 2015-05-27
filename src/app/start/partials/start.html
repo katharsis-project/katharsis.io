@@ -1,77 +1,70 @@
 <h2 class="text-center">Getting started</h2>
 <div class="divider brand centered no-margin-top"></div>
 
-<p>This guide will show you how to integrate Katharsis into a simple Dropwizard application. It will show how to create 
-a simple resource <code>Project</code> and accompanying repository <code>ProjectRepository</code>.</p>
+<p>This guide will show you how to integrate Katharsis into a simple Dropwizard application. It will show how to create
+	a simple resource <code>Project</code> and accompanying repository <code>ProjectRepository</code>.</p>
 
-<p>The result of this guide can be seen here: <a href="https://github.com/katharsis-project/katharsis-examples/tree/master/dropwizard-simple-example">
-github.com/katharsis-project/katharsis-examples/tree/master/dropwizard-simple-example</a>.</p>
+<p>The result of this guide can be seen here: <a
+	href="https://github.com/katharsis-project/katharsis-examples/tree/master/dropwizard-simple-example">
+	github.com/katharsis-project/katharsis-examples/tree/master/dropwizard-simple-example</a>.</p>
 
 <h4 class="padding-top-1x heading-dash">Adding dependencies</h4>
 
-<p>Katharsis is using <a href="https://maven.apache.org/">maven</a> as the build tool and all of the sub-projects and 
-examples are written using it. Although you can use any other tool like <a href="https://gradle.org/">gradle</a>,
-<a href="http://ant.apache.org/">ant</a>, <a href="http://ant.apache.org/ivy/">ivy</a>, <a href="http://www.scala-sbt.org/">SBT</a>...
-So, the first step is generating a maven POM file. To do that, a maven archetype can be used:</p>
+<p>Katharsis is using <a href="https://maven.apache.org/">maven</a> as the build tool and all of the sub-projects and
+	examples are written using it. Although you can use any other tool like <a href="https://gradle.org/">gradle</a>,
+	<a href="http://ant.apache.org/">ant</a>, <a href="http://ant.apache.org/ivy/">ivy</a>, <a
+		href="http://www.scala-sbt.org/">SBT</a>...
+	So, the first step is generating a maven POM file. To do that, a maven archetype can be used:</p>
 
-<pre>
+<div hljs language="groovy">
 mvn archetype:generate -DgroupId=io.katharsis.sample -DartifactId=first-hateoas-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1 -DinteractiveMode=false
-</pre>
+</div>
 
 <p>This command will create <code>first-hateoas-app</code> directory and generate basic maven based skeleton.</p>
 
-<p>We can get to <code>first-hateoas-app</code> directory and edit the POM file. We need to add additional repository (currently Katharsis is not available on Maven Central):</p>
+<p>We can get to <code>first-hateoas-app</code> directory and edit the POM file. We need to add additional repository
+	(currently Katharsis is not available on Maven Central):</p>
 
-<pre>
-&#60;repositories&#62;
-    &#60;repository&#62;
-        &#60;id&#62;oss-jfrog-artifactory&#60;/id&#62;
-        &#60;url&#62;http://oss.jfrog.org/artifactory/oss-release-local&#60;/url&#62;
-    &#60;/repository&#62;
- &#60;/repositories&#62;
-</pre>
+<div hljs language="xml" include="'app/start/code/oss-repo.xml'"></div>
 
 <p>Next, we need to add Dropwizard dependency:</p>
 
-<pre>
-&#60;dependency&#62;
-    &#60;groupId&#62;io.dropwizard&#60;/groupId&#62;
-    &#60;artifactId&#62;dropwizard-core&#60;/artifactId&#62;
-    &#60;version&#62;0.8.1&#60;/version&#62;
-&#60;/dependency&#62;
-</pre>
+<div hljs language="xml" include="'app/start/code/oss-repo.xml'"></div>
 
-<p>In the end, Katharsis dependency needs to be added. Katharsis requires Jackson classes, but they are also included in Dropwizard, so it is always a good practice to use exclusions:</p>
+<p>In the end, Katharsis dependency needs to be added. Katharsis requires Jackson classes, but they are also included in
+	Dropwizard, so it is always a good practice to use exclusions:</p>
 
-<pre>
-&#60;dependency&#62;
-    &#60;groupId&#62;io.katharsis&#60;/groupId&#62;
-    &#60;artifactId&#62;katharsis-rs&#60;/artifactId&#62;
-    &#60;version&#62;1.0.0&#60;/version&#62;
-    &#60;exclusions&#62;
-        &#60;exclusion&#62;
-            &#60;groupId&#62;com.fasterxml.jackson.core&#60;/groupId&#62;
-            &#60;artifactId&#62;jackson-core&#60;/artifactId&#62;
-        &#60;/exclusion&#62;
-        &#60;exclusion&#62;
-            &#60;groupId&#62;com.fasterxml.jackson.core&#60;/groupId&#62;
-            &#60;artifactId&#62;jackson-databind&#60;/artifactId&#62;
-        &#60;/exclusion&#62;
-        &#60;exclusion&#62;
-            &#60;groupId&#62;com.fasterxml.jackson.core&#60;/groupId&#62;
-            &#60;artifactId&#62;jackson-annotations&#60;/artifactId&#62;
-        &#60;/exclusion&#62;
-    &#60;/exclusions&#62;
-&#60;/dependency&#62;
-</pre>
+<div hljs language="xml">
+<dependency>
+    <groupId>io.katharsis</groupId>
+    <artifactId>katharsis-rs</artifactId>
+    <version>1.0.0</version>
+    <exclusions>
+        <exclusion>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </exclusion>
+        <exclusion>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </exclusion>
+        <exclusion>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+</div>
 
 <h4 class="padding-top-1x heading-dash">Configuration</h4>
 
-<p>Now, a simple Dropwizard configuration file is required. There are two parameters needed to be passed to Katharsis for correct working: resource and repository search package and default domain to be put in generated URLs in Katharsis responses.</p>
+<p>Now, a simple Dropwizard configuration file is required. There are two parameters needed to be passed to Katharsis
+	for correct working: resource and repository search package and default domain to be put in generated URLs in
+	Katharsis responses.</p>
 
 <p>A sample configuration file is presented below:</p>
 
-<pre>
+<div hljs language="http">
 katharsis:
   host:          http://localhost:8080
   searchPackage: io.katharsis.example.dropwizardSimple.domain
@@ -89,13 +82,16 @@ logging:
 
   appenders:
     - type: console
-</pre>
+</div>
 
-<p>Apart from the standard Dropwizard configuration, there are two fields for Katharsis, The default host is <a href="http://localhost:8080">http://localhost:8080</a> and the package that will be searched for resources and their repositories which is <code>io.katharsis.example.dropwizardSimple.domain</code>.</p>
+<p>Apart from the standard Dropwizard configuration, there are two fields for Katharsis, The default host is <a
+	href="http://localhost:8080">http://localhost:8080</a> and the package that will be searched for resources and their
+	repositories which is <code>io.katharsis.example.dropwizardSimple.domain</code>.</p>
 
-<p>Then, a configuration class which will map the configuration is required. The class below presents an example of it.</p>
+<p>Then, a configuration class which will map the configuration is required. The class below presents an example of
+	it.</p>
 
-<pre>
+<div hljs language="java">
 package io.katharsis.example.dropwizardSimple;
 
 import io.dropwizard.Configuration;
@@ -120,13 +116,14 @@ public class DropwizardConfiguration extends Configuration {
         public String searchPackage;
     }
 }
-</pre>
+</div>
 
 <h4 class="padding-top-1x heading-dash">Domain objects</h4>
 
-<p>Now we can add a domain object, a sample resource - let’s be it a <code>Project</code> class which will consist of an identifier and a name.</p>
+<p>Now we can add a domain object, a sample resource - let’s be it a <code>Project</code> class which will consist of an
+	identifier and a name.</p>
 
-<pre>
+<div hljs language="java">
 package io.katharsis.example.dropwizardSimple.domain.model;
 
 import io.katharsis.resource.annotations.*;
@@ -155,107 +152,29 @@ public class Project {
         this.name = name;
     }
 }
-</pre>
+</div>
 
-<p>As stated above, accompanying repository need to be added. This sample doesn’t have any DB connectivity for clearance, but it can be added without any problem.</p>
+<p>As stated above, accompanying repository need to be added. This sample doesn’t have any DB connectivity for
+	clearance, but it can be added without any problem.</p>
 
 <p>The class below uses <code>java.util.concurrent.ConcurrentHashMap</code> to store resources.</p>
 
-<pre>
-package io.katharsis.example.dropwizardSimple.domain.repository;
-
-import com.google.common.collect.Iterables;
-import io.katharsis.example.dropwizardSimple.domain.model.Project;
-import io.katharsis.queryParams.RequestParams;
-import io.katharsis.repository.ResourceRepository;
-import io.katharsis.resource.exception.ResourceNotFoundException;
-
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.stream.Collectors;
-
-public class ProjectRepository implements ResourceRepository&#60;Project, Long&#62; {
-
-    private static final Map&#60;Long, Project&#62; REPOSITORY = new ConcurrentHashMap&#60;&#62;();
-    private static final AtomicLong ID_GENERATOR = new AtomicLong(1);
-
-    public &#60;S extends Project&#62; S save(S entity) {
-        if (entity.getId() == null) {
-            entity.setId(ID_GENERATOR.getAndIncrement());
-        }
-        REPOSITORY.put(entity.getId(), entity);
-        return entity;
-    }
-
-    public Project findOne(Long id) {
-        Project project = REPOSITORY.get(id);
-        if (project == null) {
-            throw new ResourceNotFoundException("Project not found");
-        }
-        return project;
-    }
-
-    @Override
-    public Iterable&#60;Project&#62; findAll(RequestParams requestParams) {
-        return REPOSITORY.values();
-    }
-
-    @Override
-    public Iterable&#60;Project&#62; findAll(Iterable&#60;Long&#62; iterable, RequestParams requestParams) {
-        return REPOSITORY.entrySet()
-                .stream()
-                .filter(p -> Iterables.contains(iterable, p.getKey()))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
-                .values();
-    }
-
-    public void delete(Long id) {
-        REPOSITORY.remove(id);
-    }
-}
-</pre>
+<div hljs language="java" include="'app/start/code/ProjectRpository.java'"></div>
 
 <h4 class="padding-top-1x heading-dash">Application</h4>
 
 <p>After the configuration and domain classes has been created, the application class can be created.</p>
 
-<pre>
-package io.katharsis.example.dropwizardSimple;
+<div hljs language="java" include="'app/start/code/DropwizardService.java'"></div>
 
-import io.dropwizard.Application;
-import io.dropwizard.setup.Environment;
-import io.katharsis.locator.SampleJsonServiceLocator;
-import io.katharsis.rs.KatharsisFeature;
-
-import static io.katharsis.rs.KatharsisProperties.*;
-
-public class DropwizardService extends Application&#60;DropwizardConfiguration&#62; {
-
-    @Override
-    public void run(DropwizardConfiguration dropwizardConfiguration, Environment environment) throws Exception {
-
-        environment.jersey().property(RESOURCE_DEFAULT_DOMAIN, dropwizardConfiguration.katharsis.host);
-        environment.jersey().property(RESOURCE_SEARCH_PACKAGE, dropwizardConfiguration.katharsis.searchPackage);
-
-        KatharsisFeature katharsisFeature = new KatharsisFeature(environment.getObjectMapper(), new
-                SampleJsonServiceLocator());
-        environment.jersey().register(katharsisFeature);
-    }
-
-    public static void main(String[] args) throws Exception {
-        new DropwizardService().run(args);
-    }
-}
-</pre>
-
-<p>Now we can compile the code and run <code>DropwizardService server configuration.yml</code> and see Katharsis in action! </p>
+<p>Now we can compile the code and run <code>DropwizardService server configuration.yml</code> and see Katharsis in
+	action! </p>
 
 <h4 class="padding-top-1x heading-dash">Testing</h4>
 
 <p>We can make for example:</p>
 
-<pre>
+<div hljs language="http">
 POST /projects HTTP/1.1
 Host: localhost:8080
 Content-Length: 100
@@ -270,11 +189,11 @@ Content-Type: application/vnd.api+json
     }
   }
 }
-</pre>
+</div>
 
 <p>And the following response can be seen on the screen:</p>
 
-<pre>
+<div hljs language="http">
 HTTP/1.1 200 OK
 Content-Type: application/vnd.api+json
 Content-Length: 142
@@ -292,7 +211,7 @@ Content-Length: 142
   },
   "included": []
 }
-</pre>
+</div>
 
 <p>It means that we successfully configured Dropwizard with Katharsis and makes use of JSON API in Java!</p>
 

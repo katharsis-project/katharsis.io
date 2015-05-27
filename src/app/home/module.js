@@ -8,6 +8,7 @@ define([
 
 	module.config(function ($stateProvider) {
 		$stateProvider.state('app.home', {
+			url: '/',
 			views: {
 				content: {
 					templateUrl: 'app/home/views/home.html'
