@@ -27,7 +27,8 @@ module.exports = {
 
 	install: [
 		'clean:bower',
-		'bower'
+		'bower',
+		'less'
 	]
 };
 
