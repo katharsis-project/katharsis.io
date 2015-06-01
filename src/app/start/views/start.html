@@ -1,12 +1,27 @@
-<section>
-	<!-- SLIDER ================================================== -->
-	<ng-include src="'app/home/partials/slider.html'"></ng-include>
-	<!-- end:SLIDER ============================================== -->
-</section>
-
 <div class="container padding2x">
-		<div class="col-md-12" >
-			<article id="supported-requests" ng-include="'app/start/partials/start.html'"></article>
+	<div class="row">
+		<div class="col-md-3 hidden-sm hidden-xs">
+			<article ng-include="'app/start/partials/affix.html'"></article>
 		</div>
-</div>
 
+		<div class="col-md-9">
+			<h2 class="text-center">Getting started</h2>
+			<div class="divider brand centered no-margin-top"></div>
+
+			<p>This guide will show you how to integrate Katharsis into a simple Dropwizard application. It will show how to create
+				a simple resource <code>Project</code> and accompanying repository <code>ProjectRepository</code>.</p>
+
+			<p>The result of this guide can be seen here: <a
+				href="https://github.com/katharsis-project/katharsis-examples/tree/master/dropwizard-simple-example">
+				github.com/katharsis-project/katharsis-examples/tree/master/dropwizard-simple-example</a>.</p>
+
+			<article ng-include="'app/start/partials/adding-dependencies.html'" id="adding-dependencies"></article>
+			<article ng-include="'app/start/partials/configuration.html'" id="configuration"></article>
+			<article ng-include="'app/start/partials/domain-objects.html'" id="domain-objects"></article>
+			<article ng-include="'app/start/partials/application.html'" id="application"></article>
+			<article ng-include="'app/start/partials/testing.html'" id="testing"></article>
+
+
+		</div>
+	</div>
+</div>

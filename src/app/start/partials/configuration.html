@@ -1,0 +1,38 @@
+<h4 class="padding-top-1x heading-dash">Configuration</h4>
+
+<p>Now, a simple Dropwizard configuration file is required. There are two parameters needed to be passed to Katharsis
+	for correct working: resource and repository search package and default domain to be put in generated URLs in
+	Katharsis responses.</p>
+
+<p>A sample configuration file is presented below:</p>
+
+<div hljs language="http">
+	katharsis:
+	host:          http://localhost:8080
+	searchPackage: io.katharsis.example.dropwizardSimple.domain
+
+	server:
+	type: simple
+	applicationContextPath: /
+	adminContextPath: /admin
+	connector:
+	type: http
+	port: 8080
+
+	logging:
+	level: INFO
+
+	appenders:
+	- type: console
+</div>
+
+<p>Apart from the standard Dropwizard configuration, there are two fields for Katharsis, The default host is <a
+	href="http://localhost:8080">http://localhost:8080</a> and the package that will be searched for resources and their
+	repositories which is <code>io.katharsis.example.dropwizardSimple.domain</code>.</p>
+
+<p>Then, a configuration class which will map the configuration is required. The class below presents an example of
+	it.</p>
+
+<div hljs language="java" include="'app/start/code/configurationClass.java'"></div>
+
+<div class="divider double"></div>

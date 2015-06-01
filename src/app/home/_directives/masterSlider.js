@@ -14,7 +14,7 @@ define([
 
 				element.masterslider({
 					width: ms_width,
-					height: 600,
+					height: 550,
 					loop: false,
 					mouse: false,
 					swipe: false,

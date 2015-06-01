@@ -1,0 +1,28 @@
+<h4 class="padding-top-1x heading-dash">Adding dependencies</h4>
+
+<p>Katharsis is using <a href="https://maven.apache.org/">maven</a> as the build tool and all of the sub-projects and
+	examples are written using it. Although you can use any other tool like <a href="https://gradle.org/">gradle</a>,
+	<a href="http://ant.apache.org/">ant</a>, <a href="http://ant.apache.org/ivy/">ivy</a>, <a
+		href="http://www.scala-sbt.org/">SBT</a>...
+	So, the first step is generating a maven POM file. To do that, a maven archetype can be used:</p>
+
+<div hljs language="groovy" include="'app/start/code/mvn.sh'">
+</div>
+
+<p>This command will create <code>first-hateoas-app</code> directory and generate basic maven based skeleton.</p>
+
+<p>We can get to <code>first-hateoas-app</code> directory and edit the POM file. We need to add additional repository
+	(currently Katharsis is not available on Maven Central):</p>
+
+<div hljs language="xml" include="'app/start/code/oss-repo.xml'"></div>
+
+<p>Next, we need to add Dropwizard dependency:</p>
+
+<div hljs language="xml" include="'app/start/code/dropwizard-dep.xml'"></div>
+
+<p>In the end, Katharsis dependency needs to be added. Katharsis requires Jackson classes, but they are also included in
+	Dropwizard, so it is always a good practice to use exclusions:</p>
+
+<div hljs language="xml" include="'app/start/code/katharsis-dependency.xml'"></div>
+
+<div class="divider double"></div>

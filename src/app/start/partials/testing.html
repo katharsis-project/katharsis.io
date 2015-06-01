@@ -1,0 +1,46 @@
+<h4 class="padding-top-1x heading-dash">Testing</h4>
+
+<p>We can make for example:</p>
+
+<div hljs language="http">
+	POST /projects HTTP/1.1
+	Host: localhost:8080
+	Content-Length: 100
+	Accept: application/vnd.api+json
+	Content-Type: application/vnd.api+json
+
+	{
+	"data": {
+	"type": "projects",
+	"attributes": {
+	"name": "sample project"
+	}
+	}
+	}
+</div>
+
+<p>And the following response can be seen on the screen:</p>
+
+<div hljs language="http">
+	HTTP/1.1 200 OK
+	Content-Type: application/vnd.api+json
+	Content-Length: 142
+
+	{
+	"data": {
+	"type": "projects",
+	"id": "4",
+	"attributes": {
+	"name": "sample project"
+	},
+	"links": {
+	"self": "http://localhost:8080/projects/4"
+	}
+	},
+	"included": []
+	}
+</div>
+
+<p>It means that we successfully configured Dropwizard with Katharsis and makes use of JSON API in Java!</p>
+
+<div class="divider double"></div>
