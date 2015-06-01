@@ -46,13 +46,39 @@
 
 <p>Each relationship defined in Katharsis (annotation @JsonApiToOne and @JsonApiToMany) must have a relationship repository defined.</p>
 
-<p>Base unidirectional repository responsible for operations on relations. All of the methods in this interface have fieldName field as last parameter. It solves a problem of many relationships between the same resources.</p>
+<p>Base unidirectional repository responsible for operations on relations. All of the methods in this interface have
+	<i>fieldName</i> field as last parameter. It solves a problem of many relationships between the same resources.</p>
 
 <ul>
-	<li><code>setRelation(T source, D_ID targetId, String fieldName)</code></li>
-	<li><code>setRelations(T source, Iterable&#60;D_ID&#62; targetIds, String fieldName)</code></li>
-	<li><code>findOneTarget(T_ID sourceId, String fieldName)</code></li>
-	<li><code>findTargets(T_ID sourceId, String fieldName)</code></li>
+	<li>
+		<code>setRelation(T source, D_ID targetId, String fieldName)</code>
+
+		<p>Sets a resource defined by <i>targetId</i> to a field <i>fieldName</i> in an instance <i>source</i>. If no
+			value is to be set, <i>null</i> value is passed.</p>
+	</li>
+	<li>
+		<code>setRelations(T source, Iterable&#60;D_ID&#62; targetIds, String fieldName)</code>
+
+		<p>Sets resources defined by <i>targetIds</i> to a field <i>fieldName</i> in an instance <i>source</i>. This is
+			a all-or-nothing operation, that is no partial relationship updates are passed. If no values are to be set,
+			empty <i>Iterable</i> is passed.</p>
+	</li>
+	<li>
+		<code>findOneTarget(T_ID sourceId, String fieldName)</code>
+
+		<p>Finds one field's value defined by <i>fieldName</i> in a source defined by <i>sourceId</i>.</p>
+	</li>
+	<li>
+		<code>findTargets(T_ID sourceId, String fieldName)</code>
+
+		<p>Finds an <i>Iterable</i> of field's values defined by <i>fieldName</i> in a source defined by <i>sourceId
+		</i>.</p>
+	</li>
 </ul>
+
+<p>This interface must be implemented to let Katharsis work correctly, some of the requests are processed using only
+	this kind of repository. As it can be seen above, there are two kinds of methods: for multiple and single
+	relationships and it is possible to implement only one type of methods, e.g. singular methods. Nevertheless, it
+	should be avoided because of potential future problems when adding new fields of other sizes.</p>
 
 <div class="divider double"></div>

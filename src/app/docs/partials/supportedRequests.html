@@ -2,7 +2,7 @@
 <div class="divider brand centered no-margin-top"></div>
 
 <p>Currently Katharsis covers most of the JSON:API specification request types. The following table describes available requests that
-	are can accepted:</p>
+	are currently accepted:</p>
 
 <table class="table">
 	<thead>
@@ -17,46 +17,45 @@
 	<tr>
 		<th rowspan="4" scope="row"><span class="label label-success">GET</span></th>
 		<td>resources</td>
-		<td><code>http://jsonapi.org/format/#fetching-resources</code></td>
+		<td><code>http://host.local/tasks</code> or <code>http://host.local/tasks/1,2</code></td>
 		<td>multiple</td>
 	</tr>
 	<tr>
 		<td>resource</td>
-		<td><code>http://jsonapi.org/format/#fetching-resources</code></td>
+		<td><code>http://host.local/tasks/1</code></td>
 		<td>single</td>
 	</tr>
 	<tr>
 		<td>relationship</td>
-		<td><code>http://jsonapi.org/format/#fetching-relationships</code></td>
+		<td><code>http://host.local/tasks/1/relationships/project</code></td>
 		<td>single</td>
 	</tr>
 	<tr>
 		<td>field</td>
-		<td><code>http://jsonapi.org/format/#fetching-resources</code></td>
+		<td><code>http://host.local/tasks/1/project</code></td>
 		<td>single</td>
 	</tr>
 	<tr>
-		<th scope="row"><span class="label label-primary">POST</span></th>
+		<th rowspan="2" scope="row"><span class="label label-primary">POST</span></th>
 		<td>resource</td>
-		<td><code>http://jsonapi.org/format/#crud-creating</code></td>
+		<td><code>http://host.local/tasks</code></td>
 		<td>single</td>
 	</tr>
 	<tr>
-		<th scope="row"><span class="label label-warning">PUT</span></th>
-		<td>resource</td>
-		<td><code>http://jsonapi.org/format/#crud-creating</code></td>
+		<td>field</td>
+		<td><code>http://host.local/tasks/1/project</code></td>
 		<td>single</td>
 	</tr>
 	<tr>
 		<th scope="row"><span class="label label-warning">PATCH</span></th>
 		<td>resource</td>
-		<td><code>http://jsonapi.org/format/#crud-updating</code></td>
+		<td><code>http://host.local/tasks/1</code></td>
 		<td>single</td>
 	</tr>
 	<tr>
 		<th scope="row"><span class="label label-danger">DELETE</span></th>
 		<td>resource</td>
-		<td><code>http://jsonapi.org/format/#crud-deleting</code></td>
+		<td><code>http://host.local/tasks/1</code></td>
 		<td>single</td>
 	</tr>
 	</tbody>

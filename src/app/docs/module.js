@@ -1,7 +1,7 @@
-define(['angular', 'angular-scroll'], function (ng) {
+define(['angular', 'angular-scroll','angular-highlight'], function (ng) {
 	'use strict';
 
-	var module = ng.module('app.docs', ['duScroll']);
+	var module = ng.module('app.docs', ['duScroll', 'hljs']);
 
 	module.config(function ($stateProvider) {
 		$stateProvider
