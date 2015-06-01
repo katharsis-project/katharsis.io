@@ -6,24 +6,7 @@
 
 <p>A sample configuration file is presented below:</p>
 
-<div hljs language="http">
-	katharsis:
-	host:          http://localhost:8080
-	searchPackage: io.katharsis.example.dropwizardSimple.domain
-
-	server:
-	type: simple
-	applicationContextPath: /
-	adminContextPath: /admin
-	connector:
-	type: http
-	port: 8080
-
-	logging:
-	level: INFO
-
-	appenders:
-	- type: console
+<div hljs language="http" include="'app/start/code/katharsisConf.yml'">
 </div>
 
 <p>Apart from the standard Dropwizard configuration, there are two fields for Katharsis, The default host is <a

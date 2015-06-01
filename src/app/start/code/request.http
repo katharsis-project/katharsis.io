@@ -1,0 +1,14 @@
+POST /projects HTTP/1.1
+Host: localhost:8080
+Content-Length: 100
+Accept: application/vnd.api+json
+Content-Type: application/vnd.api+json
+
+{
+	"data": {
+		"type": "projects",
+		"attributes": {
+			"name": "sample project"
+		}
+	}
+}

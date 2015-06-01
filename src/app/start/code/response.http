@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Content-Type: application/vnd.api+json
+Content-Length: 142
+
+{
+	"data": {
+		"type": "projects",
+		"id": "4",
+		"attributes": {
+			"name": "sample project"
+		},
+		"links": {
+			"self": "http://localhost:8080/projects/4"
+		}
+	},
+	"included": []
+}
