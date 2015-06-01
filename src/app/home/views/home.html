@@ -19,6 +19,7 @@
 	</div>
 </section>
 
+
 <section>
 	<!-- FEATURES ================================================ -->
 	<ng-include src="'app/home/partials/features.html'"></ng-include>
@@ -26,73 +27,22 @@
 </section>
 
 <section>
-	<div class="container">
-		<div class="no-padding-bottom">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 text-center">
-						<img src="assets/img/home5/iphone-mockup.png" alt="Mockup"/>
-					</div>
+	<!-- DESC ==================================================== -->
+	<ng-include src="'app/home/partials/desc.html'"></ng-include>
+	<!-- end:DESC ================================================ -->
+</section>
 
-					<div class="col-md-6 pull-right">
-						<h2 style="font-weight:100;">Cross organizational standardized interface</h2>
-						<p>Systems nowadays utilize data from various systems to leverage the business needs. To achieve that,
-							many of them provide usually inconsistent REST interface.</p>
+<section>
+	<!-- INTEGRATIONS ============================================ -->
+	<ng-include src="'app/home/partials/integrations.html'"></ng-include>
+	<!-- end:INTEGRATIONS ======================================== -->
+</section>
 
-						<h4>Providing homogeneous REST interface</h4>
-						<p>Katharsis implements JSON API standard which introduce consistent REST interface definition. Now it can
-							be easy to integrate with other systems through uniform mechanisms.</p>
-
-						<h4>Use the purest form of REST</h4>
-						<p>JSON API is based on HATEOAS which means <i>Hypermedia as the Engine of Application State</i>. It is
-							the highest form of REST which allows producing and storing as little documentation as possible.</p>
-					</div>
-				</div>
-				<!-- end .row -->
-				<div class="divider no-padding"></div>
-			</div>
-			<!-- end .container -->
-		</div>
-
-		<div class="row padding2x">
-			<div class="container">
-				<div class="col-md-6">
-					<h2 style="font-weight:100;">Easing the development process</h2>
-					<p>By using Katharsis it is easier to develop both Customer Facing Applications and server side services. The
-						developers can have one unified base for their work.</p>
-
-					<h4>Consistent resources and repositories</h4>
-					<p>Katharsis introduces a way of defining both resources which can be shared over the REST interface and a
-					repository for their handling.</p>
-
-					<h4>Integration with other libraries</h4>
-					<p>Because of the usage of JSON API, Katharsis can be used with many other libraries which support the
-						standard.</p>
-
-				</div>
-
-				<div class="col-md-6 text-center">
-					<img src="assets/img/home5/laptop-mockup.png" alt="Mockup"/>
-				</div>
-			</div>
+<section>
+	<div class="row" style="background-color: rgba(0, 0, 0, 0.0392157);">
+		<div class="col-md-12">
+			<img src="http://forthebadge.com/images/badges/built-by-developers.svg"
+					 class="img-responsive center-block padding1x"/>
 		</div>
 	</div>
-
-	<div class="row" style="background-color: #fc5857; color: white">
-		<div class="container">
-			<div class="col-md-12">
-				<div class="testimonials-slider">
-					<div class="testimonial with-thumb style-centered">
-						<a href="#"><img src="assets/img/demo-images/team-3.png" alt="Team"></a>
-						<blockquote>
-							<p>My favorite things in life don't cost any money. It's really clear that the most precious resource
-								we all have is time.</p>
-							<footer>Steve Jobs <span>Apple Inc.</span></footer>
-						</blockquote>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 </section>

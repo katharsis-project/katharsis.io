@@ -27,9 +27,9 @@ define([
 
 				$document.on('scroll', function () {
 					if ($document.scrollTop() < 100) {
-						$('.affix').css({'position': 'relative', 'top': '-25px'});
+						$('.affix').css({'position': 'relative', 'top': '-65px'});
 					} else {
-						$('.affix').css({'position': 'fixed', 'top': '15px'});
+						$('.affix').css({'position': 'fixed', 'top': '-25px'});
 					}
 				});
 				$log.debug('Called linking function');

@@ -3,7 +3,7 @@ define([
 ], function (module) {
 	'use strict';
 
-	function backToTop($log) {
+	function backToTop($log, $document) {
 
 		$log.debug('Initiated directive');
 		return {
@@ -16,7 +16,7 @@ define([
 				});
 
 				$(window).scroll(function () {
-					if ($(window).scrollTop() > 1000) {
+					if ($document.scrollTop() > 500) {
 						$(element).addClass('visible');
 					}
 					else {
