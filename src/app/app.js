@@ -1,11 +1,19 @@
 define([
 	'angular',
+	'angulartics/angulartics-ga',
+	'angulartics/angulartics-scroll',
 	'angular-ui-router',
 	'angular-bootstrap'
 ], function (ng) {
 	'use strict';
 
 	var app = ng.module('app', [
+		// Google Analytics
+		'angulartics',
+		'angulartics.google.analytics',
+		'angulartics.scroll',
+
+		// Anuglar UI
 		'ui.bootstrap',
 		'ui.router',
 

@@ -5,10 +5,25 @@
 		</div>
 
 		<div class="col-md-9">
-			<article id="supported-requests" ng-include="'app/docs/partials/supportedRequests.html'"></article>
-			<article id="relationships" ng-include="'app/docs/partials/relationships.html'"></article>
-			<article id="models" ng-include="'app/docs/partials/models.html'"></article>
-			<article id="repositories" ng-include="'app/docs/partials/repositories.html'"></article>
+			<article id="supported-requests"
+							 ng-include="'app/docs/partials/supportedRequests.html'"
+							 analytics-on="scrollby">
+			</article>
+
+			<article id="relationships"
+							 ng-include="'app/docs/partials/relationships.html'"
+							 analytics-on="scrollby">
+			</article>
+
+			<article id="models"
+							 ng-include="'app/docs/partials/models.html'"
+							 analytics-on="scrollby">
+			</article>
+
+			<article id="repositories"
+							 ng-include="'app/docs/partials/repositories.html'"
+							 analytics-on="scrollby">
+			</article>
 		</div>
 	</div>
 </div>
@@ -20,6 +35,7 @@
 		</div>
 		<div class="col-md-9 padding2x">
 			<h2>Site still under development</h2>
+
 			<p>Feel free to come from to time to see what has changed!</p>
 		</div>
 	</div>

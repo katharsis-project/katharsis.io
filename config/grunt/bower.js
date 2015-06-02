@@ -5,7 +5,7 @@ module.exports = {
 			destPrefix: 'src/assets/js/'
 		},
 		files: {
-			'waypoints/waypoints.js': 'waypoints/lib/jquery.waypoints.js',
+			'waypoints/waypoints.js': 'waypoints/waypoints.js',
 			'angular-scroll/angular-scroll.js': 'angular-scroll/angular-scroll.js',
 			'owl-carousel/owl-carousel.js': 'owl-carusel/owl-carousel/owl.carousel.js',
 			'almond/almond.js': 'almond/almond.js',
@@ -18,7 +18,10 @@ module.exports = {
 			'jquery/jquery.js': 'jquery/dist/jquery.js',
 			'highlight/highlight.js': 'highlightjs/highlight.pack.js',
 			'angular-highlight/angular-highlight.js':'angular-highlightjs/angular-highlightjs.js',
-			'requirejs-domready/requirejs-domready.js': 'requirejs-domready/domReady.js'
+			'requirejs-domready/requirejs-domready.js': 'requirejs-domready/domReady.js',
+			'angulartics/angulartics-scroll.js': 'angulartics/src/angulartics-scroll.js',
+			'angulartics/angulartics-ga.js': 'angulartics/src/angulartics-ga.js',
+			'angulartics/angulartics.js': 'angulartics/src/angulartics.js'
 		}
 	},
 	require: {

@@ -6,6 +6,7 @@ requirejs.config({
 		'jquery-easing': 'assets/js/masterslider/jquery.easing.min',
 		'masterslider': 'assets/js/masterslider/masterslider',
 		'highlight': 'assets/js/highlight/highlight',
+		'waypoints': 'assets/js/waypoints/waypoints',
 
 		// Angular dependencies
 		'angular': 'assets/js/angular/angular',
@@ -13,6 +14,7 @@ requirejs.config({
 		'angular-ui-router': 'assets/js/angular-ui-router/angular-ui-router',
 		'angular-scroll': 'assets/js/angular-scroll/angular-scroll',
 		'angular-highlight': 'assets/js/angular-highlight/angular-highlight',
+		'angulartics': 'assets/js/angulartics/',
 
 		// Require
 		'domReady': 'assets/js/requirejs-domready/requirejs-domready',
@@ -30,13 +32,16 @@ requirejs.config({
 		'angular-ui-router': ['angular'],
 		'angular-scroll': ['angular'],
 		'angular-highlight': ['angular', 'highlight'],
+		'angulartics/angulartics': ['angular'],
+		'angulartics/angulartics-ga': ['angulartics/angulartics'],
+		'angulartics/angulartics-scroll': ['angulartics/angulartics','waypoints'],
 
 		// Bootstrap dependencies
 		'bootstrap': ['jquery'],
 
 		'jquery-easing': ['jquery'],
 		'masterslider': ['jquery', 'jquery-easing'],
-		'grid': ['jquery']
+		'waypoints': ['jquery']
 	},
 
 	priority: [

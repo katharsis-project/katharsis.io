@@ -1,5 +1,5 @@
 {
-  "name": "neoteric",
+  "name": "katharsis.io",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
@@ -18,6 +18,7 @@
     "angular-ui-utils": "bower-scrollfix",
     "angular-scroll": "~0.7.0",
     "angular-highlightjs": "~0.4.1",
-    "highlightjs": "~8.5.0"
+    "highlightjs": "~8.5.0",
+    "angulartics": "~0.18.0"
   }
 }
