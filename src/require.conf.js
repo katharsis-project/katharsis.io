@@ -6,8 +6,6 @@ requirejs.config({
 		'jquery-easing': 'assets/js/masterslider/jquery.easing.min',
 		'masterslider': 'assets/js/masterslider/masterslider',
 		'highlight': 'assets/js/highlight/highlight',
-		// Script
-		'grid': 'app/scripts',
 
 		// Angular dependencies
 		'angular': 'assets/js/angular/angular',

@@ -38,7 +38,7 @@
 <body ng-app="app" class="header-bordered menu-light">
 
 <!-- DOCUMENT_WRAPPER ================================================== -->
-<div data-ui-view="layout" class="wrapper"></div>
+<div data-ui-view="layout" ng-if="appReady" class="wrapper"></div>
 <!-- end: DOCUMENT_WRAPPER ============================================= -->
 
 <script src="require.js" data-main="main"></script>
