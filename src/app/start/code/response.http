@@ -5,12 +5,12 @@ Content-Length: 142
 {
 	"data": {
 		"type": "projects",
-		"id": "4",
+		"id": "1",
 		"attributes": {
 			"name": "sample project"
 		},
 		"links": {
-			"self": "http://localhost:8080/projects/4"
+			"self": "http://localhost:8080/projects/1"
 		}
 	},
 	"included": []

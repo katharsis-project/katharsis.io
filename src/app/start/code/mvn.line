@@ -1,1 +1,1 @@
-mvn archetype:generate -DgroupId=io.katharsis.sample -DartifactId=first-hateoas-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1 -DinteractiveMode=false
+mvn archetype:generate -DgroupId=io.katharsis -DartifactId=dropwizard-simple-example -Dversion=0.9.0 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.1 -DinteractiveMode=false

@@ -9,9 +9,9 @@
 <div hljs language="groovy" include="'app/start/code/mvn.line'">
 </div>
 
-<p>This command will create <code>first-hateoas-app</code> directory and generate basic maven based skeleton.</p>
+<p>This command will create <code>dropwizard-simple-example</code> directory and generate basic maven based skeleton.</p>
 
-<p>We can get to <code>first-hateoas-app</code> directory and edit the POM file. We need to add additional repository
+<p>We can get to <code>dropwizard-simple-example</code> directory and edit the POM file. We need to add additional repository
 	(currently Katharsis is not available on Maven Central):</p>
 
 <div hljs language="xml" include="'app/start/code/oss-repo.xml'"></div>
@@ -20,9 +20,14 @@
 
 <div hljs language="xml" include="'app/start/code/dropwizard-dep.xml'"></div>
 
-<p>In the end, Katharsis dependency needs to be added. Katharsis requires Jackson classes, but they are also included in
+<p>Now, Katharsis dependency needs to be added. Katharsis requires Jackson classes, but they are also included in
 	Dropwizard, so it is always a good practice to use exclusions:</p>
 
 <div hljs language="xml" include="'app/start/code/katharsis-dependency.xml'"></div>
+
+<p>In the end a <a href="https://maven.apache.org/plugins/maven-shade-plugin/">maven shade</a> plugin configuration
+	should be added to allow building a fat JAR.</p>
+
+<div hljs language="xml" include="'app/start/code/shade.xml'"></div>
 
 <div class="divider double"></div>
