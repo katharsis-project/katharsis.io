@@ -5,9 +5,7 @@ module.exports = {
 			dot: true,
 			src: [
 				'.tmp',
-				'doc',
-				'<%= paths.dist %>/*',
-				'!<%= paths.dist %>/.git*'
+				'<%= paths.dist %>/*'
 			]
 		}]
 	},
@@ -15,8 +13,7 @@ module.exports = {
 		files: [{
 			src: [
 				'bower_components',
-				'<%= paths.dev %>/vendor/libs',
-				'<%= paths.dev %>/styles/libs'
+				'<%= paths.dev %>/assets/ja'
 			]
 		}]
 	}

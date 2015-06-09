@@ -7,7 +7,6 @@ module.exports = {
 
 	'dist': [
 		'clean:dist',
-		'config:production',
 		'useminPrepare',
 		'templates',
 		'concat',

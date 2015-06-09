@@ -13,7 +13,7 @@ define([
 		'angulartics.google.analytics',
 		'angulartics.scroll',
 
-		// Anuglar UI
+		// Angular UI
 		'ui.bootstrap',
 		'ui.router',
 
