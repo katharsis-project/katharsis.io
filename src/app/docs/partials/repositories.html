@@ -64,12 +64,22 @@
 			empty <i>Iterable</i> is passed.</p>
 	</li>
 	<li>
+		<code>addRelations(T source, Iterable&#60;D_ID&#62; targetIds, String fieldName)</code>
+
+		<p>Adds relationships to a list of relationships.</p>
+	</li>
+	<li>
+		<code>removeRelations(T source, Iterable&#60;D_ID&#62; targetIds, String fieldName)</code>
+
+		<p>Removes relationships from a list of relationships.</p>
+	</li>
+	<li>
 		<code>findOneTarget(T_ID sourceId, String fieldName)</code>
 
 		<p>Finds one field's value defined by <i>fieldName</i> in a source defined by <i>sourceId</i>.</p>
 	</li>
 	<li>
-		<code>findTargets(T_ID sourceId, String fieldName)</code>
+		<code>findManyTargets(T_ID sourceId, String fieldName)</code>
 
 		<p>Finds an <i>Iterable</i> of field's values defined by <i>fieldName</i> in a source defined by <i>sourceId
 		</i>.</p>
