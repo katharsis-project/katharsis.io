@@ -10,5 +10,4 @@ If you found and problem or possible improvements feel free to contact us on git
 
 ### Issue board
 [![Stories in Ready](https://badge.waffle.io/katharsis-project/katharsis.io.svg?label=ready&title=Ready)](http://waffle.io/katharsis-project/katharsis.io)
-
 [![Stories in In Progress](https://badge.waffle.io/katharsis-project/katharsis.io.svg?label=in progress&title=In Progress)](http://waffle.io/katharsis-project/katharsis.io)
