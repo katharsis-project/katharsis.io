@@ -13,7 +13,7 @@
 <p>The methods are as follows:</p>
 <ul>
 	<li>
-		<code>findOne(ID id)</code>
+		<code>findOne(ID id, RequestParams requestParams)</code>
 
 		<p>Search one resource with a given ID. If a resource cannot be found, a ResourceNotFoundException exception should
 			be thrown. It should return an entity with associated relationships.</p>
@@ -74,12 +74,12 @@
 		<p>Removes relationships from a list of relationships.</p>
 	</li>
 	<li>
-		<code>findOneTarget(T_ID sourceId, String fieldName)</code>
+		<code>findOneTarget(T_ID sourceId, String fieldName, RequestParams requestParams)</code>
 
 		<p>Finds one field's value defined by <i>fieldName</i> in a source defined by <i>sourceId</i>.</p>
 	</li>
 	<li>
-		<code>findManyTargets(T_ID sourceId, String fieldName)</code>
+		<code>findManyTargets(T_ID sourceId, String fieldName, RequestParams requestParams)</code>
 
 		<p>Finds an <i>Iterable</i> of field's values defined by <i>fieldName</i> in a source defined by <i>sourceId
 		</i>.</p>
