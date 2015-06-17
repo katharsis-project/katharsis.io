@@ -4,6 +4,6 @@
 module.exports = {
 	html: '<%= paths.dev %>/index.html',
 	options: {
-		dest: '<%= paths.dist %>/'
+		dest: '<%= paths.dist %>'
 	}
 };

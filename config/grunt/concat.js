@@ -1,6 +1,6 @@
 module.exports = {
 	default: {
-		src: ['<%= paths.dev %>/styles/css/*.css'],
-		dest: '<%= paths.tmp %>/styles/css/style.css'
+		src: ['<%= paths.dev %>/assets/css/*.css'],
+		dest: '<%= paths.tmp %>/assets/css/style.css'
 	}
 };

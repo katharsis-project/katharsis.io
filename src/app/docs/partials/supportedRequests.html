@@ -36,7 +36,7 @@
 		<td>single</td>
 	</tr>
 	<tr>
-		<th rowspan="2" scope="row"><span class="label label-primary">POST</span></th>
+		<th rowspan="3" scope="row"><span class="label label-primary">POST</span></th>
 		<td>resource</td>
 		<td><code>http://host.local/tasks</code></td>
 		<td>single</td>
@@ -47,18 +47,37 @@
 		<td>single</td>
 	</tr>
 	<tr>
-		<th scope="row"><span class="label label-warning">PATCH</span></th>
+		<td>relationship</td>
+		<td><code>http://host.local/tasks/1/relationships/project</code></td>
+		<td>single</td>
+	</tr>
+	<tr>
+		<th rowspan="2" scope="row"><span class="label label-warning">PATCH</span></th>
 		<td>resource</td>
 		<td><code>http://host.local/tasks/1</code></td>
 		<td>single</td>
 	</tr>
 	<tr>
-		<th scope="row"><span class="label label-danger">DELETE</span></th>
+		<td>relationship</td>
+		<td><code>http://host.local/tasks/1/relationships/project</code></td>
+		<td>single</td>
+	</tr>
+	<tr>
+		<th rowspan="2" scope="row"><span class="label label-danger">DELETE</span></th>
 		<td>resource</td>
 		<td><code>http://host.local/tasks/1</code></td>
 		<td>single</td>
 	</tr>
+	<tr>
+		<td>relationship</td>
+		<td><code>http://host.local/tasks/1/relationships/project</code></td>
+		<td>single</td>
+	</tr>
 	</tbody>
 </table>
+
+<p>The framework uses media type headers to determine if a request should be processed, that is <code>Accept</code>
+	header should contain <code>application/vnd.api+json</code> value and if <code>Contant-Type</code> header is set, it
+	should also contain <code>application/vnd.api+json</code> value.</p>
 
 <div class="divider double"></div>

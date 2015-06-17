@@ -6,23 +6,64 @@
 		href="http://www.scala-sbt.org/">SBT</a>...
 	So, the first step is generating a maven POM file. To do that, a maven archetype can be used:</p>
 
-<div hljs language="groovy" include="'app/start/code/mvn.line'">
-</div>
+<div hljs language="groovy" include="'app/start/code/mvn.line'"></div>
 
-<p>This command will create <code>first-hateoas-app</code> directory and generate basic maven based skeleton.</p>
+<p>This command will create <code>dropwizard-simple-example</code> directory and generate basic maven based skeleton.</p>
 
-<p>We can get to <code>first-hateoas-app</code> directory and edit the POM file. We need to add additional repository
-	(currently Katharsis is not available on Maven Central):</p>
+<p>We can get to <code>dropwizard-simple-example</code> directory and edit the POM file:</p>
 
-<div hljs language="xml" include="'app/start/code/oss-repo.xml'"></div>
+<tabset>
+	<tab>
+		<tab-heading>Maven</tab-heading>
+
+		<div hljs language="xml" include="'app/start/code/deps/mvn.xml'"></div>
+	</tab>
+	<tab>
+		<tab-heading>Ivy</tab-heading>
+
+		<div hljs language="xml" include="'app/start/code/deps/ivy.xml'"></div>
+	</tab>
+	<tab>
+		<tab-heading>Grape</tab-heading>
+
+		<div hljs language="groovy" include="'app/start/code/deps/grape.yml'"></div>
+	</tab>
+	<tab>
+		<tab-heading>Gradle</tab-heading>
+
+		<div hljs language="groovy" include="'app/start/code/deps/gradle.yml'"></div>
+	</tab>
+	<tab>
+		<tab-heading>Buildr</tab-heading>
+
+		<div hljs language="groovy" include="'app/start/code/deps/buildr.yml'"></div>
+	</tab>
+	<tab>
+		<tab-heading>SBT</tab-heading>
+
+		<div hljs language="groovy" include="'app/start/code/deps/sbt.yml'"></div>
+	</tab>
+	<tab>
+		<tab-heading>Leiningen</tab-heading>
+
+		<div hljs language="groovy" include="'app/start/code/deps/leiningen.yml'"></div>
+	</tab>
+</tabset>
+
+<div class="divider double"></div>
 
 <p>Next, we need to add Dropwizard dependency:</p>
 
 <div hljs language="xml" include="'app/start/code/dropwizard-dep.xml'"></div>
 
-<p>In the end, Katharsis dependency needs to be added. Katharsis requires Jackson classes, but they are also included in
+<p>Now, Katharsis dependency needs to be added. Katharsis requires Jackson classes, but they are also included in
 	Dropwizard, so it is always a good practice to use exclusions:</p>
 
 <div hljs language="xml" include="'app/start/code/katharsis-dependency.xml'"></div>
+
+<p>In the end a <a href="https://maven.apache.org/plugins/maven-shade-plugin/">maven shade</a> plugin configuration
+	should be added to allow building a fat JAR.</p>
+
+<div hljs language="xml" include="'app/start/code/shade.xml'"></div>
 
 <div class="divider double"></div>

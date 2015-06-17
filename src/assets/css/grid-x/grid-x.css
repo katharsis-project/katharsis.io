@@ -1,109 +1,3 @@
-/*-------------------------------------------------------------------------
-
-    Theme Name: Grid X
-    Theme URI: http://template.themeton.com/gridx
-    Author: ThemeTon
-    Author URI: http://themeton.com
-    Description: MultiPurpose HTML5, CSS3 template for your creative works
-    Version: 1.0.1
-
-  -------------------------------------------------------------------------
-
-    Table of Contents
-
-    1.0 General style
-        1.1 General body style
-        1.2 Full screen & Full width sections
-        1.3 Page Title
-
-    2.0 Header style
-        2.1 Logo style
-        2.2 Menu style
-        2.3 Header style: Left side
-        2.4 Header style: Transparent + Bordered
-        2.5 Header style: Transparent bordered
-        2.6 Header style: Fixed top
-        2.7 Header style: Fullscreen menu
-        2.8 Header style: Styled menu
-        2.9 Header style: Min styles (center, right & left)
-        2.10 Header style: Menu light
-        2.11 Header style: Menu dark
-        2.12 Header style: Fullscreen Menu
-        2.13 Header search form
-        2.14 Header style: Responsive
-
-    3.0 Grid styles
-        3.1 Post format
-        3.1 Grid X style
-        3.2 Masonry styles
-        3.3 Grid styles
-        3.4 Item style
-            3.5 Grid Style 1
-            3.6 Grid Style 2
-            3.7 Grid Style 3
-            3.8 Grid Style 4
-            3.9 Grid Style 5
-            3.10 Grid Style 6
-            3.11 Grid Style 7
-            3.12 Grid Style 8
-            3.13 Grid Style 9
-            3.14 Grid Style 10
-            3.15 Grid Style 11
-            3.16 Masonry Style - with title
-            3.17 Masonry Style 2
-            3.18 Masonry Style 3
-        3.19 Viewport single post
-        3.20 Grid X Modal style
-        3.21 Grid responsive
-
-    4.0 Footer style
-        4.1 Sub footer style
-        4.2 Back to top anchor
-        4.3 Footer responsive
-
-    5.0 Widget
-        5.1 Widget style
-        5.2 Widgets on sidebar
-        5.3 Widgets on footer
-
-    6.0 Page
-        6.1 Page title
-        6.2 Breadcrumb
-        6.3 Regular blog
-        6.4 Post single & Popular tags style
-        6.5 Post single
-        6.6 Comment
-        6.7 Single postfolio
-        6.8 404 page
-
-    7.0 Elements
-        7.1 Affix navigation
-        7.2 Contact form
-        7.3 Social link
-        7.4 Progress bar
-        7.5 Alert
-        7.6 Team box
-        7.7 Service box
-        7.8 Heading style
-        7.9 Tabs
-        7.10 Accordion & Toggle
-        7.11 Dividers
-        7.12 Buttons
-        7.13 Testimonials
-        7.14 Carousel
-        7.15 Google Maps
-        7.16 Gallery
-        7.17 Tiled Gallery
-        7.18 Grid Gallery
-
-    8.0 Helper classes
-        8.1 Image alignments
-        8.2 Content alignments
-        8.3 Spacing & Padding classes
-        8.4 Margin classes
-        8.5 Snippets
-
-  -------------------------------------------------------------------------*/
 .absolute-full {
 	position: absolute;
 	top: 0px;
@@ -481,20 +375,13 @@ form .form-field label.error {
 /* 2.1 Logo style
   -------------------------------------------------- */
 .header a.navbar-brand {
-	background-position: center center;
-	background-repeat: no-repeat;
 	text-indent: -9999px;
 	height: 100px;
 	width: 116px;
 	margin-left: 15px;
 	margin-right: 15px;
 	background-size: contain;
-	background-image: url(/assets/img/test-logo2.png);
-}
-
-.header a.navbar-brand.retina {
-	display: none;
-	background-image: url(assets/img/logo@2x.png);
+	background: url(/assets/img/test-logo2.png) no-repeat center center;
 }
 
 .header a.navbar-brand-sm {

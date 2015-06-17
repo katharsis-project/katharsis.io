@@ -1,0 +1,37 @@
+<h2 class="text-center">Request Parameters</h2>
+<div class="divider brand centered no-margin-top"></div>
+
+<p>Katharsis provides a set of parameters which change the returning JSON object.</p>
+
+<h4 class="padding-top-1x heading-dash">Sorting</h4>
+<p>
+	Sorting information for the repositories can be achieved by providing soring information in <code>sort</code> parameter.
+	The structure of the parameter should be as follows:
+</p>
+
+<ol>
+	<li>The value passed should be a valid JSON object</li>
+	<li>The keys should be paths of the attributes of a resource</li>
+	<li>The key's value should contain one of the following strings: <code>asc</code> or <code>desc</code></li>
+</ol>
+
+<p>
+	An example of the soring parameter: <code>{"name": "asc"}</code>.
+</p>
+
+<h4 class="padding-top-1x heading-dash">Inclusion of Related Resources</h4>
+<p>
+	All of the resources, for which a relationship has been defined, can be returned along with the main resource.
+	The parameter <code>include</code> should contain those requests and its structure should be as follows:
+</p>
+
+<ol>
+	<li>The value passed should be a valid JSON array</li>
+	<li>The values of the array should be paths of the attributes of a resource</li>
+</ol>
+
+<p>
+	Examples of the inclusion parameter: <code>["project"]</code>, <code>["project.author", "team"]</code>.
+</p>
+
+<div class="divider double"></div>
