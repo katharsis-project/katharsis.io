@@ -5,6 +5,11 @@
 		</div>
 
 		<div class="col-md-9">
+			<article id="requirements"
+							 ng-include="'app/docs/partials/requirements.html'"
+							 analytics-on="scrollby">
+			</article>
+
 			<article id="supported-requests"
 							 ng-include="'app/docs/partials/supportedRequests.html'"
 							 analytics-on="scrollby">
@@ -22,6 +27,11 @@
 
 			<article id="repositories"
 							 ng-include="'app/docs/partials/repositories.html'"
+							 analytics-on="scrollby">
+			</article>
+
+			<article id="error-handling"
+							 ng-include="'app/docs/partials/errorHandling.html'"
 							 analytics-on="scrollby">
 			</article>
 		</div>
