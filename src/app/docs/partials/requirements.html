@@ -1,59 +1,79 @@
 <h2 class="text-center">Requirements</h2>
 <div class="divider brand centered no-margin-top"></div>
-
-<h4 class="padding-top-1x heading-dash">Java version</h4>
-<p>Java 8 is required to run Katharsis framework.</p>
 <h4 class="padding-top-1x heading-dash">Dependencies</h4>
-<p>We try to keep number of Katharsis dependencies to minimum.</p>
-<p>Most notable would be Jackson, which we heavily use for providing all the JSON API goodies.</p>
-<ul>
-	<li><b><a href="https://github.com/katharsis-project/katharsis-core">katharsis-core</a>:</b></li>
-</ul>
-	<table class="table">
-		<thead>
-		<tr>
-			<th>Dependency</th>
-			<th>Minimum version*</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<th><a href="https://github.com/FasterXML/jackson">Jackson</a></th>
-			<td>2.5.1</td>
-		</tr>
-		<tr>
-			<th><a href="https://github.com/ronmamo/reflections">Reflections</a></th>
-			<td>0.9.9</td>
-		</tr>
-		<tr>
-			<th><a href="https://github.com/jhalterman/typetools">Typetools</a></th>
-			<td>0.4.0</td>
-		</tr>
-		<tr>
-			<th><a href="https://github.com/apache/commons-beanutils">commons-beanutils</a></th>
-			<td>1.9.2</td>
-		</tr>
-		</tbody>
-	</table>
+Below are listed dependencies used in Katharsis project grouped per component:
+<br/>
 
-<ul>
-	<li><b><a href="https://github.com/katharsis-project/katharsis-rs">katharsis-rs</a>:</b></li>
-</ul>
 <table class="table">
 	<thead>
 	<tr>
-		<th>Dependency</th>
-		<th>Minimum version*</th>
+		<th class="col-md-3">Library</th>
+		<th class="col-md-5">Dependency</th>
+		<th class="col-md-4">Minimum version*</th>
 	</tr>
 	</thead>
 	<tbody>
 	<tr>
-		<th><a href="https://github.com/jersey/jersey">Jersey</a></th>
-		<td>2.17</td>
+		<td rowspan="5">
+			<strong><a href="https://github.com/katharsis-project/katharsis-core">katharsis-core</a></strong>
+		</td>
+		<td>
+			<a href="http://www.oracle.com/technetwork/java/javase/overview/index.html"><i
+				class="glyphicon glyphicon-link"></i> Java</a>
+		</td>
+		<td><span class="label label-primary">1.8 SE</span></td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://github.com/FasterXML/jackson"><i class="glyphicon glyphicon-link"></i> Jackson</a>
+		</td>
+		<td>2.5.1</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://github.com/ronmamo/reflections"><i class="glyphicon glyphicon-link"></i> Reflections</a>
+		</td>
+		<td>0.9.9</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://github.com/jhalterman/typetools"><i class="glyphicon glyphicon-link"></i> Typetools</a>
+		</td>
+		<td>0.4.0</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://github.com/apache/commons-beanutils"><i class="glyphicon glyphicon-link"></i>
+				commons-beanutils</a>
+		</td>
+		<td>1.9.2</td>
+	</tr>
+	</tbody>
+	<tbody>
+	<tr>
+		<td rowspan="3">
+			<strong><a href="https://github.com/katharsis-project/katharsis-rs">katharsis-rs</a></strong>
+		</td>
+		<td>
+			<a href="https://jax-rs-spec.java.net"><i class="glyphicon glyphicon-link"></i> JAX-RS</a>
+		</td>
+		<td>2.0.1</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://www.jcp.org/en/jsr/detail?id=315"><i class="glyphicon glyphicon-link"></i>Java Servlet API</a>
+		<td>3.0.1</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="https://github.com/katharsis-project/katharsis-core"><i class="glyphicon glyphicon-link"></i> katharsis-core</a>
+		</td>
+		<td>latest</td>
 	</tr>
 	</tbody>
 </table>
 
-<p><b>*Minimum version: </b> Dependencies versions, which Katharsis is build on. We do not guarantee compatibility with previous versions.</p>
+<strong>*</strong> Dependencies versions, which Katharsis is build on. Compatibility with previous versions is
+not guaranteed.
 
 <div class="divider double"></div>
