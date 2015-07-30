@@ -1,11 +1,16 @@
 <h2 class="text-center">Request Parameters</h2>
 <div class="divider brand centered no-margin-top"></div>
 
+<div class="alert alert-info">In contrast to JSON:API standard due to server request string length limitation
+	katharsis consumes request params as <strong>JSON Objects and Arrays</strong>.
+</div>
+
 <p>Katharsis provides a set of parameters which change the returning JSON object.</p>
 
 <h4 class="padding-top-1x heading-dash">Sorting</h4>
 <p>
-	Sorting information for the repositories can be achieved by providing soring information in <code>sort</code> parameter.
+	Sorting information for the repositories can be achieved by providing soring information in <code>sort</code>
+	parameter.
 	The structure of the parameter should be as follows:
 </p>
 
@@ -32,6 +37,23 @@
 
 <p>
 	Examples of the inclusion parameter: <code>["project"]</code>, <code>["project.author", "team"]</code>.
+</p>
+
+<h4 class="padding-top-1x heading-dash">Sparse Fieldsets</h4>
+<p>
+	Requested resource from endpoint can be limited to specific fields in the response.
+	In order to provide set of included fields parameter <code>fields</code> should should be as follows:
+</p>
+
+<ol>
+	<li>The value passed should be a valid JSON array</li>
+	<li>The values of the array should be list of the attributes of a resource</li>
+	<li>Attributes <code>id</code> and <code>type</code> will be always returned regardless of containment of sparse
+		fieldset</li>
+</ol>
+
+<p>
+	Examples of the fields parameter: <code>["name"]</code>, <code>["description", "project.author"]</code>.
 </p>
 
 <div class="divider double"></div>

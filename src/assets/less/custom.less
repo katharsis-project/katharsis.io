@@ -43,23 +43,39 @@ code {
 	top: 3px;
 }
 
-.mouse-wheel{
+.mouse-wheel {
 	bottom: 30px;
 	width: 26px;
 	height: 46px;
+	border: 2px solid #242C36;
+
+	i {
+		background-color: #242C36;
+	}
 }
 
 .affix.panel-group .panel-heading a:after {
 	content: 'E';
 }
 
-.back-to-top{
+.back-to-top {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .visible .back-to-top {
 	visibility: visible;
 	opacity: 1;
+}
+
+.ms-slide{
+	background: #242c36; /* Old browsers */
+	background: -moz-linear-gradient(top, #242c36 0%, #333a4c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#242c36), color-stop(100%,#333a4c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #242c36 0%,#333a4c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #242c36 0%,#333a4c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #242c36 0%,#333a4c 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #242c36 0%,#333a4c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242c36', endColorstr='#333a4c',GradientType=0 );
 }
 
 

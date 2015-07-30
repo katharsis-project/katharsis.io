@@ -10,7 +10,7 @@ define([
 		return {
 			restrict: 'C',
 			link: function (scope, element) {
-				var ms_width = element.find('.container').width();
+				var ms_width = element.find('.container').width() + 100;
 
 				element.masterslider({
 					width: ms_width,
