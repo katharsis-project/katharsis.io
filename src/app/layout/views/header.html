@@ -2,21 +2,22 @@
 	<div class="container">
 		<!-- LOGO ================================================== -->
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-							data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
 			<a href-void class="navbar-brand cursor-pointer" ui-sref="app.home">
 				<img src="assets/img/test-logo9.png" alt="Katharsis logo"/>
 			</a>
 		</div>
 		<!-- end:LOGO ================================================== -->
 
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+
 		<!-- MAIN_NAVIGATION ================================================== -->
-			<nav>
+			<nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav main-menu">
 					<li ui-sref-active="active">
 						<a href-void ui-sref="app.start">Getting started</a>
@@ -29,7 +30,7 @@
 					<li ui-sref-active="active">
 						<a href-void ui-sref="app.docs">Documentation</a>
 					</li>
-					<li class="dropdown">
+					<li class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 						<a href-void="" class="dropdown-toggle">Community</a>
 						<ul class="dropdown-menu">
 							<li>

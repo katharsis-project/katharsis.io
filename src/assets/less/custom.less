@@ -67,6 +67,17 @@ code {
 	opacity: 1;
 }
 
+header .navbar-header a.navbar-brand {
+	text-indent: -9999px;
+	height: 100px;
+	width: 70px;
+	margin-left: 0;
+	margin-right: 0;
+}
+.collapse.navbar-collapse {
+	padding: 0;
+}
+
 .slider {
 	position: relative;
 	overflow: hidden;
@@ -100,9 +111,57 @@ code {
 	}
 }
 
+.header-transparent .header nav ul.main-menu, .header-bordered .header nav ul.main-menu {
+	display: block !important;
+}
+
+.navbar-toggle {
+	margin-top: 35px;
+}
+
 .header a.navbar-brand {
 	img {
 		padding-top: 10px;
+	}
+}
+
+.header-transparent .header nav ul.main-menu,
+.header-bordered .header nav ul.main-menu {
+	display: block;
+}
+
+.header-transparent .header nav ul.main-menu > li,
+.header-bordered .header nav ul.main-menu > li {
+	display: block;
+}
+
+@media only screen and (max-width: 767px) {
+	.header-transparent .header nav, .header-bordered .header nav {
+		width: 100%;
+		margin: 0;
+		overflow: visible;
+
+		.dropdown-menu {
+			width: 100% !important;
+			margin: 0 auto;
+			li {
+				width: 100% !important;
+			}
+			a {
+				padding: 0 !important;
+				text-align: center;
+				font-size: 13px;
+			}
+		}
+
+		ul.main-menu > li {
+			text-align: center;
+			line-height: 50px;
+			height: 50px;
+			a {
+				line-height: 50px;
+			}
+		}
 	}
 }
 
