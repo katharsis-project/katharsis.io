@@ -22,7 +22,8 @@ define([
 		'app.layout',
 		'app.home',
 		'app.docs',
-		'app.start'
+		'app.start',
+		'app.examples'
 	]);
 
 	app.config(function ($locationProvider) {

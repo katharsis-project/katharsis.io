@@ -10,9 +10,12 @@ define([
 
 	'app/docs/module',
 	'app/docs/_includes',
-  
+
 	'app/start/module',
-	'app/start/_includes'
+	'app/start/_includes',
+
+	'app/examples/module',
+	'app/examples/_includes'
 ], function () {
 	'use strict';
 });
