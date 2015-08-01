@@ -30,22 +30,14 @@ module.exports = {
 			'require.js': 'requirejs/require.js'
 		}
 	},
-
-	css: {
-		options: {
-			destPrefix: 'src/assets/css/'
-		},
-		files: {
-			'animate.css/animate.css': 'animate.css/animate.css',
-			'highlight/darkula.css': 'highlightjs/styles/obsidian.css'
-		}
-	},
 	less: {
 		options: {
 			destPrefix: 'src/assets/less/'
 		},
 		files: {
-			'bootstrap': 'bootstrap/less'
+			'bootstrap': 'bootstrap/less',
+			'animate/animate.less': 'animate.css/animate.css',
+			'highlight/darkula.less': 'highlightjs/styles/obsidian.css'
 		}
 	},
 	fonts: {
