@@ -26,8 +26,12 @@ define([
 		'app.examples'
 	]);
 
-	app.config(function ($locationProvider) {
-		$locationProvider.html5Mode(false);
+	app.config(function ($locationProvider, hljsServiceProvider) {
+		$locationProvider.html5Mode(true);
+			hljsServiceProvider.setOptions({
+				tabReplace: '  '
+			});
+
 	});
 
 	app.run(function ($rootScope, $state, $log) {

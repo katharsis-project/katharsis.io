@@ -1,4 +1,4 @@
-define(['angular', 'angular-scroll','angular-highlight'], function (ng) {
+define(['angular', 'angular-scroll', 'angular-highlight'], function (ng) {
 	'use strict';
 
 	var module = ng.module('app.examples', ['duScroll', 'hljs']);
