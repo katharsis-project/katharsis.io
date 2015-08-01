@@ -1,0 +1,339 @@
+
+/* 5.0 Widget
+  -------------------------------------------------- */
+.widget {
+	font-size: 13px;
+	line-height: 1.8em;
+	margin-bottom: 50px;
+}
+
+.widget:after {
+	clear: both;
+	display: table;
+	content: ' ';
+}
+
+.widget a {
+	text-decoration: none;
+	line-height: 1.2em;
+}
+
+.widget > p:last-child {
+	margin-bottom: 0;
+}
+
+.widget ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.widget ul li {
+	padding-left: 18px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.widget ul li:before {
+	content: "5";
+	font-family: "ElegantIcons";
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.widget ul li .badge {
+	float: right;
+	background-color: #b3b3b3;
+}
+
+.widget .widget-title {
+	font-family: "Raleway";
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.widget .recentcomments:before {
+	content: "\76";
+}
+
+/* 5.1 Widget style
+  -------------------------------------------------- */
+/* Widget: Social */
+.widget.widget_social li {
+	float: left;
+	line-height: 1;
+	padding: 0;
+	width: 40px;
+	height: 40px;
+}
+
+.widget.widget_social li + li {
+	margin-left: 2px;
+}
+
+.widget.widget_social li a {
+	border-radius: 0;
+	line-height: 1;
+	width: 40px;
+	height: 40px;
+	color: #fff;
+	border-color: #b3b3b3;
+	background-color: #b3b3b3;
+}
+
+.widget.widget_social li:before {
+	content: '';
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+/* Widget: Tag cloud */
+.widget.widget_tag_cloud .tagcloud a {
+	text-transform: capitalize;
+	padding: .5em 10px;
+	line-height: 2.6em;
+	font-size: inherit !important;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	-webkit-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+
+.widget.widget_tag_cloud .tagcloud a:hover {
+	background-color: #fc5857;
+}
+
+/* Widget: Recent entries & Recent news */
+.widget.widget_recent_entries li,
+.widget.widget_recent_news li {
+	padding: 0;
+}
+
+.widget.widget_recent_entries li + li,
+.widget.widget_recent_news li + li {
+	border-top: 1px dashed;
+	border-color: #e6e6e6;
+	padding-top: 20px;
+	margin: 10px 0 0 0;
+}
+
+.widget.widget_recent_entries li:before,
+.widget.widget_recent_news li:before {
+	content: '';
+	margin: 0;
+}
+
+.widget.widget_recent_entries li a,
+.widget.widget_recent_news li a {
+	display: block;
+}
+
+.widget.widget_recent_entries li span,
+.widget.widget_recent_news li span {
+	color: #808080;
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+.widget.widget_recent_news li a.widget-thumb {
+	float: left;
+}
+
+.widget.widget_recent_news li a img {
+	width: 100%;
+}
+
+.widget.widget_recent_news li p {
+	margin: 10px 0 5px 0;
+	line-height: 1.2em;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.widget.widget_recent_news li .widget-content {
+	margin-left: 60px;
+}
+
+/* Widget: Instagram */
+.widget.widget_instagram li {
+	float: left;
+	padding: 0;
+	margin: 0 2px 2px 0;
+}
+
+.widget.widget_instagram li:before {
+	content: '';
+	margin: 0;
+}
+
+.widget.widget_instagram li a.widget-thumb {
+	display: block;
+	width: 58px;
+	height: 58px;
+	position: relative;
+}
+
+.widget.widget_instagram li a.widget-thumb img {
+	height: 58px;
+}
+
+.widget.widget_instagram li a.widget-thumb:before {
+	top: -58px;
+}
+
+.widget.widget_instagram li a.widget-thumb:after {
+	line-height: 58px;
+}
+
+.widget li a.widget-thumb {
+	width: 45px;
+	height: 45px;
+	overflow: hidden;
+	position: relative;
+}
+
+.widget li a.widget-thumb:before {
+	content: '';
+	background-color: #fc5857;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 2;
+	top: -45px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.7;
+	-webkit-transition: all 0.15s ease-in-out;
+	transition: all 0.15s ease-in-out;
+}
+
+.widget li a.widget-thumb:after {
+	content: "\4c";
+	font-family: "ElegantIcons";
+	-webkit-font-smoothing: antialiased;
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+	text-align: center;
+	line-height: 45px;
+	-webkit-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.widget li a.widget-thumb:hover:before {
+	top: 0;
+}
+
+.widget li a.widget-thumb:hover:after {
+	opacity: 1;
+}
+
+.widget.widget_recent_news a.widget-thumb:before {
+	top: -45px;
+}
+
+.widget.widget_recent_news a.widget-thumb:after {
+	line-height: 45px;
+}
+
+/* 5.1 Widgets on sidebar
+  -------------------------------------------------- */
+.sidebar .widget {
+	position: relative;
+}
+
+.sidebar .widget ul li a.widget-thumb:hover {
+	color: #fff;
+}
+
+.sidebar .widget ul li .badge {
+	background-color: #fc5857;
+}
+
+.sidebar .widget.widget_tag_cloud .tagcloud a {
+	border-color: rgba(252, 88, 87, 0.5);
+}
+
+.sidebar .widget.widget_tag_cloud .tagcloud a:hover {
+	color: #fff;
+}
+
+.sidebar .widget address {
+	margin-bottom: 0;
+}
+
+.sidebar .widget .widget-title {
+	margin: 0 0 20px 0;
+}
+
+.sidebar .widget .widget-title:after {
+	border-left: 2px solid #fc5857;
+	content: '';
+	display: block;
+	height: 26px;
+	position: absolute;
+	left: 0;
+	top: 20px;
+}
+
+.sidebar .widget:not(.widget_instagram):not(.widget_tag_cloud) {
+	padding: 25px 20px;
+	border: 1px solid;
+	border-color: #e6e6e6;
+	border-radius: 3px;
+}
+
+.sidebar .widget.widget_instagram .widget-title,
+.sidebar .widget.widget_tag_cloud .widget-title {
+	margin-left: 20px;
+}
+
+.sidebar .widget.widget_instagram .widget-title:after,
+.sidebar .widget.widget_tag_cloud .widget-title:after {
+	top: -5px;
+}
+
+@media only screen and (max-width: 767px) {
+	.sidebar {
+		margin-top: 75px;
+	}
+}
+
+/* 5.2 Widgets on footer
+  -------------------------------------------------- */
+#footer .widget .widget-title {
+	color: #fff;
+	margin: 0;
+	margin-bottom: 30px;
+	font-family: "Raleway";
+	font-size: 16px;
+}
+
+#footer .widget.widget_recent_entries li + li,
+#footer .widget.widget_recent_news li + li {
+	border-color: #555555;
+}
+
+#footer .widget.widget_recent_entries li span,
+#footer .widget.widget_recent_news li span {
+	color: #808080;
+}
+
+#footer .widget.widget_social li a {
+	color: #fff;
+	border-color: #6e6e6e;
+	background-color: #6e6e6e;
+}
+
+#footer .widget.widget_social li a:hover {
+	color: #fff;
+}
+
+#footer .widget ul li .badge {
+	background-color: #888888;
+}

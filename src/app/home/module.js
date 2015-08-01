@@ -11,7 +11,13 @@ define([
 			url: '/',
 			views: {
 				content: {
-					templateUrl: 'app/home/views/home.html'
+					templateUrl: 'app/home/views/home.html',
+					controller: function ($scope, $window) {
+						ng.element($window).bind('scroll', function () {
+							$scope.topOffset = $window.pageYOffset;
+							$scope.$apply();
+						});
+					}
 				}
 			}
 		});

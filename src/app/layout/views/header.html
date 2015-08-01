@@ -2,45 +2,54 @@
 	<div class="container">
 		<!-- LOGO ================================================== -->
 		<div class="navbar-header">
-			<a href-void class="navbar-brand cursor-pointer" ui-sref="app.home"></a>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href-void class="navbar-brand cursor-pointer" ui-sref="app.home">
+				<img src="assets/img/test-logo9.png" alt="Katharsis logo"/>
+			</a>
 		</div>
 		<!-- end:LOGO ================================================== -->
 
 		<!-- MAIN_NAVIGATION ================================================== -->
-		<nav>
-			<ul class="nav navbar-nav main-menu">
-				<li ui-sref-active="active">
-					<a href-void ui-sref="app.start">Getting started</a>
-				</li>
-				<li ui-sref-active="active">
-					<a href-void ui-sref="app.examples">
-						<i class="glyphicon glyphicon-ban-circle text-danger"></i> <span class="text-muted">Examples</span>
-					</a>
-				</li>
-				<li ui-sref-active="active">
-					<a href-void ui-sref="app.docs">Documentation</a>
-				</li>
-				<li ui-sref-active="active">
-					<a href-void ui-sref="app.examples">
-						<i class="glyphicon glyphicon-ban-circle text-danger"></i> <span class="text-muted">Community</span>
-					</a>
-				</li>
-				<li ui-sref-active="active">
-					<a href-void ui-sref="app.about">
-						<i class="glyphicon glyphicon-ban-circle text-danger"></i> <span class="text-muted">About</span>
-					</a>
-				</li>
-			</ul>
-			<!-- end:MAIN_NAVIGATION ================================================== -->
-
-
-			<!-- TOP_LINKS> ================================================== -->
-			<ul class="nav navbar-nav navbar-right">
-				<li class="header-search-form">
-					<a href-void><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-				</li>
-			</ul>
-			<!-- end:TOP_LINKS ================================================== -->
-		</nav>
-	</div>
+			<nav>
+				<ul class="nav navbar-nav main-menu">
+					<li ui-sref-active="active">
+						<a href-void ui-sref="app.start">Getting started</a>
+					</li>
+					<li ui-sref-active="active">
+						<a href-void ui-sref="app.examples">
+							<i class="glyphicon glyphicon-ban-circle text-danger"></i> <span class="text-muted">Examples</span>
+						</a>
+					</li>
+					<li ui-sref-active="active">
+						<a href-void ui-sref="app.docs">Documentation</a>
+					</li>
+					<li class="dropdown">
+						<a href-void="" class="dropdown-toggle">Community</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="http://stackoverflow.com/questions/tagged/katharsis">Stack overflow</a>
+							</li>
+							<li>
+								<a href="https://groups.google.com/forum/#!forum/katharsis">Google groups</a>
+							</li>
+							<li>
+								<a href="https://github.com/katharsis-project/">Github</a>
+							</li>
+						</ul>
+					</li>
+					<li ui-sref-active="active">
+						<a href-void ui-sref="app.about">
+							<i class="glyphicon glyphicon-ban-circle text-danger"></i> <span class="text-muted">About</span>
+						</a>
+					</li>
+				</ul>
+				<!-- end:MAIN_NAVIGATION ================================================== -->
+			</nav>
+		</div>
 </header>

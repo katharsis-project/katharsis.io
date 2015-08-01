@@ -1,0 +1,227 @@
+
+/* 4.0 Footer style
+  -------------------------------------------------- */
+#footer {
+	padding: 75px 0;
+	background-color: #3b3b3b;
+	border-top: 5px solid rgba(0, 0, 0, 0.1);
+	color: #999999;
+	font-size: 14px;
+}
+
+#footer a {
+	color: #c0c0c0;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #dadada;
+}
+
+#footer .pull-right .widget {
+	float: right;
+}
+
+#footer .pull-right .widget > * {
+	float: right;
+}
+
+#footer.footer-centered [class^="col-"] {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
+#footer.footer-centered [class^="col-"] .widget {
+	margin-bottom: 30px;
+	line-height: 1.5em;
+}
+
+#footer.footer-centered [class^="col-"] .widget > * {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#footer.footer-minimal .container,
+#footer.footer-minimal .container-fluid {
+	position: relative;
+}
+
+#footer.footer-minimal .widget {
+	margin-bottom: 0;
+	line-height: 1.3em;
+}
+
+#footer.footer-minimal .widget.absolute-bottom {
+	position: absolute;
+	left: 15px;
+	bottom: 0;
+}
+
+#footer.footer-minimal .widget.absolute-bottom.text-right {
+	left: auto;
+	right: 15px;
+}
+
+#footer.footer-minimal ul li {
+	margin: 0;
+	padding-left: 0;
+}
+
+#footer.footer-minimal ul li:after,
+#footer.footer-minimal ul li:before {
+	content: '';
+}
+
+#footer > .container > .row:last-child > div > .widget:last-child {
+	margin-bottom: 0px;
+}
+
+#footer address abbr {
+	border-color: #484848;
+}
+
+/* 4.1 Sub footer style
+  -------------------------------------------------- */
+.sub-footer {
+	padding: 50px 0;
+	background-color: #2e2e2e;
+	color: #999999;
+}
+
+.sub-footer a {
+	color: #c0c0c0;
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+}
+
+.sub-footer a:hover {
+	color: #dadada;
+	text-decoration: none;
+}
+
+.sub-footer ul {
+	margin: 0;
+	display: inline-block;
+}
+
+.sub-footer ul li a {
+	border: none;
+}
+
+.sub-footer ul li + li {
+	padding-left: 15px;
+}
+
+.sub-footer a[class^="social_"] {
+	border: none;
+}
+
+/* 4.2 Back to top anchor
+  -------------------------------------------------- */
+.back-to-top {
+	width: 32px;
+	height: 32px;
+	color: #fff;
+	z-index: 1010;
+	background-color: rgba(0, 0, 0, 0.3);
+	bottom: 43px;
+	right: 50px;
+	position: fixed;
+	overflow: hidden;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+
+.back-to-top.visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+.back-to-top:before {
+	content: "2";
+	font-family: 'ElegantIcons';
+	font-size: 18px;
+	line-height: 32px;
+	width: 32px;
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	top: 0px;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.back-to-top:after {
+	content: "2";
+	font-family: 'ElegantIcons';
+	font-size: 18px;
+	line-height: 32px;
+	width: 32px;
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	top: 32px;
+	visibility: hidden;
+	color: #fff;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+	cursor: pointer;
+	background-color: #fc5857;
+}
+
+.back-to-top:hover:before {
+	top: -32px;
+}
+
+.back-to-top:hover:after {
+	top: -32px;
+	visibility: visible;
+}
+
+.back-to-top.affix {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* 4.3 Footer responsive
+  -------------------------------------------------- */
+@media only screen and (max-width: 991px) {
+	#footer > .container > .row:last-child > div > .widget:last-child {
+		margin-bottom: 50px;
+	}
+
+	#footer > .container > .row:last-child > div:last-child .widget:last-child {
+		margin-bottom: 0;
+	}
+
+	#footer.footer-minimal .widget.absolute-bottom {
+		position: relative;
+		margin-top: 30px;
+	}
+
+	.back-to-top {
+		right: 0;
+		bottom: 0;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#sub-footer {
+		text-align: center;
+	}
+
+	#sub-footer .text-right {
+		text-align: center;
+	}
+
+	#sub-footer > .container > .row > div:first-child {
+		margin-bottom: 20px;
+	}
+}

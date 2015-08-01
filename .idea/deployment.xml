@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="katharsis.io" overwriteAll="false" preserveTimestamps="false">
+  <component name="PublishConfigData" serverName="katharsis.io" overwriteAll="false" showEqualInSync="true" showDifferentInSync="false" showNewOnSourceInSync="false" showNewOnTargetInSync="false">
     <serverData>
       <paths name="katharsis.io">
         <serverdata>

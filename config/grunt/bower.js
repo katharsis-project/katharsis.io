@@ -7,14 +7,12 @@ module.exports = {
 		files: {
 			'waypoints/waypoints.js': 'waypoints/waypoints.js',
 			'angular-scroll/angular-scroll.js': 'angular-scroll/angular-scroll.js',
-			'owl-carousel/owl-carousel.js': 'owl-carusel/owl-carousel/owl.carousel.js',
 			'almond/almond.js': 'almond/almond.js',
 			'angular/angular.js': 'angular/angular.js',
 			'angular-bootstrap/ui-bootstrap.js': 'angular-bootstrap/ui-bootstrap.js',
 			'angular-bootstrap/ui-bootstrap-tpls.js': 'angular-bootstrap/ui-bootstrap-tpls.js',
 			'angular-ui-router/angular-ui-router.js': 'angular-ui-router/release/angular-ui-router.js',
 			'bootstrap/bootstrap.js': 'bootstrap/dist/js/bootstrap.js',
-			'magnific-popup/magnific-popup.js': 'magnific-popup/dist/jquery.magnific-popup.js',
 			'jquery/jquery.js': 'jquery/dist/jquery.js',
 			'highlight/highlight.js': 'highlightjs/highlight.pack.js',
 			'angular-highlight/angular-highlight.js':'angular-highlightjs/angular-highlightjs.js',
@@ -38,8 +36,6 @@ module.exports = {
 			destPrefix: 'src/assets/css/'
 		},
 		files: {
-			'owl-carousel/owl-carousel.css': 'owl-carusel/owl-carousel/owl.carousel.css',
-			'magnific-popup/magnific-popup.css': 'magnific-popup/dist/magnific-popup.css',
 			'animate.css/animate.css': 'animate.css/animate.css',
 			'highlight/darkula.css': 'highlightjs/styles/obsidian.css'
 		}

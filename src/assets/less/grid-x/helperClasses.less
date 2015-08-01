@@ -1,0 +1,290 @@
+
+/* 8.0 Helper classes
+
+   8.1 Helper classes: Image Alignments
+  -------------------------------------------------- */
+.img-left-top,
+.img-left-center,
+.img-left-bottom,
+.img-center-top,
+.img-center-center,
+.img-center-bottom,
+.img-right-top,
+.img-right-center,
+.img-right-bottom {
+	background-size: initial;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+}
+
+.img-left-top {
+	background-position: left top;
+}
+
+.img-left-center {
+	background-position: left center;
+}
+
+.img-left-bottom {
+	background-position: left bottom;
+}
+
+.img-center-top {
+	background-position: center top;
+}
+
+.img-center-center {
+	background-position: center center;
+}
+
+.img-center-bottom {
+	background-position: center bottom;
+}
+
+.img-right-top {
+	background-position: right top;
+}
+
+.img-right-center {
+	background-position: right center;
+}
+
+.img-right-bottom {
+	background-position: right bottom;
+}
+
+@media only screen and (max-width: 1024px) {
+	.img-left-top,
+	.img-left-center,
+	.img-left-bottom,
+	.img-center-top,
+	.img-center-center,
+	.img-center-bottom,
+	.img-right-top,
+	.img-right-center,
+	.img-right-bottom {
+		background-size: contain;
+	}
+}
+
+.v-align-top {
+	vertical-align: top !important;
+}
+
+.v-align-middle {
+	vertical-align: middle !important;
+}
+
+.v-align-bottom {
+	vertical-align: bottom !important;
+}
+
+/* 8.2 Helper classes: Content Alignments
+  -------------------------------------------------- */
+.alignleft {
+	display: inline;
+	float: left;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+blockquote.alignleft,
+.wp-caption.alignleft,
+img.alignleft {
+	margin: 0.4em 1.6em 1.6em 0;
+}
+
+blockquote.alignright,
+.wp-caption.alignright,
+img.alignright {
+	margin: 0.4em 0 1.6em 1.6em;
+}
+
+blockquote.aligncenter,
+.wp-caption.aligncenter,
+img.aligncenter {
+	clear: both;
+	margin-top: 0.4em;
+	margin-bottom: 1.6em;
+}
+
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+	margin-bottom: 1.2em;
+}
+
+/* Captions */
+.wp-caption {
+	margin-bottom: 1.6em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0;
+}
+
+.wp-caption-text {
+	background-color: #e6e6e6;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 12px;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	padding: 0.5em 0;
+	text-align: center;
+}
+
+/* 8.3 Helper classes: Spacing & Padding classes
+  -------------------------------------------------- */
+.fullwidth-section,
+.fullscreen-section {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.padding1x {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.padding2x {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.padding3x {
+	padding-top: 90px;
+	padding-bottom: 90px;
+}
+
+.padding4x {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+.padding5x {
+	padding-top: 150px;
+	padding-bottom: 150px;
+}
+
+.no-padding {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.no-padding-top {
+	padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0 !important;
+}
+
+.padding-top-1x {
+	padding-top: 30px;
+}
+
+.padding-top-2x {
+	padding-top: 60px;
+}
+
+.padding-top-3x {
+	padding-top: 90px;
+}
+
+.padding-top-4x {
+	padding-top: 120px;
+}
+
+.padding-bottom-1x {
+	padding-bottom: 30px;
+}
+
+.padding-bottom-2x {
+	padding-bottom: 60px;
+}
+
+.padding-bottom-3x {
+	padding-bottom: 90px;
+}
+
+.padding-bottom-4x {
+	padding-bottom: 120px;
+}
+
+/* 8.4 Helper classes: Margin classes
+  -------------------------------------------------- */
+.no-margin {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.no-margin-top {
+	margin-top: 0 !important;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0 !important;
+}
+
+.margin2x {
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.margin3x {
+	margin-top: 90px;
+	margin-bottom: 90px;
+}
+
+.margin4x {
+	margin-top: 120px;
+	margin-bottom: 120px;
+}
+
+/* 8.5 Helper classes: Snippets
+  -------------------------------------------------- */
+.text-light {
+	color: #f8f8f8;
+}
+
+.text-light a {
+	color: #dfdfdf;
+}
+
+.text-light a[class^="social_"] {
+	color: #f8f8f8;
+	border-color: #f8f8f8;
+}
+
+.text-thin {
+	font-weight: 100;
+}
+
+.brand-color {
+	color: #fc5857;
+}
+
+.animate {
+	opacity: 0;
+}
+
+@media (max-width: 480px) {
+	.hidden-xxs {
+		display: none !important;
+	}
+}
+
+.cursor-pointer{
+	cursor: pointer;
+}
