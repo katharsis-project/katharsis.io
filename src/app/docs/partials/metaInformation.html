@@ -1,0 +1,13 @@
+<h4 class="heading-dash">Meta Information</h4>
+
+<p>There is a special interface which can be added to resource repositories to provide meta information:
+	<code>io.katharsis.repository.MetaRepository</code>. It contains a single method
+	<code>MetaInformation getMetaInformation(Iterable&lt;T&gt; resources)</code> which return meta information object
+	that implements a marker interface <code>io.katharsis.response.MetaInformation</code>.</p>
+
+<p>If you want to add meta information along with the responses, all repositories, that is those that implement <code>
+	ResourceRepository</code>
+	and <code>RelationshipRepository</code>, must implement <code>MetaRepository</code>.</p>
+
+<div class="divider double"></div>
+
