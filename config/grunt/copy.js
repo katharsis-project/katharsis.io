@@ -13,7 +13,7 @@ module.exports = {
 				'index.html',
 				'assets/fonts/**/*',
 				'assets/img/**/*',
-				'app/start/code/**/*'
+				'assets/code/**/*'
 			]
 		}]
 	}
