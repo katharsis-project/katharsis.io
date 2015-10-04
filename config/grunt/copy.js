@@ -7,21 +7,14 @@ module.exports = {
 			cwd: '<%= paths.dev %>',
 			dest: '<%= paths.dist %>',
 			src: [
-				'*.{ico,png,txt}',
-				'app/require.js',
+				'favicon.ico',
+				'robots.txt',
 				'.htaccess',
 				'index.html',
-				'404.html',
-				'images/**/*',
-				'styles/fonts/**/*',
-				'styles/img/**/*',
-				'styles/sounds/**/*'
+				'assets/fonts/**/*',
+				'assets/img/**/*',
+				'app/start/code/**/*'
 			]
-		}, {
-			expand: true,
-			cwd: '.tmp/images',
-			dest: '<%= paths.dist %>/images',
-			src: ['generated/*']
 		}]
 	}
 };

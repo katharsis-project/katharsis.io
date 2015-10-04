@@ -14,8 +14,7 @@ module.exports = {
 		'copy',
 		'requirejs',
 		'rev',
-		'usemin',
-		'clean:server'
+		'usemin'
 	],
 
 	'default': [

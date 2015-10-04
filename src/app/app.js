@@ -1,7 +1,9 @@
 define([
 	'angular',
+	'angulartics/angulartics',
 	'angulartics/angulartics-ga',
 	'angulartics/angulartics-scroll',
+	'waypoints',
 	'angular-ui-router',
 	'angular-bootstrap'
 ], function (ng) {
@@ -26,12 +28,12 @@ define([
 		'app.examples'
 	]);
 
-	app.config(function ($locationProvider, hljsServiceProvider) {
+	app.config(function ($locationProvider, hljsServiceProvider, $logProvider) {
+		$logProvider.debugEnabled(false);
 		$locationProvider.html5Mode(true);
-			hljsServiceProvider.setOptions({
-				tabReplace: '  '
-			});
-
+		hljsServiceProvider.setOptions({
+			tabReplace: '  '
+		});
 	});
 
 	app.run(function ($rootScope, $state, $log) {

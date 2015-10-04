@@ -2,21 +2,21 @@ module.exports = function () {
 	return {
 		default: {
 			options: {
-				baseUrl: '<%= paths.dev %>/app',
+				baseUrl: '<%= paths.dev %>/',
 				optimize: 'uglify2',
 				generateSourceMaps: true,
 				preserveLicenseComments: false,
 				useStrict: true,
-				out: '<%= yeoman.dist %>/app/main.js',
-				mainConfigFile: '<%= yeoman.app %>/app/require.conf.js',
+				out: '<%= paths.dist %>/assets/js/main.min.js',
+				mainConfigFile: '<%= paths.dev %>/require.conf.js',
 				findNestedDependencies: true,
 				removeCombined: true,
 				optimizeAllPluginResources: true,
 				replaceRequireScript: [{
-					files: ['<%= yeoman.dist %>/index.html'],
+					files: ['<%= paths.dist %>/index.html'],
 					module: 'main'
 				}],
-				name: '../vendor/libs/almond/almond',
+				name: 'assets/js/almond/almond',
 				uglify2: {
 					mangle: false
 				},

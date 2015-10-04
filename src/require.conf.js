@@ -3,8 +3,6 @@ requirejs.config({
 	paths: {
 		// jQuery dependencies
 		'jquery': 'assets/js/jquery/jquery',
-		'jquery-easing': 'assets/js/masterslider/jquery.easing.min',
-		'masterslider': 'assets/js/masterslider/masterslider',
 		'highlight': 'assets/js/highlight/highlight',
 		'waypoints': 'assets/js/waypoints/waypoints',
 
@@ -36,11 +34,7 @@ requirejs.config({
 		'angulartics/angulartics-ga': ['angulartics/angulartics'],
 		'angulartics/angulartics-scroll': ['angulartics/angulartics','waypoints'],
 
-		// Bootstrap dependencies
 		'bootstrap': ['jquery'],
-
-		'jquery-easing': ['jquery'],
-		'masterslider': ['jquery', 'jquery-easing'],
 		'waypoints': ['jquery']
 	},
 

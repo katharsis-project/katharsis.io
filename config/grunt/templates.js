@@ -1,7 +1,8 @@
 module.exports = {
 	default: {
 		files: [{
-			src: '<%= paths.dev %>/app/**/**/*.html',
+			src: 'app/**/*.html',
+			cwd: '<%= paths.dev %>',
 			dest: '<%= paths.dev %>/app/templates/module.js'
 		}],
 		options: {
@@ -18,7 +19,6 @@ module.exports = {
 			},
 			htmlmin: {
 				removeCommentsFromCDATA: true,
-				// Do not use COMMENT DIRECTIVES!
 				removeComments: true,
 				collapseBooleanAttributes: true,
 				collapseWhitespace: true,
