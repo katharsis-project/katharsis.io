@@ -1,5 +1,5 @@
-[INFO] io.katharsis:katharsis-rs:jar:0.9.4
-[INFO] +- io.katharsis:katharsis-core:jar:0.9.4:compile
+[INFO] io.katharsis:katharsis-rs:jar:1.0.0
+[INFO] +- io.katharsis:katharsis-core:jar:1.0.0:compile
 [INFO] +- com.fasterxml.jackson.core:jackson-annotations:jar:2.5.1:compile
 [INFO] +- javax.ws.rs:javax.ws.rs-api:jar:2.0.1:compile
 [INFO] \- javax.servlet:javax.servlet-api:jar:3.0.1:compile

@@ -1,1 +1,1 @@
-libraryDependencies += "io.katharsis" % "katharsis-core" % "0.9.4"
+libraryDependencies += "io.katharsis" % "katharsis-core" % "1.0.0"
