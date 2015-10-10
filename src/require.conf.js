@@ -1,5 +1,6 @@
 // jshint unused: false
 requirejs.config({
+	waitSeconds: 0,
 	paths: {
 		// jQuery dependencies
 		'jquery': 'assets/js/jquery/jquery',
