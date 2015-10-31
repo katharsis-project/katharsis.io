@@ -2,7 +2,20 @@
 <div class="divider brand centered no-margin-top"></div>
 
 <p>The model definition must have corresponding resource repository. In addition, each relation also must have a
-	corresponding repository.</p>
+	corresponding repository. Those repositories can be defined in one of the two ways:
+<ul>
+	<li>Implementing a repository interface:
+	<ul>
+    <li><code>ResourceRepository</code> for a resource</li>
+		<li><code>RelationshipRepository</code> for resource relationships</li>
+	</ul></li>
+	<li>Annotated with a repository annotation:
+	<ul>
+		<li><code>JsonApiResourceRepository</code> for a resource</li>
+		<li><code>JsonApiRelationshipRepository</code> for resource relationships</li>
+	</ul></li>
+</ul>
+</p>
 
 <h4 class="padding-top-1x heading-dash">ResourceRepository</h4>
 
@@ -90,5 +103,48 @@
 	this kind of repository. As it can be seen above, there are two kinds of methods: for multiple and single
 	relationships and it is possible to implement only one type of methods, e.g. singular methods. Nevertheless, it
 	should be avoided because of potential future problems when adding new fields of other sizes.</p>
+
+<h4 class="padding-top-1x heading-dash">@JsonApiResourceRepository</h4>
+
+<p>A resource repository can be defined not by implementing <code>ResourceRepository</code> interface,
+but using <code>JsonApiResourceRepository</code> annotation. Thanks to that it's not needed
+	implementing all of the methods.</p>
+
+	<p>Mapping of <code>ResourceRepository</code> methods to annotations:</p>
+		<ul>
+			<li>
+				<code>findOne(ID id, RequestParams requestParams)</code> -> <code>JsonApiFindOne</code>
+
+				<p>The first parameter has to be resource's id. The method has to return one resource.</p>
+			</li>
+			<li>
+				<code>findAll(RequestParams requestParams)</code> -> <code>JsonApiFindAll</code>
+
+				<p>The method has to return a list of resources.</p>
+			</li>
+			<li>
+				<code>findAll(Iterable&#60;ID&#62;ids, RequestParams requestParams)</code> -> <code>JsonApiFindAllWithIds</code>
+
+				<p>The first parameter has to be resource's ids. The method has to return a list of resource.</p>
+			</li>
+			<li>
+				<code>save(S entity)</code> -> <code>JsonApiSave</code>
+
+				<p>The first parameter has to be resource.</p>
+			</li>
+			<li>
+				<code>delete(ID id)</code> -> <code>JsonApiDelete</code>
+
+				<p>The first parameter has to be resource's id.</p>
+			</li>
+		</ul>
+
+<h4 class="padding-top-1x heading-dash">@JsonApiRelationshipRepository</h4>
+
+<p>A resource repository can be defined not by implementing <code>RelationshipRepository</code> interface,
+but using <code>JsonApiRelationshipRepository</code> annotation. Thanks to that it's not needed
+	implementing all of the methods.</p>
+
+
 
 <div class="divider double"></div>

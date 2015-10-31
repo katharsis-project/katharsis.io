@@ -37,8 +37,16 @@
 	level JSON object) with every primary resource. The field can be added to every relationship defined by
 	<code>JsonApiToOne</code> or <code>JsonApiToMany</code>. Otherwise, <code>ResourceException</code> will be thrown at
 	the initialization phrase.</p>
-<p>The example below shows a sample class which will always contain a relationship's resource.</p>
+<p>The example below shows a sample model with this annotation.</p>
 <div hljs language="java" include="'assets/code/docs/jsonApiToIncludeByDefault.java'"></div>
+
+
+<h4 class="padding-top-1x heading-dash">JsonApiLookupIncludeAutomatically</h4>
+<p>Field or getter annotated with <code>JsonApiLookupIncludeAutomatically</code> willl be automatically populated by
+	Katharsis on <code>GET</code> requests. It can be added to every relationship defined by
+	<code>JsonApiToOne</code> or <code>JsonApiToMany</code>.</p>
+<p>The example below shows a sample class which will always contain a relationship's resource.</p>
+<div hljs language="java" include="'assets/code/docs/JsonApiLookupIncludeAutomatically.java'"></div>
 
 
 <p>The framework support fields inheritance, it is possible to define fields in superclasses.</p>

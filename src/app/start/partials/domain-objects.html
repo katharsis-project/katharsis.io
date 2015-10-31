@@ -8,6 +8,10 @@
 <p>As stated above, accompanying repository need to be added. This sample doesn’t have any DB connectivity for
 	clearance, but it can be added without any problem.</p>
 
+<p>To allow Katharsis operate on the resources, a special class called <i>repository</i> has to be created.
+	 To provide a repository for a created <code>Project</code> model, create a class <code>ProjectRepository</code>.
+ Katharsis can scan this class, and using annotations, find out which methods what can do.</p>
+
 <p>The class below uses <code>java.util.concurrent.ConcurrentHashMap</code> to store resources.</p>
 
 <div hljs language="java" include="'assets/code/start/ProjectRepository.java'"></div>

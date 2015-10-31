@@ -1,4 +1,4 @@
-[INFO] io.katharsis:katharsis-core:jar:1.0.0
+[INFO] io.katharsis:katharsis-core:jar:2.0.0
 [INFO] +- org.reflections:reflections:jar:0.9.9:compile
 [INFO] |  +- com.google.guava:guava:jar:15.0:compile
 [INFO] |  +- org.javassist:javassist:jar:3.18.2-GA:compile
