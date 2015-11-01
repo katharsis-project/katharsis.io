@@ -26,21 +26,21 @@
 <p>The methods are as follows:</p>
 <ul>
 	<li>
-		<code>findOne(ID id, RequestParams requestParams)</code>
+		<code>findOne(ID id, QueryParams queryParams)</code>
 
 		<p>Search one resource with a given ID. If a resource cannot be found, a ResourceNotFoundException exception should
 			be thrown. It should return an entity with associated relationships.</p>
 	</li>
 	<li>
-		<code>findAll(RequestParams requestParams)</code>
+		<code>findAll(QueryParams queryParams)</code>
 
-		<p>Search for all of the resources. An instance of RequestParams can be used if necessary. If no resources can be
+		<p>Search for all of the resources. An instance of QueryParams can be used if necessary. If no resources can be
 			found an empty Iterable or null must be returned. It should return entities with associated relationships.</p>
 	</li>
 	<li>
-		<code>findAll(Iterable&#60;ID&#62;ids, RequestParams requestParams)</code>
+		<code>findAll(Iterable&#60;ID&#62;ids, QueryParams queryParams)</code>
 
-		<p>Search for resources constrained by a list of identifiers. An instance of RequestParams can be used if necessary. If no resources can be found an empty Iterable or null must be returned. It should return entities with associated relationships.</p>
+		<p>Search for resources constrained by a list of identifiers. An instance of QueryParams can be used if necessary. If no resources can be found an empty Iterable or null must be returned. It should return entities with associated relationships.</p>
 	</li>
 	<li>
 		<code>save(S entity)</code>
@@ -87,12 +87,12 @@
 		<p>Removes relationships from a list of relationships.</p>
 	</li>
 	<li>
-		<code>findOneTarget(T_ID sourceId, String fieldName, RequestParams requestParams)</code>
+		<code>findOneTarget(T_ID sourceId, String fieldName, QueryParams queryParams)</code>
 
 		<p>Finds one field's value defined by <i>fieldName</i> in a source defined by <i>sourceId</i>.</p>
 	</li>
 	<li>
-		<code>findManyTargets(T_ID sourceId, String fieldName, RequestParams requestParams)</code>
+		<code>findManyTargets(T_ID sourceId, String fieldName, QueryParams queryParams)</code>
 
 		<p>Finds an <i>Iterable</i> of field's values defined by <i>fieldName</i> in a source defined by <i>sourceId
 		</i>.</p>
@@ -104,47 +104,110 @@
 	relationships and it is possible to implement only one type of methods, e.g. singular methods. Nevertheless, it
 	should be avoided because of potential future problems when adding new fields of other sizes.</p>
 
-<h4 class="padding-top-1x heading-dash">@JsonApiResourceRepository</h4>
+<h4 class="padding-top-1x heading-dash">Annotated repositories</h4>
 
-<p>A resource repository can be defined not by implementing <code>ResourceRepository</code> interface,
-but using <code>JsonApiResourceRepository</code> annotation. Thanks to that it's not needed
-	implementing all of the methods.</p>
+<p>A resource repository can be defined not by implementing <code>ResourceRepository</code> or <code>RelationshipRepository</code> interface,
+but using <code>JsonApiResourceRepository</code> or
+	<code>JsonApiRelationshipRepository</code> annotations from <code>io.katharsis.repository.annotations</code> package.
+	Defining the repositories this way has two benefits:</p>
+<ul>
+	<li>It's not needed define all of the methods i.e. read-only resources might have just reading methods defined</li>
+	<li>Additional parameters can be added to the methods like authentication, request headers or cookies</li>
+</ul>
+<p>Along with the required parameters for each methods (like resource identifier in <code>JsonApiFindOne</code>) default
+	supported type is <code>QueryParams</code> which provides parsed set of query parameters. Each Katharsis integration
+provides different set of supported parameters. This list can be found in JAX-RS and Servlet integration sections.</p>
 
-	<p>Mapping of <code>ResourceRepository</code> methods to annotations:</p>
-		<ul>
-			<li>
-				<code>findOne(ID id, RequestParams requestParams)</code> -> <code>JsonApiFindOne</code>
+<p>A list below defines a mapping of <code>ResourceRepository</code> methods to annotations:</p>
+	<ul>
+		<li>
+			<code>findOne(ID, QueryParams)</code> -> <code>JsonApiFindOne</code>
 
-				<p>The first parameter has to be resource's id. The method has to return one resource.</p>
-			</li>
-			<li>
-				<code>findAll(RequestParams requestParams)</code> -> <code>JsonApiFindAll</code>
+			<p>The first parameter has to be resource's id. The method has to return one resource.</p>
+		</li>
+		<li>
+			<code>findAll(QueryParams)</code> -> <code>JsonApiFindAll</code>
 
-				<p>The method has to return a list of resources.</p>
-			</li>
-			<li>
-				<code>findAll(Iterable&#60;ID&#62;ids, RequestParams requestParams)</code> -> <code>JsonApiFindAllWithIds</code>
+			<p>The method has to return a list of resources.</p>
+		</li>
+		<li>
+			<code>findAll(Iterable&#60;ID&#62;, QueryParams)</code> -> <code>JsonApiFindAllWithIds</code>
 
-				<p>The first parameter has to be resource's ids. The method has to return a list of resource.</p>
-			</li>
-			<li>
-				<code>save(S entity)</code> -> <code>JsonApiSave</code>
+			<p>The first parameter has to be a list of resource ids. The method has to return a list of resources.</p>
+		</li>
+		<li>
+			<code>save(S)</code> -> <code>JsonApiSave</code>
 
-				<p>The first parameter has to be resource.</p>
-			</li>
-			<li>
-				<code>delete(ID id)</code> -> <code>JsonApiDelete</code>
+			<p>The first parameter has to be resource. The method has to return one resource.</p>
+		</li>
+		<li>
+			<code>delete(ID)</code> -> <code>JsonApiDelete</code>
 
-				<p>The first parameter has to be resource's id.</p>
-			</li>
-		</ul>
+			<p>The first parameter has to be resource's id.</p>
+		</li>
+	</ul>
+<p>A list below defines a mapping of <code>RelationshipRepository</code> methods to annotations:</p>
+	<ul>
+		<li>
+			<code>setRelation(T, D_ID, String)</code> -> <code>JsonApiSetRelation</code>
 
-<h4 class="padding-top-1x heading-dash">@JsonApiRelationshipRepository</h4>
+			<p>The requirements for the method parameters are as follows:</p>
+			<ol>
+				 <li>Instance of a source resource</li>
+				 <li>Instance of a relationship to be set</li>
+				 <li>Relationship's filed name</li>
+			</ol>
+		</li>
+		<li>
+			<code>setRelations(T, Iterable&#60;D_ID&#62;, String)</code> -> <code>JsonApiSetRelations</code>
 
-<p>A resource repository can be defined not by implementing <code>RelationshipRepository</code> interface,
-but using <code>JsonApiRelationshipRepository</code> annotation. Thanks to that it's not needed
-	implementing all of the methods.</p>
+			<p>The requirements for the method parameters are as follows:</p>
+			<ol>
+				<li>Instance of a source resource</li>
+				<li><code>Iterable</code> of relationships to be set</li>
+				<li>Relationship's filed name</li>
+			</ol>
+		</li>
+		<li>
+			<code>addRelations(T, Iterable&#60;D_ID&#62;, String)</code> -> <code>JsonApiAddRelation</code>
 
+			<p>The requirements for the method parameters are as follows:</p>
+			<ol>
+				<li>Instance of a source resource</li>
+				<li><code>Iterable</code> of relationships to be add</li>
+				<li>Relationship's filed name</li>
+			</ol>
+		</li>
+		<li>
+			<code>removeRelations(T, Iterable&#60;D_ID&#62;, String)</code> -> <code>JsonApiRemoveRelation</code>
 
+			<p>The requirements for the method parameters are as follows:</p>
+			<ol>
+				<li>Instance of a source resource</li>
+				<li><code>Iterable</code> of relationships to be removed</li>
+				<li>Relationship's filed name</li>
+			</ol>
+		</li>
+		<li>
+			<code>findOneTarget(T_ID, String, QueryParams)</code> -> <code>JsonApiFindOneTarget</code>
+
+			<p>The requirements for the method parameters are as follows:</p>
+			<ol>
+				<li>An identifier of a source resource</li>
+				<li>Relationship's field name</li>
+			</ol>
+			<p>The method has to return a resources.</p>
+		</li>
+		<li>
+			<code>findManyTargets(T_ID, String, QueryParams)</code> -> <code>JsonApiFindManyTargets</code>
+
+			<p>The requirements for the method parameters are as follows:</p>
+			<ol>
+				<li>An identifier of a source resource</li>
+				<li>Relationship's field name</li>
+			</ol>
+			<p>The method has to return an <code>Iterable</code> with resources.</p>
+		</li>
+	</ul>
 
 <div class="divider double"></div>

@@ -1,59 +1,92 @@
 <h2 class="text-center">Query Parameters</h2>
 <div class="divider brand centered no-margin-top"></div>
 
-<div class="alert alert-info">In contrast to JSON:API standard due to server request string length limitation
-	katharsis consumes request params as <strong>JSON Objects and Arrays</strong>.
-</div>
+<p>Katharsis has defined set of query parameters which can be used by the framework during data retrieval and by a
+developer to perform other operations. All of the types of parameters can be accessed using <code>QueryParams</code>
+object in repository methods.</p>
 
-<p>Katharsis provides a set of parameters which change the returning JSON object.</p>
+<h4 class="padding-top-1x heading-dash">Filtering</h4>
+<p>
+	Resource filtering can be achieved by providing parameters which start with <code>filter</code>.
+	The format for filters: <code>filter[ResourceType][property|operator]([property|operator])* = "value"</code>
+</p>
+<p>Examples:</p>
+<ul>
+    <li><code>GET /tasks/?filter[Task][name]=Super task</code></li>
+    <li><code>GET /tasks/?filter[Task][name]=Super task&[Task][dueDate]=2015-10-01</code></li>
+    <li><code>GET /tasks/?filter[Task][name][$startWith]=Super task</code></li>
+    <li><code>GET /tasks/?filter[Task][name][][$startWith]=Super&[Task][name][][$endWith]=task</code></li>
+</ul>
 
 <h4 class="padding-top-1x heading-dash">Sorting</h4>
+<div class="alert alert-info">Katharsis implementation differs form JSON API
+    <a href="http://jsonapi.org/format/#fetching-sorting">definition of sorting</a>
+    in order to fit standard query parameter serializing strategy and maximize effective processing of data.
+</div>
 <p>
-	Sorting information for the repositories can be achieved by providing soring information in <code>sort</code>
-	parameter.
-	The structure of the parameter should be as follows:
+	Sorting information for the resources can be achieved by providing <code>sort</code> parameter.
+    The format for sorting: <code>sort[ResourceType][property|operator]([property|operator])* = "value"</code>
 </p>
+<p>Examples:</p>
+<ul>
+    <li><code>GET /tasks/?sort[Task][name]=asc</code></li>
+    <li><code>GET /tasks/?sort[Project][shortName]=desc&sort[User][name][firstName]=asc</code></li>
+</ul>
 
-<ol>
-	<li>The value passed should be a valid JSON object</li>
-	<li>The keys should be paths of the attributes of a resource</li>
-	<li>The key's value should contain one of the following strings: <code>asc</code> or <code>desc</code></li>
-</ol>
-
+<h4 class="padding-top-1x heading-dash">Grouping</h4>
+<div class="alert alert-info">Katharsis implementation differs form JSON API
+    Grouping itself is not specified by JSON API itself, but the keyword and format it reserved for today and future use in Katharsis.
+</div>
 <p>
-	An example of the soring parameter: <code>{"name": "asc"}</code>.
+    Grouping information for the resources can be achieved by providing <code>sort</code> parameter.
+    The format for grouping: <code>group[ResourceType] = "property(.property)*"</code>
 </p>
+<p>Examples:</p>
+<ul>
+    <li><code>GET /tasks/?group[Task]=name</code></li>
+    <li><code>GET /tasks/?group[User]=name.firstName&include[Project]=team</code></li>
+</ul>
 
-<h4 class="padding-top-1x heading-dash">Inclusion of Related Resources</h4>
+<h4 class="padding-top-1x heading-dash">Pagination</h4>
 <p>
-	All of the resources, for which a relationship has been defined, can be returned along with the main resource.
-	The parameter <code>include</code> should contain those requests and its structure should be as follows:
+    Pagination for the repositories can be achieved by providing <code>page</code> parameter.
+    The format for pagination: <code>page[offset|limit] = "value"</code>, where <strong>value</strong> is an integer
 </p>
-
-<ol>
-	<li>The value passed should be a valid JSON array</li>
-	<li>The values of the array should be paths of the attributes of a resource</li>
-</ol>
-
-<p>
-	Examples of the inclusion parameter: <code>["project"]</code>, <code>["project.author", "team"]</code>.
-</p>
+<p>Example:</p>
+<ul>
+    <li><code>GET /tasks/?page[offset]=0&page[limit]=10</code></li>
+</ul>
 
 <h4 class="padding-top-1x heading-dash">Sparse Fieldsets</h4>
+<div class="alert alert-info">Katharsis implementation differs form JSON API
+    <a href="http://jsonapi.org/format/#fetching-sparse-fieldsets">definition of sparse field set</a>
+    in order to fit standard query parameter serializing strategy and maximize effective processing of data.
+</div>
 <p>
-	Requested resource from endpoint can be limited to specific fields in the response.
-	In order to provide set of included fields parameter <code>fields</code> should should be as follows:
+    Information about fields to include in the response can be achieved by providing <code>fields</code> parameter.
+    The format for fields: <code>fields[ResourceType] = "property(.property)*"</code>
 </p>
+<p>Examples:</p>
+<ul>
+    <li><code>GET /tasks/?fields[Task]=name</code></li>
+    <li><code>GET /tasks/?fields[Task][]=name&fields[Task][]=dueDate</code></li>
+    <li><code>GET /tasks/?fields[User]=name.surname&include[Task]=author</code></li>
+</ul>
 
-<ol>
-	<li>The value passed should be a valid JSON array</li>
-	<li>The values of the array should be list of the attributes of a resource</li>
-	<li>Attributes <code>id</code> and <code>type</code> will be always returned regardless of containment of sparse
-		fieldset</li>
-</ol>
-
+<h4 class="padding-top-1x heading-dash">Inclusion of Related Resources</h4>
+<div class="alert alert-info">Katharsis implementation differs form JSON API
+    <a href="http://jsonapi.org/format/#fetching-includes">definition of includes</a>
+    in order to fit standard query parameter serializing strategy and maximize effective processing of data.
+</div>
 <p>
-	Examples of the fields parameter: <code>["name"]</code>, <code>["description", "project.author"]</code>.
+    Information about relationships to include in the response can be achieved by providing <code>include</code> parameter.
+    The format for fields: <code>include[ResourceType] = "property(.property)*"</code>
 </p>
+<p>Examples:</p>
+<ul>
+    <li><code>GET /tasks/?include[Task]=author</code></li>
+    <li><code>GET /tasks/?include[Task][]=author&include[Task][]=comments</code></li>
+    <li><code>GET /tasks/?include[Project]=task&include[Task]=comments</code></li>
+</ul>
 
 <div class="divider double"></div>
