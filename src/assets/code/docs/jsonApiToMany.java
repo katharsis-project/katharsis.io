@@ -3,8 +3,11 @@ public class Task {
 
 	// ID field
 
-	@JsonApiToMany
+	@JsonApiToMany(lazy = false)
 	private List<Project> projects;
+
+	@JsonApiToMany // not shown in Top Level JSON
+	private List<Log> logs;
 
 	// fields, getters and setters
 }

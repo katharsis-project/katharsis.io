@@ -1,4 +1,5 @@
-<h4 class="heading-dash">Links Information</h4>
+<h2 class="text-center">Links Information</h2>
+<div class="divider brand centered no-margin-top"></div>
 
 <p>There is a special interface which can be added to resource repositories to provide links information:
 	<code>io.katharsis.repository.LinksRepository</code>. It contains a single method
@@ -8,5 +9,8 @@
 <p>If you want to add meta information along with the responses, all repositories, that is those that implement <code>
 	ResourceRepository</code>
 	and <code>RelationshipRepository</code>, must implement <code>LinksRepository</code>.</p>
+
+<p>When using annotated versions of repositories, a method that provides <code>LinksInformation</code> object should be
+	annotated with <code>JsonApiLinks</code> and the first parameter of the method has to be a list of resources.</p>
 
 <div class="divider double"></div>

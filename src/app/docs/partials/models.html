@@ -28,7 +28,8 @@
 <h4 class="padding-top-1x heading-dash">JsonApiToMany</h4>
 <p>Indicates an association to many values which need to be handled by a separate <code>RelationshipRepository</code>.
 	A type of the field has to be an <code>Iterable</code> or its derived classes (e.g.<code>List</code>) of valid
-	resources.</p>
+	resources. By default, relationship is considered to be <strong>lazy</strong>, that is the relationship is not shown in the Top
+    Level JSON. To change that, pass parameter <code>@JsonApiToMany(lazy = false)</code>.</p>
 <p>The example below shows a sample class which contains this kind of relationship.</p>
 <div hljs language="java" include="'assets/code/docs/jsonApiToMany.java'"></div>
 

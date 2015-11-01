@@ -86,4 +86,16 @@
 	Instantiated <code>KatharsisFeature</code> has to be registered as a JAX-RS feature.
 </p>
 
+<h4 class="padding-top-1x heading-dash">Repository supported parameters</h4>
+
+<p>JAX-RS integration allows a user to pass the following types of parameters:</p>
+<ol>
+	<li>An instance of <code>ContainerRequestContext</code></li>
+	<li>An instance of <code>SecurityContext</code></li>
+	<li>A cookie. The parameter should be annotated with <code>@CookieParam("cookie name")</code>. The type can be either
+		<code>Cookie</code>, <code>String</code> or any other type that Jackson can handle.</li>
+	<li>A header. The parameter should be annotated with <code>@HeaderParam("header name")</code>. The type can be either
+		<code>String</code> or any other type that Jackson can handle.</li>
+</ol>
+
 <div class="divider double"></div>
