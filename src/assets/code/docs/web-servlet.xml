@@ -1,0 +1,18 @@
+<web-app>
+  <servlet>
+    <servlet-name>SampleKatharsisServlet</servlet-name>
+    <servlet-class>io.katharsis.servlet.SampleKatharsisServlet</servlet-class>
+    <init-param>
+      <param-name>katharsis.config.core.resource.package</param-name>
+      <param-value>io.katharsis.servlet.resource</param-value>
+    </init-param>
+    <init-param>
+      <param-name>katharsis.config.core.resource.domain</param-name>
+      <param-value>http://localhost:8080</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SampleKatharsisServlet</servlet-name>
+    <url-pattern>/api/v1/*</url-pattern>
+  </servlet-mapping>
+</web-app>

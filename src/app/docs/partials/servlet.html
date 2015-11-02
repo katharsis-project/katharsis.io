@@ -1,6 +1,38 @@
 <h2 class="text-center">Servlet integration</h2>
 <div class="divider brand centered no-margin-top"></div>
 
+<p>There are two ways of integrating katharsis using Servlets:</p>
+<ol>
+    <li>Adding an instance of <code>AbstractKatharsisServlet</code></li>
+    <li>Adding an instance of <code>AbstractKatharsisFilter</code></li>
+</ol>
 
+<h4 class="padding-top-1x heading-dash">Integrating using a Servlet</h4>
+<p>To integrate katharsis using a servlet several steps are required. The first one is to create a class that extends
+    <code>AbstractKatharsisServlet</code> and will provide required configuration to the library.
+    A code below shows a sample implementation.</p>
+<div hljs language="java" include="'assets/code/docs/SampleKatharsisServlet.java'"></div>
+<p>The newly created servlet has to be added to <code>web.xml</code> file or other deployment descriptor.
+A code below shows a sample <code>web.xml</code> file with properly defined and configured servlet</p>
+<div hljs language="xml" include="'assets/code/docs/web-servlet.xml'"></div>
+
+<h4 class="padding-top-1x heading-dash">Integrating using a filter</h4>
+<p>To integrate katharsis using a filter several steps are required. The first one is to create a class that extends
+    <code>AbstractKatharsisFilter</code> and will provide required configuration to the library.
+    A code below shows a sample implementation.</p>
+<div hljs language="java" include="'assets/code/docs/SampleKatharsisFilter.java'"></div>
+<p>The newly created filter has to be added to <code>web.xml</code> file or other deployment descriptor.
+    A code below shows a sample <code>web.xml</code> file with properly defined and configured filter</p>
+<div hljs language="xml" include="'assets/code/docs/web-filter.xml'"></div>
+
+
+<h4 class="padding-top-1x heading-dash">Repository supported parameters</h4>
+
+<p>Servlet integration allows a developer to pass the following types of parameters in repository methods:</p>
+<ol>
+    <li>An instance of <code>ServletContext</code></li>
+    <li>An instance of <code>HttpServletRequest</code></li>
+    <li>An instance of <code>HttpServletResponse</code></li>
+</ol>
 
 <div class="divider double"></div>

@@ -1,0 +1,22 @@
+<web-app>
+  <filter>
+    <filter-name>SampleKatharsisFilter</filter-name>
+    <filter-class>io.katharsis.servlet.SampleKatharsisFilter</filter-class>
+    <init-param>
+      <param-name>katharsis.config.web.path.prefix</param-name>
+      <param-value>/api/v1</param-value>
+    </init-param>
+    <init-param>
+      <param-name>katharsis.config.core.resource.package</param-name>
+      <param-value>io.katharsis.servlet.resource</param-value>
+    </init-param>
+    <init-param>
+      <param-name>katharsis.config.core.resource.domain</param-name>
+      <param-value>http://localhost:8080</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>SampleKatharsisFilter</filter-name>
+    <url-pattern>/api/v1/*</url-pattern>
+  </filter-mapping>
+</web-app>
