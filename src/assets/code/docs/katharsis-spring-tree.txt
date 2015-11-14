@@ -1,0 +1,14 @@
+[INFO] io.katharsis:katharsis-spring:jar:2.0.0
+[INFO] +- org.springframework.boot:spring-boot-starter-web:jar:1.2.7.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter:jar:1.2.7.RELEASE:compile
+...
+[INFO] +- org.springframework.boot:spring-boot-configuration-processor:jar:1.2.7.RELEASE:compile
+[INFO] |  \- org.json:json:jar:20140107:compile
+[INFO] +- io.katharsis:katharsis-servlet:jar:2.0.0:compile
+[INFO] |  +- io.katharsis:katharsis-core:jar:2.0.0:compile
+[INFO] |  |  +- org.reflections:reflections:jar:0.9.9:compile
+[INFO] |  |  |  +- org.javassist:javassist:jar:3.18.2-GA:compile
+[INFO] |  |  |  \- com.google.code.findbugs:annotations:jar:2.0.1:compile
+[INFO] |  |  +- net.jodah:typetools:jar:0.4.0:compile
+[INFO] |  |  \- org.slf4j:slf4j-api:jar:1.7.12:compile
+[INFO] |  \- com.google.guava:guava:jar:15.0:compile
