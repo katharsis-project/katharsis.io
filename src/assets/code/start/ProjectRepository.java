@@ -37,12 +37,12 @@ public class ProjectRepository {
     }
 
     @JsonApiFindAll
-    public Iterable<Project> findAll(RequestParams requestParams) {
+    public Iterable<Project> findAll(QueryParams queryParams) {
         return REPOSITORY.values();
     }
 
     @JsonApiFindAllWithIds
-    public Iterable<Project> findAll(Iterable<Long> iterable, RequestParams requestParams) {
+    public Iterable<Project> findAll(Iterable<Long> iterable, QueryParams queryParams) {
         return REPOSITORY.entrySet()
                 .stream()
                 .filter(p -> Iterables.contains(iterable, p.getKey()))
