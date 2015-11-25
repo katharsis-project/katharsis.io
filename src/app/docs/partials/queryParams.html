@@ -7,7 +7,7 @@ object in repository methods.</p>
 
 <h4 class="padding-top-1x heading-dash">Filtering</h4>
 <p>
-	Resource filtering can be achieved by providing parameters which start with <code>filter</code>.
+	Resource filtering can be achieved by providing parameters which start with <code>filter</code>.<br/>
 	The format for filters: <code>filter[ResourceType][property|operator]([property|operator])* = "value"</code>
 </p>
 <p>Examples:</p>
@@ -24,8 +24,8 @@ object in repository methods.</p>
     in order to fit standard query parameter serializing strategy and maximize effective processing of data.
 </div>
 <p>
-	Sorting information for the resources can be achieved by providing <code>sort</code> parameter.
-    The format for sorting: <code>sort[ResourceType][property|operator]([property|operator])* = "value"</code>
+	Sorting information for the resources can be achieved by providing <code>sort</code> parameter.<br/>
+	The format for sorting: <code>sort[ResourceType][property|operator]([property|operator])* = "value"</code>
 </p>
 <p>Examples:</p>
 <ul>
@@ -37,7 +37,7 @@ object in repository methods.</p>
 <div class="alert alert-info">Grouping itself is not specified by JSON API itself, but the keyword and format it reserved for today and future use in Katharsis.
 </div>
 <p>
-    Grouping information for the resources can be achieved by providing <code>sort</code> parameter.
+	Grouping information for the resources can be achieved by providing <code>sort</code> parameter.<br/>
     The format for grouping: <code>group[ResourceType] = "property(.property)*"</code>
 </p>
 <p>Examples:</p>
@@ -48,7 +48,7 @@ object in repository methods.</p>
 
 <h4 class="padding-top-1x heading-dash">Pagination</h4>
 <p>
-    Pagination for the repositories can be achieved by providing <code>page</code> parameter.
+	Pagination for the repositories can be achieved by providing <code>page</code> parameter.<br/>
     The format for pagination: <code>page[offset|limit] = "value"</code>, where <strong>value</strong> is an integer
 </p>
 <p>Example:</p>
@@ -62,9 +62,10 @@ object in repository methods.</p>
     in order to fit standard query parameter serializing strategy and maximize effective processing of data.
 </div>
 <p>
-    Information about fields to include in the response can be achieved by providing <code>fields</code> parameter.
+	Information about fields to include in the response can be achieved by providing <code>fields</code> parameter.<br/>
     The format for fields: <code>fields[ResourceType] = "property(.property)*"</code>
 </p>
+
 <p>Examples:</p>
 <ul>
     <li><code>GET /tasks/?fields[Task]=name</code></li>
