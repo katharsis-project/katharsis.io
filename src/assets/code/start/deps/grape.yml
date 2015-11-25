@@ -1,3 +1,3 @@
 @Grapes(
-	@Grab(group='io.katharsis', module='katharsis-core', version='2.0.0')
+	@Grab(group='io.katharsis', module='katharsis-core', version='2.0.1')
 )
