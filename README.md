@@ -3,7 +3,7 @@
 The Katharsis library adds an additional layer on top of RESTful endpoint to provide easy HATEOAS support for Java by implementing JSON:API standard.
 
 # katharsis.io
-In this repo is stored source code of the [katharsis project website](http://katharsis.io).
+This repo stores source code of [katharsis project website](http://katharsis.io).
 
 ### Chat
 If you found and problem or possible improvements feel free to contact us on gitter:
