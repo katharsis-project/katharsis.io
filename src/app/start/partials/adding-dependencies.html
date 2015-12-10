@@ -61,6 +61,12 @@
 
 <div hljs language="xml" include="'assets/code/start/katharsis-dependency.xml'"></div>
 
+<p>However, Katharsis out of the box uses searching of classes (resources, repositories, etc.) and for that
+<i>reflections</i> library is required. To add this library just place <i>reflections</i> dependency like this one in
+	your POM:</p>
+
+<div hljs language="xml" include="'assets/code/start/reflections-dependency.xml'"></div>
+
 <p>In the end a <a href="https://maven.apache.org/plugins/maven-shade-plugin/">maven shade</a> plugin configuration
 	should be added to allow building a fat JAR.</p>
 
