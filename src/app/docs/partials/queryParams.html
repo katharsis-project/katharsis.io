@@ -12,10 +12,10 @@ object in repository methods.</p>
 </p>
 <p>Examples:</p>
 <ul>
-    <li><code>GET /tasks/?filter[Task][name]=Super task</code></li>
-    <li><code>GET /tasks/?filter[Task][name]=Super task&[Task][dueDate]=2015-10-01</code></li>
-    <li><code>GET /tasks/?filter[Task][name][$startWith]=Super task</code></li>
-    <li><code>GET /tasks/?filter[Task][name][][$startWith]=Super&[Task][name][][$endWith]=task</code></li>
+    <li><code>GET /tasks/?filter[tasks][name]=Super task</code></li>
+    <li><code>GET /tasks/?filter[tasks][name]=Super task&[tasks][dueDate]=2015-10-01</code></li>
+    <li><code>GET /tasks/?filter[tasks][name][$startWith]=Super task</code></li>
+    <li><code>GET /tasks/?filter[tasks][name][][$startWith]=Super&[tasks][name][][$endWith]=task</code></li>
 </ul>
 
 <h4 class="padding-top-1x heading-dash">Sorting</h4>
@@ -29,8 +29,8 @@ object in repository methods.</p>
 </p>
 <p>Examples:</p>
 <ul>
-    <li><code>GET /tasks/?sort[Task][name]=asc</code></li>
-    <li><code>GET /tasks/?sort[Project][shortName]=desc&sort[User][name][firstName]=asc</code></li>
+    <li><code>GET /tasks/?sort[tasks][name]=asc</code></li>
+    <li><code>GET /tasks/?sort[projects][shortName]=desc&sort[users][name][firstName]=asc</code></li>
 </ul>
 
 <h4 class="padding-top-1x heading-dash">Grouping</h4>
@@ -42,8 +42,8 @@ object in repository methods.</p>
 </p>
 <p>Examples:</p>
 <ul>
-    <li><code>GET /tasks/?group[Task]=name</code></li>
-    <li><code>GET /tasks/?group[User]=name.firstName&include[Project]=team</code></li>
+    <li><code>GET /tasks/?group[tasks]=name</code></li>
+    <li><code>GET /tasks/?group[users]=name.firstName&include[projects]=team</code></li>
 </ul>
 
 <h4 class="padding-top-1x heading-dash">Pagination</h4>
@@ -68,9 +68,9 @@ object in repository methods.</p>
 
 <p>Examples:</p>
 <ul>
-    <li><code>GET /tasks/?fields[Task]=name</code></li>
-    <li><code>GET /tasks/?fields[Task][]=name&fields[Task][]=dueDate</code></li>
-    <li><code>GET /tasks/?fields[User]=name.surname&include[Task]=author</code></li>
+    <li><code>GET /tasks/?fields[tasks]=name</code></li>
+    <li><code>GET /tasks/?fields[tasks][]=name&fields[tasks][]=dueDate</code></li>
+    <li><code>GET /tasks/?fields[users]=name.surname&include[tasks]=author</code></li>
 </ul>
 
 <h4 class="padding-top-1x heading-dash">Inclusion of Related Resources</h4>
@@ -84,9 +84,9 @@ object in repository methods.</p>
 </p>
 <p>Examples:</p>
 <ul>
-    <li><code>GET /tasks/?include[Task]=author</code></li>
-    <li><code>GET /tasks/?include[Task][]=author&include[Task][]=comments</code></li>
-    <li><code>GET /tasks/?include[Project]=task&include[Task]=comments</code></li>
+    <li><code>GET /tasks/?include[tasks]=author</code></li>
+    <li><code>GET /tasks/?include[tasks][]=author&include[tasks][]=comments</code></li>
+    <li><code>GET /tasks/?include[projects]=task&include[tasks]=comments</code></li>
 </ul>
 
 <div class="divider double"></div>
