@@ -4,7 +4,6 @@ module.exports = function () {
 			options: {
 				baseUrl: '<%= paths.dev %>/',
 				optimize: 'uglify2',
-				generateSourceMaps: true,
 				preserveLicenseComments: false,
 				useStrict: true,
 				out: '<%= paths.dist %>/assets/js/main.min.js',
