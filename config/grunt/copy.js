@@ -12,8 +12,7 @@ module.exports = {
 				'.htaccess',
 				'index.html',
 				'assets/fonts/**/*',
-				'assets/img/**/*',
-				'assets/code/**/*'
+				'assets/img/**/*'
 			]
 		}]
 	}
