@@ -5,7 +5,7 @@
       <paths name="katharsis.io">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$/dist" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
