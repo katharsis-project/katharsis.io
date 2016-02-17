@@ -84,6 +84,8 @@ object in repository methods.</p>
 </p>
 <p>Examples:</p>
 <ul>
+    <li><code>GET /tasks/?include[tasks]=project</code></li>
+    <li><code>GET /tasks/1/?include[tasks]=project</code></li>
     <li><code>GET /tasks/?include[tasks]=author</code></li>
     <li><code>GET /tasks/?include[tasks][]=author&include[tasks][]=comments</code></li>
     <li><code>GET /tasks/?include[projects]=task&include[tasks]=comments</code></li>
