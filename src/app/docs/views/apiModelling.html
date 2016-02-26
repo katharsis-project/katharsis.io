@@ -1,0 +1,41 @@
+<div class="container padding2x">
+	<div class="row">
+		<div class="col-md-3 hidden-sm hidden-xs">
+			<article ng-include="'app/docs/partials/affixAPIModelling.html'"></article>
+		</div>
+
+		<div class="col-md-9">
+
+			<div class="row">
+				<div class="col-md-3 col-xs-6">
+					<img src="assets/img/writing.jpg" class="img-responsive center-block"/>
+				</div>
+				<div class="col-md-9 col-xs-6">
+					<h2>Documentation</h2>
+
+					<div class="divider brand no-margin-top"></div>
+
+					<p>Katharsis provides means to easily expose resources over the REST interface. If you want to take a
+						deeper look on the concepts behind Katharsis, this is page for you!
+					</p>
+
+				</div>
+			</div>
+
+			<article id="relationships"
+							 ng-include="'app/docs/partials/relationships.html'"
+							 analytics-on="scrollby">
+			</article>
+
+			<article id="models"
+							 ng-include="'app/docs/partials/models.html'"
+							 analytics-on="scrollby">
+			</article>
+
+			<article id="repositories"
+							 ng-include="'app/docs/partials/repositories.html'"
+							 analytics-on="scrollby">
+			</article>
+		</div>
+	</div>
+</div>

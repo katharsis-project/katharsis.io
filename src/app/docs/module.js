@@ -6,10 +6,32 @@ define(['angular', 'angular-scroll','angular-highlight'], function (ng) {
 	module.config(function ($stateProvider) {
 		$stateProvider
 			.state('app.docs', {
-				url: '/docs',
+				url: '/docs'
+			})
+
+			.state('app.docs.general', {
+				url: '/general',
 				views: {
-					content: {
-						templateUrl: 'app/docs/views/docs.html'
+					'content@app': {
+						templateUrl: 'app/docs/views/general.html'
+					}
+				}
+			})
+
+			.state('app.docs.apiModelling', {
+				url: '/general',
+				views: {
+					'content@app': {
+						templateUrl: 'app/docs/views/apiModelling.html'
+					}
+				}
+			})
+
+			.state('app.docs.requestHandling', {
+				url: '/general',
+				views: {
+					'content@app': {
+						templateUrl: 'app/docs/views/requestHandling.html'
 					}
 				}
 			});

@@ -25,11 +25,22 @@
 					<li ui-sref-active="active">
 						<a href-void ui-sref="app.examples">Examples</a>
 					</li>
-					<li ui-sref-active="active">
-						<a href-void ui-sref="app.docs">Documentation</a>
+					<li class="dropdown">
+						<a class="dropdown-toggle cursor-pointer">Documentation</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a ui-sref="app.docs.general" href-void>General</a>
+							</li>
+							<li>
+								<a ui-sref="app.docs.apiModelling" href-void>API modelling</a>
+							</li>
+							<li>
+								<a ui-sref="app.docs.requestHandling" href-void>Request handling</a>
+							</li>
+						</ul>
 					</li>
 					<li class="dropdown">
-						<a class="dropdown-toggle">Community</a>
+						<a class="dropdown-toggle cursor-pointer">Community</a>
 						<ul class="dropdown-menu">
 							<li>
 								<a target="_blank" href="http://stackoverflow.com/questions/tagged/katharsis">Stack overflow</a>
