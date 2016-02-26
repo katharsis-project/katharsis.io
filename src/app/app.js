@@ -25,6 +25,7 @@ define([
 		'app.home',
 		'app.docs',
 		'app.start',
+		'app.about',
 		'app.examples'
 	]);
 

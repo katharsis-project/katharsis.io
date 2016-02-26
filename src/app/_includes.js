@@ -15,7 +15,9 @@ define([
 	'app/start/_includes',
 
 	'app/examples/module',
-	'app/examples/_includes'
+	'app/examples/_includes',
+
+	'app/about/module'
 ], function () {
 	'use strict';
 });
