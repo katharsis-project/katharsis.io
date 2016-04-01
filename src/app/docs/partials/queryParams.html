@@ -5,6 +5,8 @@
 developer to perform other operations. All of the types of parameters can be accessed using <code>QueryParams</code>
 object in repository methods.</p>
 
+<p>The following property/operator attributes can consist of words and special characters: <code>_-!@#$%^&*()=+</code>.</p>
+
 <h4 class="padding-top-1x heading-dash">Filtering</h4>
 <p>
 	Resource filtering can be achieved by providing parameters which start with <code>filter</code>.<br/>
@@ -13,9 +15,9 @@ object in repository methods.</p>
 <p>Examples:</p>
 <ul>
     <li><code>GET /tasks/?filter[tasks][name]=Super task</code></li>
-    <li><code>GET /tasks/?filter[tasks][name]=Super task&[tasks][dueDate]=2015-10-01</code></li>
+    <li><code>GET /tasks/?filter[tasks][name]=Super task&filter[tasks][dueDate]=2015-10-01</code></li>
     <li><code>GET /tasks/?filter[tasks][name][$startWith]=Super task</code></li>
-    <li><code>GET /tasks/?filter[tasks][name][][$startWith]=Super&[tasks][name][][$endWith]=task</code></li>
+    <li><code>GET /tasks/?filter[tasks][name][][$startWith]=Super&filter[tasks][name][][$endWith]=task</code></li>
 </ul>
 
 <h4 class="padding-top-1x heading-dash">Sorting</h4>
