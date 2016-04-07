@@ -93,4 +93,14 @@ object in repository methods.</p>
     <li><code>GET /tasks/?include[projects]=task&include[tasks]=comments</code></li>
 </ul>
 
+<h4 class="padding-top-1x heading-dash">Customization</h4>
+<p>It's possible to customize the way parameters are initially parsed by Katharsis. Each Katharsis integration (defined
+    in the next section) creates an instance of <code>io.katharsis.queryParamsQueryParamsParser</code> which can change
+    some aspects of how parameters are processed to the system. The default implementation
+    <code>io.katharsis.queryParams.DefaultQueryParamsParser</code> allows passing query parameters the way described in
+    this section, but it is not the only way parameters can be passed. For examples, one may create own parser which will
+    accept included elements in a for of comma separated list <code>GET /tasks/?include[tasks]=project,author</code> by
+    creating own class like the one defined below.</p>
+<div hljs language="java" include="'assets/code/docs/CommaDelimitedQueryParamsParser.java'"></div>
+
 <div class="divider double"></div>
