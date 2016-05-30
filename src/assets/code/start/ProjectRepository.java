@@ -28,7 +28,7 @@ public class ProjectRepository {
     }
 
     @JsonApiFindOne
-    public Project findOne(Long id) {K
+    public Project findOne(Long id) {
         Project project = REPOSITORY.get(id);
         if (project == null) {
             throw new ResourceNotFoundException("Project not found");
