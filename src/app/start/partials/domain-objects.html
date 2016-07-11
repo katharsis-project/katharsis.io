@@ -1,16 +1,16 @@
 <h4 class="padding-top-1x heading-dash">Domain objects</h4>
 
-<p>Now we can add a domain object, a sample resource - let’s be it a <code>Project</code> class which will consist of an
+<p>Now we can add a domain object, a sample resource - let’s make it a <code>Project</code> class which will consist of an
 	identifier and a name.</p>
 
 <div hljs language="java" include="'assets/code/start/domainObject.java'"></div>
 
-<p>As stated above, accompanying repository need to be added. This sample doesn’t have any DB connectivity for
-	clearance, but it can be added without any problem.</p>
+<p>As stated above, an accompanying repository needs to be added. This sample doesn’t have any DB connectivity for
+	clarity, but it can be added without any problem.</p>
 
-<p>To allow Katharsis operate on the resources, a special class called <i>repository</i> has to be created.
-	 To provide a repository for a created <code>Project</code> model, create a class <code>ProjectRepository</code>.
- Katharsis can scan this class, and using annotations, find out which methods what can do.</p>
+<p>To allow Katharsis to operate on the resources, a special class called <i>repository</i> has to be created.
+	 To provide a repository for the <code>Project</code> model, create a class <code>ProjectRepository</code>.
+ Katharsis can scan this class, and using annotations, find out which methods can do what.</p>
 
 <p>The class below uses <code>java.util.concurrent.ConcurrentHashMap</code> to store resources.</p>
 
