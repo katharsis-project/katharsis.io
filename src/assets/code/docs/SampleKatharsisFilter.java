@@ -10,14 +10,6 @@ public class SampleKatharsisFilter extends AbstractKatharsisFilter {
     private String resourceSearchPackage;
     private String resourceDefaultDomain;
 
-    public void init(FilterConfig filterConfig) throws ServletException {
-        super.init(filterConfig);
-        resourceSearchPackage = filterConfig
-            .getInitParameter(KatharsisProperties.RESOURCE_SEARCH_PACKAGE);
-        resourceDefaultDomain = filterConfig
-            .getInitParameter(KatharsisProperties.RESOURCE_DEFAULT_DOMAIN);
-    }
-
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         super.init(filterConfig);
