@@ -1,37 +1,15 @@
-define(['angular', 'angular-scroll','angular-highlight'], function (ng) {
+define(['angular'], function (ng) {
 	'use strict';
 
-	var module = ng.module('app.docs', ['duScroll', 'hljs']);
+	var module = ng.module('app.docs', []);
 
 	module.config(function ($stateProvider) {
 		$stateProvider
 			.state('app.docs', {
-				url: '/docs'
-			})
-
-			.state('app.docs.general', {
-				url: '/general',
+				url: '/docs',
 				views: {
 					'content@app': {
-						templateUrl: 'app/docs/views/general.html'
-					}
-				}
-			})
-
-			.state('app.docs.apiModelling', {
-				url: '/general',
-				views: {
-					'content@app': {
-						templateUrl: 'app/docs/views/apiModelling.html'
-					}
-				}
-			})
-
-			.state('app.docs.requestHandling', {
-				url: '/general',
-				views: {
-					'content@app': {
-						templateUrl: 'app/docs/views/requestHandling.html'
+						templateUrl: 'app/docs/views/docs.html'
 					}
 				}
 			});

@@ -1,7 +1,6 @@
 define([
 	'./_directives/backToTop',
-	'./_directives/hrefVoid',
-	'./_directives/supportBanner'
+	'./_directives/hrefVoid'
 ], function () {
 	'use strict';
 });
