@@ -1,7 +1,7 @@
 <dependency>
 	<groupId>io.katharsis</groupId>
 	<artifactId>katharsis-rs</artifactId>
-	<version>2.3.0</version>
+	<version>${katharsis.version}</version>
 	<exclusions>
 		<exclusion>
 			<groupId>com.fasterxml.jackson.core</groupId>

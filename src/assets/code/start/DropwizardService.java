@@ -1,29 +1,21 @@
-package io.katharsis.example.dropwizardSimple;
+package io.katharsis.example.dropwizard.simple;
 
 import io.dropwizard.Application;
 import io.dropwizard.setup.Environment;
-import io.katharsis.locator.SampleJsonServiceLocator;
+import io.katharsis.core.properties.KatharsisProperties;
 import io.katharsis.rs.KatharsisFeature;
-
-import static io.katharsis.rs.KatharsisProperties.*;
 
 public class DropwizardService extends Application<DropwizardConfiguration> {
 
-    @Override
-    public void run(DropwizardConfiguration dropwizardConfiguration, Environment environment)
-        throws Exception {
+	@Override
+	public void run(DropwizardConfiguration dropwizardConfiguration, Environment environment) throws Exception {
+		environment.jersey().property(KatharsisProperties.RESOURCE_SEARCH_PACKAGE, dropwizardConfiguration.katharsis.searchPackage);
 
-        environment.jersey()
-            .property(RESOURCE_DEFAULT_DOMAIN, dropwizardConfiguration.katharsis.host);
-        environment.jersey()
-            .property(RESOURCE_SEARCH_PACKAGE, dropwizardConfiguration.katharsis.searchPackage);
+		KatharsisFeature katharsisFeature = new KatharsisFeature();
+		environment.jersey().register(katharsisFeature);
+	}
 
-        KatharsisFeature katharsisFeature = new KatharsisFeature(environment.getObjectMapper(), new
-                SampleJsonServiceLocator());
-        environment.jersey().register(katharsisFeature);
-    }
-
-    public static void main(String[] args) throws Exception {
-        new DropwizardService().run(args);
-    }
+	public static void main(String[] args) throws Exception {
+		new DropwizardService().run(args);
+	}
 }
