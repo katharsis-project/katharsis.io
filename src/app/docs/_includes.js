@@ -1,5 +1,3 @@
-define([
-	'./_directives/scrollfixColumn/scrollfixColumn'
-], function () {
+define([], function () {
 	'use strict';
 });

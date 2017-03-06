@@ -1,15 +1,15 @@
 define(['angular'], function (ng) {
 	'use strict';
 
-	var module = ng.module('app.docs', []);
+	var module = ng.module('app.about', []);
 
 	module.config(function ($stateProvider) {
 		$stateProvider
-			.state('app.docs', {
-				url: '/docs',
+			.state('app.about', {
+				url: '/about',
 				views: {
-					'content@app': {
-						templateUrl: 'app/docs/views/docs.html'
+					content: {
+						templateUrl: 'app/about/views/about.html'
 					}
 				}
 			});

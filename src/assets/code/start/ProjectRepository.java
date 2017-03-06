@@ -1,57 +1,47 @@
+package io.katharsis.example.dropwizard.simple.domain.repository;
 
-package io.katharsis.example.dropwizardSimple.domain.repository;
-
-import com.google.common.collect.Iterables;
-import io.katharsis.example.dropwizardSimple.domain.model.Project;
-import io.katharsis.repository.annotations.*;
-import io.katharsis.queryParams.QueryParams;
-import io.katharsis.resource.exception.ResourceNotFoundException;
-
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.stream.Collectors;
 
-@JsonApiResourceRepository(Project.class)
-public class ProjectRepository {
+import io.katharsis.example.dropwizard.simple.domain.model.Project;
+import io.katharsis.queryspec.QuerySpec;
+import io.katharsis.repository.ResourceRepositoryBase;
+import io.katharsis.resource.list.ResourceList;
 
-    private static final Map<Long, Project> REPOSITORY = new ConcurrentHashMap<>();
-    private static final AtomicLong ID_GENERATOR = new AtomicLong(1);
+public class ProjectRepository extends ResourceRepositoryBase<Project, Long> {
 
-    @JsonApiSave
-    public <S extends Project> S save(S entity) {
-        if (entity.getId() == null) {
-            entity.setId(ID_GENERATOR.getAndIncrement());
-        }
-        REPOSITORY.put(entity.getId(), entity);
-        return entity;
-    }
+	private static final AtomicLong ID_GENERATOR = new AtomicLong(124);
 
-    @JsonApiFindOne
-    public Project findOne(Long id) {
-        Project project = REPOSITORY.get(id);
-        if (project == null) {
-            throw new ResourceNotFoundException("Project not found");
-        }
-        return project;
-    }
+	private Map<Long, Project> projects = new HashMap<>();
 
-    @JsonApiFindAll
-    public Iterable<Project> findAll(QueryParams queryParams) {
-        return REPOSITORY.values();
-    }
+	public ProjectRepository() {
+		super(Project.class);
+		List<String> interests = new ArrayList<>();
+		interests.add("coding");
+		interests.add("art");
+		save(new Project(123L, "Great Project"));
+	}
 
-    @JsonApiFindAllWithIds
-    public Iterable<Project> findAll(Iterable<Long> iterable, QueryParams queryParams) {
-        return REPOSITORY.entrySet()
-                .stream()
-                .filter(p -> Iterables.contains(iterable, p.getKey()))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
-                .values();
-    }
+	@Override
+	public synchronized void delete(Long id) {
+		projects.remove(id);
+	}
 
-    @JsonApiDelete
-    public void delete(Long id) {
-        REPOSITORY.remove(id);
-    }
+	@Override
+	public synchronized <S extends Project> S save(S project) {
+		if (project.getId() == null) {
+			project.setId(ID_GENERATOR.getAndIncrement());
+		}
+		projects.put(project.getId(), project);
+		return project;
+	}
+
+	@Override
+	public synchronized ResourceList<Project> findAll(QuerySpec querySpec) {
+		return querySpec.apply(projects.values());
+	}
+
 }

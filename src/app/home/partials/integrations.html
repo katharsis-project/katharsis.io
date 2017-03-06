@@ -52,6 +52,21 @@
 					</div>
 				</div>
 				<div class="panel panel-default">
+					<div class="panel-heading collapsed" role="tab" id="headingTwo">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+								 aria-controls="collapseTwo">
+								CDI integration
+							</a>
+						</h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+						<div class="panel-body">
+							<p>Katharsis can automatically pickup repository, module, exception mapper, etc. implementations from CDI environments.
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
 					<div class="panel-heading collapsed" role="tab" id="headingThree">
 						<h4 class="panel-title">
 							<a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
@@ -77,10 +92,74 @@
 					</div>
 					<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 						<div class="panel-body">
-							<p>Katharsis provide an easy integration with Spring Boot by providing a configuration class.</p>
+							<p>
+								Katharsis provide an easy integration with Spring and Spring Boot. For Spring Boot it provides a configuration class.
+								Katharsis can automatically pickup repository, module, exception mapper, etc. implementations from an ApplicationContext.
+								There is further support for Spring Security and JPA. 
+							</p>
 						</div>
 					</div>
 				</div>
+				
+				
+				<div class="panel panel-default">
+					<div class="panel-heading collapsed" role="tab" id="headingFour">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
+								 aria-controls="collapseFour">
+								JSR-303 Bean Validation integration
+							</a>
+						</h4>
+					</div>
+					<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+						<div class="panel-body">
+							<p>
+								Katharsis provides exceptions mappers for JSR-303 validation exceptions, allowing their translation
+								into fully JSON API compliant errors.
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="panel panel-default">
+					<div class="panel-heading collapsed" role="tab" id="headingFour">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
+								 aria-controls="collapseFour">
+								Brave/Zipkin integration
+							</a>
+						</h4>
+					</div>
+					<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+						<div class="panel-body">
+							<p>
+								Katharsis provides a Brave integration to allow the tracing of repository called with the
+								Zipkin protocol.
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading collapsed" role="tab" id="headingFour">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
+								 aria-controls="collapseFour">
+								JPA integration
+							</a>
+						</h4>
+					</div>
+					<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+						<div class="panel-body">
+							<p>
+								Katharsis provides a JPA integration with allows to expose existing JPA entities without any
+								additional implementation work.
+							</p>
+						</div>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 libraryDependencies += "io.katharsis" % "katharsis-core" % "2.6.0"
+=======
+libraryDependencies += "io.katharsis" % "katharsis-core" % "${katharsis.version}"
+>>>>>>> refs/remotes/origin/development
